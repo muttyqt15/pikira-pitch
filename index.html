@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pikira Pitch Deck — AI-Native Academic OS for Indonesian K-12</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   RESET & VIEWPORT BASE
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow-x: hidden; }
+html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    font-size: var(--body);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+}
+
+.slide {
+    width: 100vw; height: 100vh; height: 100dvh;
+    overflow: hidden; scroll-snap-align: start;
+    display: flex; flex-direction: column; position: relative;
+}
+.slide-content {
+    flex: 1; display: flex; flex-direction: column;
+    justify-content: center; align-items: stretch;
+    max-height: 100%; overflow: hidden;
+    padding: var(--pad);
+    gap: var(--content-gap);
+}
+.slide-content > * { flex-shrink: 0; }
+
+:root {
+    /* Pikira brand */
+    --navy-950: #031525;
+    --navy-900: #062338;
+    --navy-800: #0a3856;
+    --navy-700: #124a70;
+    --navy-600: #1d5c8a;
+    --navy-500: #2b7aab;
+    --navy-400: #4a99cc;
+    --navy-300: #78b6de;
+    --navy-200: #a5d0ec;
+    --navy-100: #d2e6f6;
+    --navy-50: #eaf3fb;
+    --carrot-600: #c46a28;
+    --carrot-500: #e8853d;
+    --carrot-400: #f0a468;
+    --carrot-300: #f5c49a;
+    --carrot-200: #fae0c7;
+    --carrot-100: #fdf0e3;
+    --silver-100: #CAD1D9;
+    --silver-200: #e2e6ea;
+
+    --bg: var(--navy-950);
+    --bg-card: var(--navy-900);
+    --bg-elevated: var(--navy-800);
+    --accent: var(--carrot-500);
+    --accent-soft: rgba(232, 133, 61, 0.10);
+    --text: #f0f4f8;
+    --text-dim: var(--silver-100);
+    --text-muted: #6b7f92;
+    --green: #4ade80;
+    --yellow: #fbbf24;
+    --blue: var(--navy-400);
+
+    --h1: clamp(2rem, 5.5vw, 4.5rem);
+    --h2: clamp(1.25rem, 3vw, 2.2rem);
+    --h3: clamp(1rem, 2vw, 1.4rem);
+    --body: clamp(0.85rem, 1.5vw, 1.1rem);
+    --small: clamp(0.75rem, 1.1vw, 0.9rem);
+    --tiny: clamp(0.65rem, 0.9vw, 0.78rem);
+
+    --pad: clamp(1.2rem, 4vw, 4.5rem);
+    --content-gap: clamp(1rem, 3vh, 2.5rem);
+    --gap: clamp(0.6rem, 1.5vw, 1.5rem);
+    --gap-sm: clamp(0.35rem, 0.8vw, 0.7rem);
+}
+
+h1, h2, h3 { line-height: 1.15; letter-spacing: -0.02em; }
+h1 { font-size: var(--h1); font-weight: 800; }
+h2 { font-size: var(--h2); font-weight: 700; }
+h3 { font-size: var(--h3); font-weight: 700; }
+
+/* ============================================
+   UTILITY
+   ============================================ */
+.accent { color: var(--accent); }
+.dim { color: var(--text-dim); }
+.muted { color: var(--text-muted); }
+.small { font-size: var(--small); }
+.tiny { font-size: var(--tiny); }
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: clamp(0.7rem, 1.5vw, 1.2rem);
+}
+
+.tag {
+    display: inline-block; font-size: var(--tiny);
+    padding: 0.12em 0.55em; border-radius: 100px;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+}
+.tag--shipped { background: rgba(74,222,128,0.15); color: var(--green); }
+.tag--progress { background: rgba(251,191,36,0.15); color: var(--yellow); }
+.tag--planned { background: rgba(74,153,204,0.15); color: var(--blue); }
+
+.section-label {
+    font-size: var(--tiny); font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.15em; color: var(--accent);
+}
+
+.callout {
+    background: var(--accent-soft); border-left: 3px solid var(--accent);
+    padding: 0.5em 0.9em; border-radius: 0 8px 8px 0;
+    font-size: var(--small); line-height: 1.45;
+}
+
+.source {
+    font-size: var(--tiny); color: var(--text-muted);
+    font-style: italic;
+}
+
+/* ============================================
+   SLIDE 1: COVER
+   ============================================ */
+.slide--cover {
+    background: linear-gradient(160deg, var(--navy-950) 0%, var(--navy-900) 40%, #0c2d45 100%);
+}
+.slide--cover .slide-content {
+    align-items: center; text-align: center;
+}
+.cover-logo-img {
+    height: clamp(64px, 12vh, 120px);
+    filter: drop-shadow(0 4px 20px rgba(232,133,61,0.2));
+}
+.cover-wordmark {
+    font-size: clamp(2.2rem, 7vw, 5rem);
+    font-weight: 800; letter-spacing: 0.12em;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--carrot-400) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.cover-divider {
+    width: 50px; height: 3px; border-radius: 2px;
+    background: var(--accent); margin: 0;
+}
+.cover-tagline {
+    font-size: clamp(0.85rem, 1.6vw, 1.2rem);
+    color: var(--text-dim); font-weight: 400; max-width: 500px;
+}
+.cover-meta {
+    color: var(--text-muted); font-size: var(--small);
+    display: flex; flex-direction: column; gap: 0.15rem;
+}
+
+/* ============================================
+   SLIDE 2: PROBLEM
+   ============================================ */
+.problem-layout {
+    display: grid; grid-template-columns: 200px 1fr; gap: clamp(1.5rem, 4vw, 4rem);
+    align-items: center;
+}
+@media (max-width: 768px) { .problem-layout { grid-template-columns: 1fr; } }
+
+.donut-container { position: relative; width: clamp(140px, 20vw, 200px); height: clamp(140px, 20vw, 200px); margin: 0 auto; }
+.donut-ring {
+    width: 100%; height: 100%; border-radius: 50%;
+    background: conic-gradient(var(--accent) 0deg 324deg, var(--navy-700) 324deg 360deg);
+    mask: radial-gradient(farthest-side, transparent 65%, #000 66%);
+    -webkit-mask: radial-gradient(farthest-side, transparent 65%, #000 66%);
+}
+.donut-center {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+}
+.donut-pct { font-size: clamp(1.6rem, 4vw, 2.5rem); font-weight: 800; color: var(--accent); }
+.donut-label { font-size: var(--tiny); color: var(--text-muted); text-align: center; }
+
+.problem-cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
+@media (max-width: 600px) { .problem-cols { grid-template-columns: 1fr; } }
+.problem-col-header {
+    font-size: var(--tiny); font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.06em; margin-bottom: var(--gap-sm);
+    padding-bottom: 0.25em; border-bottom: 2px solid;
+}
+.problem-list {
+    list-style: none; display: flex; flex-direction: column;
+    gap: clamp(0.15rem, 0.5vh, 0.35rem);
+}
+.problem-list li {
+    font-size: var(--small); line-height: 1.35;
+    padding-left: 1.2em; position: relative;
+}
+.problem-list li::before {
+    content: ''; position: absolute; left: 0; top: 0.4em;
+    width: 6px; height: 6px; border-radius: 2px;
+}
+.problem-list.hot li::before { background: var(--accent); }
+.problem-list.cold li::before { background: var(--navy-700); }
+.problem-list.cold li { color: var(--text-muted); }
+
+.bottom-note {
+    font-size: var(--small); color: var(--text-muted);
+    font-style: italic;
+}
+
+/* ============================================
+   SLIDE 3: VALIDATION
+   ============================================ */
+.stats-row {
+    display: flex; gap: clamp(0.5rem, 1.5vw, 1.5rem);
+    flex-wrap: wrap;
+}
+.stat-pill {
+    background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 100px; padding: 0.3em 1em;
+    display: flex; align-items: center; gap: 0.4em;
+}
+.stat-pill .num { font-size: var(--h3); font-weight: 800; color: var(--accent); }
+.stat-pill .label { font-size: var(--small); color: var(--text-dim); }
+
+.findings-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-sm);
+}
+@media (max-width: 768px) { .findings-grid { grid-template-columns: 1fr; } }
+.finding-card {
+    background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px; padding: clamp(0.6rem, 1.2vw, 1rem);
+    border-top: 3px solid var(--accent);
+}
+.finding-card h4 { font-size: var(--small); font-weight: 700; margin-bottom: 0.2em; }
+.finding-card p { font-size: var(--tiny); color: var(--text-dim); line-height: 1.35; }
+
+/* ============================================
+   SLIDE 4: COMPETITIVE TABLE
+   ============================================ */
+.comp-table {
+    width: 100%; border-collapse: collapse; font-size: var(--small);
+}
+.comp-table th {
+    font-weight: 700; text-align: left;
+    padding: 0.4em 0.6em; border-bottom: 2px solid var(--navy-600);
+    font-size: var(--tiny);
+}
+.comp-table th:last-child { color: var(--accent); }
+.comp-table td {
+    padding: 0.35em 0.6em; border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: var(--text-dim); font-size: var(--tiny);
+}
+.comp-table tr.hl td {
+    background: var(--accent-soft); color: var(--text); font-weight: 500;
+}
+.comp-table .pikira { color: var(--accent); font-weight: 600; }
+.comp-table .chk { color: var(--green); }
+.comp-table .x { color: var(--text-muted); opacity: 0.4; }
+
+.insight-callout {
+    background: var(--bg-card); border: 1px solid var(--navy-700);
+    border-radius: 10px; padding: clamp(0.5rem, 1vw, 0.8rem);
+    font-size: var(--small); color: var(--text-dim); line-height: 1.45;
+}
+.insight-callout strong { color: var(--text); }
+
+/* ============================================
+   SLIDE 5: INSIGHT + AI MOAT
+   ============================================ */
+.pipeline-visual {
+    display: flex; align-items: center; justify-content: center;
+    gap: clamp(0.15rem, 0.4vw, 0.3rem); flex-wrap: wrap;
+}
+.pipe-node {
+    padding: 0.3em 0.65em; border-radius: 6px;
+    font-size: var(--tiny); font-weight: 600; white-space: nowrap;
+}
+.pipe-node.active { background: var(--accent); color: #000; }
+.pipe-node.dim { background: var(--navy-800); color: var(--text-dim); border: 1px solid var(--navy-700); }
+.pipe-arrow { color: var(--navy-600); font-size: var(--tiny); }
+
+.moat-cards {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-sm);
+}
+@media (max-width: 768px) { .moat-cards { grid-template-columns: 1fr; } }
+.moat-card {
+    background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px; padding: clamp(0.6rem, 1.2vw, 1rem);
+    position: relative; overflow: hidden;
+}
+.moat-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 2px; background: linear-gradient(90deg, var(--accent), var(--carrot-400));
+}
+.moat-card h4 { font-size: var(--small); font-weight: 700; margin-bottom: 0.15em; }
+.moat-card p { font-size: var(--tiny); color: var(--text-dim); line-height: 1.35; }
+
+.vs-chatgpt {
+    display: inline-flex; align-items: center; gap: 0.4em;
+    background: rgba(255,255,255,0.04); border-radius: 100px;
+    padding: 0.25em 0.8em; font-size: var(--tiny); color: var(--text-muted);
+}
+.vs-chatgpt .better { color: var(--green); font-weight: 600; }
+
+/* ============================================
+   SLIDE 6: ANALOGIES
+   ============================================ */
+.analogy-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap);
+}
+@media (max-width: 768px) { .analogy-grid { grid-template-columns: 1fr; } }
+.analogy-card {
+    background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px; padding: clamp(0.8rem, 1.5vw, 1.4rem);
+    text-align: center;
+}
+.analogy-logos {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0.6em; margin-bottom: 0.5em; min-height: 36px;
+}
+.logo-text {
+    font-size: clamp(0.9rem, 1.8vw, 1.3rem); font-weight: 800;
+    letter-spacing: -0.02em;
+}
+.analogy-logos .vs-badge {
+    font-size: var(--tiny); font-weight: 700; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.1em;
+}
+.analogy-card p { font-size: var(--tiny); color: var(--text-dim); line-height: 1.35; }
+
+.punchline-box {
+    background: linear-gradient(135deg, var(--navy-800), var(--navy-900));
+    border: 1px solid var(--accent);
+    border-radius: 10px; padding: clamp(0.6rem, 1.2vw, 1rem);
+    font-size: var(--small); line-height: 1.45;
+}
+
+/* ============================================
+   SLIDE 7: VISION (simplified)
+   ============================================ */
+.vision-split {
+    display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); align-items: stretch;
+}
+@media (max-width: 768px) { .vision-split { grid-template-columns: 1fr; } }
+.vision-panel {
+    background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px; padding: clamp(1rem, 2vw, 1.5rem);
+    display: flex; flex-direction: column; gap: var(--gap-sm);
+}
+.vision-col-title {
+    font-size: var(--small); font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--accent);
+}
+.vision-desc {
+    font-size: var(--small); color: var(--text-dim); line-height: 1.45;
+}
+.insight-quote {
+    background: rgba(255,255,255,0.03); border-left: 3px solid var(--accent);
+    padding: 0.5em 0.8em; border-radius: 0 6px 6px 0;
+    font-size: var(--small); color: var(--text-dim); font-style: italic;
+    line-height: 1.4;
+}
+.vision-bottom {
+    font-size: var(--body); font-weight: 600;
+    border-left: 3px solid var(--accent);
+    padding: 0.6em 1em;
+    color: var(--text);
+    background: var(--accent-soft);
+    border-radius: 0 10px 10px 0;
+}
+
+/* ============================================
+   SLIDE 8: MARKET
+   ============================================ */
+.market-stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gap-sm);
+}
+@media (max-width: 600px) { .market-stats { grid-template-columns: repeat(2, 1fr); } }
+.market-stat {
+    background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px; padding: clamp(0.5rem, 1.2vw, 1rem); text-align: center;
+}
+.market-stat .num {
+    font-size: clamp(1.2rem, 3vw, 2rem); font-weight: 800; color: var(--accent);
+}
+.market-stat .label { font-size: var(--tiny); color: var(--text-dim); }
+
+.funnel {
+    display: flex; flex-direction: column; gap: var(--gap-sm);
+}
+.funnel-step {
+    display: flex; align-items: center; gap: 0.8em;
+    background: var(--bg-card); border-radius: 10px;
+    padding: 0.5em 1em; border-left: 3px solid var(--accent);
+}
+.funnel-step .step-num {
+    font-size: var(--h3); font-weight: 800; color: var(--accent); min-width: 1.3em;
+}
+.funnel-step .step-text { font-size: var(--small); }
+.funnel-step .step-text strong { color: var(--text); }
+.funnel-arrow { color: var(--navy-600); text-align: center; font-size: var(--small); line-height: 1; }
+
+/* ============================================
+   SLIDE 9: BUSINESS MODEL
+   ============================================ */
+.pricing-strip {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-sm);
+}
+@media (max-width: 600px) { .pricing-strip { grid-template-columns: 1fr; } }
+.pricing-pill {
+    background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px; padding: clamp(0.5rem, 1vw, 0.8rem);
+    text-align: center;
+}
+.pricing-pill.featured { border-color: var(--accent); }
+.pricing-pill .tier { font-size: var(--small); font-weight: 700; }
+.pricing-pill .target { font-size: var(--tiny); color: var(--text-muted); }
+.pricing-pill .amount { font-size: var(--body); font-weight: 800; color: var(--accent); }
+.pricing-pill .period { font-size: var(--tiny); color: var(--text-muted); }
+
+/* Revenue growth line chart via CSS */
+.growth-chart {
+    position: relative;
+    height: clamp(100px, 18vh, 160px);
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: clamp(0.5rem, 1vw, 0.8rem);
+    padding-bottom: 2em;
+}
+.growth-chart svg {
+    width: 100%; height: 100%;
+}
+.growth-label {
+    position: absolute; font-size: var(--tiny); color: var(--text-dim);
+    transform: translateX(-50%);
+}
+.growth-label .val { font-weight: 700; color: var(--accent); display: block; }
+.growth-label .sub { color: var(--text-muted); }
+.growth-math {
+    font-size: var(--tiny); color: var(--text-muted); font-style: italic;
+    text-align: center;
+}
+
+/* ============================================
+   SLIDE 10: TRACTION
+   ============================================ */
+.timeline-visual {
+    display: flex; flex-direction: column; gap: 0;
+    position: relative; padding-left: clamp(1.8rem, 4vw, 3.5rem);
+}
+.timeline-visual::before {
+    content: ''; position: absolute; left: clamp(0.4rem, 1.2vw, 1rem);
+    top: 8px; bottom: 8px; width: 2px;
+    background: linear-gradient(180deg, var(--accent), var(--navy-600));
+    border-radius: 2px;
+}
+.tl-item { position: relative; padding: 0.4em 0 0.8em; }
+.tl-item::before {
+    content: ''; position: absolute;
+    left: calc(-1 * clamp(1.8rem, 4vw, 3.5rem) + clamp(0.4rem, 1.2vw, 1rem) - 4px);
+    top: 0.6em; width: 10px; height: 10px;
+    border-radius: 50%; background: var(--accent);
+    border: 2px solid var(--navy-950); z-index: 1;
+}
+.tl-item.current::before {
+    box-shadow: 0 0 0 3px rgba(232,133,61,0.3);
+}
+.tl-label { font-size: var(--small); font-weight: 700; color: var(--accent); margin-bottom: 0.1em; }
+.tl-content { font-size: var(--small); color: var(--text-dim); line-height: 1.4; }
+.tl-content strong { color: var(--text); }
+
+.stat-banner {
+    background: linear-gradient(135deg, var(--navy-700), var(--navy-800));
+    border: 1px solid var(--accent);
+    padding: clamp(0.5rem, 1vw, 0.8rem);
+    border-radius: 10px; text-align: center;
+    font-weight: 700; font-size: var(--small);
+    color: var(--accent);
+}
+.honest-note {
+    font-size: var(--tiny); color: var(--text-muted); font-style: italic;
+}
+
+/* ============================================
+   SLIDE 11: TEAM
+   ============================================ */
+.team-cards { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
+@media (max-width: 600px) { .team-cards { grid-template-columns: 1fr; } }
+.team-card {
+    background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px; padding: clamp(0.8rem, 1.5vw, 1.2rem);
+    display: flex; gap: 0.8em; align-items: flex-start;
+}
+.team-card.placeholder { border-style: dashed; border-color: var(--navy-600); }
+.team-avatar {
+    width: clamp(40px, 5vw, 56px); height: clamp(40px, 5vw, 56px);
+    border-radius: 50%; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--accent), var(--carrot-400));
+    display: flex; align-items: center; justify-content: center;
+    font-size: clamp(1rem, 2vw, 1.5rem); font-weight: 800; color: #000;
+}
+.team-card.placeholder .team-avatar { background: var(--navy-700); color: var(--navy-500); }
+.team-info h4 { font-size: var(--small); font-weight: 700; margin-bottom: 0.05em; }
+.team-info .role { font-size: var(--tiny); color: var(--accent); font-weight: 600; margin-bottom: 0.3em; }
+.team-info ul { list-style: none; display: flex; flex-direction: column; gap: 0.1em; }
+.team-info li { font-size: var(--tiny); color: var(--text-dim); line-height: 1.3; }
+
+.ship-note {
+    font-size: var(--tiny); color: var(--text-dim);
+    text-align: center; max-width: 650px; align-self: center;
+    line-height: 1.4;
+}
+
+/* ============================================
+   SLIDE 12: ROADMAP — horizontal
+   ============================================ */
+.h-timeline {
+    display: flex; align-items: flex-start;
+    gap: 0; position: relative;
+    overflow-x: auto;
+}
+.h-tl-item {
+    flex: 1; min-width: clamp(100px, 15vw, 160px);
+    display: flex; flex-direction: column; align-items: center;
+    position: relative;
+}
+.h-tl-item::before {
+    content: ''; width: 100%; height: 2px;
+    background: var(--navy-700); position: absolute; top: 16px;
+}
+.h-tl-item:first-child::before { left: 50%; width: 50%; }
+.h-tl-item:last-child::before { right: 50%; width: 50%; left: auto; }
+.h-tl-dot {
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--navy-600); border: 2px solid var(--navy-950);
+    z-index: 1; margin-bottom: 0.6em; flex-shrink: 0;
+}
+.h-tl-item.highlight .h-tl-dot {
+    background: var(--accent);
+    box-shadow: 0 0 0 5px rgba(232,133,61,0.2), 0 0 16px rgba(232,133,61,0.12);
+}
+.h-tl-item.active .h-tl-dot { background: var(--accent); }
+.h-tl-card {
+    background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px; padding: 0.4em 0.6em;
+    text-align: center; width: 100%;
+}
+.h-tl-item.highlight .h-tl-card {
+    border-color: var(--accent); background: var(--accent-soft);
+}
+.h-tl-period { font-size: var(--tiny); font-weight: 700; color: var(--accent); }
+.h-tl-school { font-size: var(--tiny); color: var(--text-muted); margin: 0.1em 0; }
+.h-tl-milestone { font-size: var(--tiny); color: var(--text-dim); line-height: 1.25; }
+.h-tl-p2mw { font-size: var(--tiny); color: var(--navy-400); margin-top: 0.1em; }
+
+/* ============================================
+   SLIDE 13: ASK
+   ============================================ */
+.ask-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-sm); }
+@media (max-width: 768px) { .ask-grid { grid-template-columns: 1fr; } }
+.ask-col {
+    background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px; padding: clamp(0.6rem, 1.2vw, 1rem);
+}
+.ask-col h4 {
+    font-size: var(--small); font-weight: 700; color: var(--accent);
+    margin-bottom: 0.3em;
+}
+.ask-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.2em; }
+.ask-col li {
+    font-size: var(--tiny); color: var(--text-dim); line-height: 1.3;
+    padding-left: 0.8em; position: relative;
+}
+.ask-col li::before { content: '\2022'; position: absolute; left: 0; color: var(--navy-500); }
+
+.benefit-bar {
+    background: var(--accent-soft); border: 1px solid rgba(232,133,61,0.15);
+    border-radius: 10px; padding: 0.5em 0.9em;
+    display: flex; align-items: flex-start; gap: 0.6em;
+}
+.benefit-bar h4 { font-size: var(--small); font-weight: 700; margin-bottom: 0.1em; }
+.benefit-bar p { font-size: var(--tiny); color: var(--text-dim); line-height: 1.3; }
+
+/* ============================================
+   SLIDE 14: CLOSE
+   ============================================ */
+.slide--close {
+    background: linear-gradient(160deg, var(--navy-950) 0%, var(--navy-900) 40%, #0c2d45 100%);
+}
+.slide--close .slide-content { align-items: center; text-align: center; }
+
+/* ============================================
+   NAV & ANIMATIONS
+   ============================================ */
+.nav-dots {
+    position: fixed; right: clamp(0.4rem, 1.2vw, 1rem);
+    top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 4px; z-index: 100;
+}
+.nav-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--navy-600); opacity: 0.5;
+    cursor: pointer; transition: all 0.3s;
+    border: none; padding: 0;
+}
+.nav-dot.active { opacity: 1; background: var(--accent); transform: scale(1.3); }
+.slide-counter {
+    position: fixed; bottom: clamp(0.4rem, 1.2vw, 1rem);
+    right: clamp(0.4rem, 1.2vw, 1.2rem);
+    font-size: var(--tiny); color: var(--text-muted); z-index: 100;
+}
+
+.reveal {
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal.d1 { transition-delay: 0.06s; }
+.reveal.d2 { transition-delay: 0.14s; }
+.reveal.d3 { transition-delay: 0.22s; }
+.reveal.d4 { transition-delay: 0.3s; }
+
+/* ============================================
+   RESPONSIVE — Short viewports
+   ============================================ */
+@media (max-height: 700px) {
+    :root {
+        --pad: clamp(0.6rem, 2.5vw, 1.8rem);
+        --content-gap: clamp(0.5rem, 1.5vh, 1.2rem);
+        --h2: clamp(1rem, 2.5vw, 1.6rem);
+    }
+}
+@media (max-height: 600px) {
+    :root {
+        --pad: clamp(0.5rem, 2vw, 1.2rem);
+        --content-gap: clamp(0.35rem, 1.2vh, 0.8rem);
+        --h1: clamp(1.1rem, 3.5vw, 1.8rem);
+        --body: clamp(0.68rem, 1.1vw, 0.85rem);
+    }
+    .nav-dots { display: none; }
+}
+@media (max-height: 500px) {
+    :root {
+        --pad: clamp(0.3rem, 1.5vw, 0.8rem);
+        --content-gap: clamp(0.25rem, 1vh, 0.5rem);
+        --h2: clamp(0.8rem, 2.2vw, 1.2rem);
+    }
+}
+
+/* Vertical timeline for tablets and phones */
+@media (max-width: 768px) {
+    .h-timeline {
+        flex-direction: column; gap: 0;
+        overflow-x: visible;
+        padding-left: 1.2rem;
+    }
+    .h-tl-item {
+        flex-direction: row; align-items: flex-start;
+        min-width: 0; width: 100%;
+    }
+    .h-tl-item::before {
+        width: 2px; height: 100%;
+        top: 0; left: 5px;
+    }
+    .h-tl-item:first-child::before { left: 5px; width: 2px; top: 50%; height: 50%; }
+    .h-tl-item:last-child::before { left: 5px; width: 2px; top: 0; height: 50%; right: auto; }
+    .h-tl-dot {
+        margin-bottom: 0; margin-right: 0.6em;
+        margin-top: 0.5em; flex-shrink: 0;
+    }
+    .h-tl-card {
+        text-align: left; padding: 0.4em 0.6em;
+        margin-bottom: 0.3em;
+    }
+    .h-tl-period { font-size: var(--small); }
+    .h-tl-milestone { font-size: var(--small); }
+}
+
+/* iPhone SE (375x667) specific */
+@media (max-width: 400px) {
+    :root {
+        --pad: clamp(0.8rem, 4vw, 1.2rem);
+        --content-gap: clamp(0.5rem, 1.8vh, 1rem);
+        --h2: clamp(1.05rem, 5vw, 1.4rem);
+        --h3: clamp(0.85rem, 4vw, 1.1rem);
+        --body: clamp(0.72rem, 3.5vw, 0.88rem);
+        --small: clamp(0.65rem, 3vw, 0.78rem);
+        --tiny: clamp(0.58rem, 2.5vw, 0.7rem);
+    }
+    /* Hide nav dots on narrow screens — they overlap content */
+    .nav-dots { display: none; }
+    .slide-counter { right: 0.5rem; }
+
+    .problem-layout { grid-template-columns: 1fr; }
+    .donut-container { width: 100px; height: 100px; }
+    .donut-pct { font-size: 1.2rem; }
+    .donut-label { font-size: 0.45rem; line-height: 1.15; }
+    .problem-cols { grid-template-columns: 1fr; }
+    .findings-grid, .moat-cards, .analogy-grid { grid-template-columns: 1fr; }
+    .market-stats { grid-template-columns: repeat(2, 1fr); }
+    .pricing-strip { grid-template-columns: 1fr; }
+    .team-cards { grid-template-columns: 1fr; }
+    .ask-grid { grid-template-columns: 1fr; }
+    .vision-split { grid-template-columns: 1fr; }
+    .comp-table th, .comp-table td { padding: 0.3em 0.4em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+    html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== SLIDE 1: COVER ========== -->
+<section class="slide slide--cover" id="s1">
+<div class="slide-content">
+    <img class="cover-logo-img reveal" src="pikira-logo.png" alt="Pikira">
+    <div class="cover-wordmark reveal d1">PIKIRA</div>
+    <div class="cover-divider reveal d2"></div>
+    <p class="cover-tagline reveal d2" style="font-size:clamp(0.9rem,1.8vw,1.3rem);font-weight:600">Let teachers teach again.</p>
+    <p class="reveal d2" style="font-size:var(--small);color:var(--text-dim);margin-top:-0.5em">AI-Native Academic Operating System for Indonesian K-12</p>
+    <div class="cover-meta reveal d3">
+        <span style="font-weight:600;color:var(--accent)">Pitch Deck</span>
+        <span>Prepared for [Dosen Name]</span>
+        <span>Muttaqin Muzakkir &middot; March 2026</span>
+    </div>
+</div>
+</section>
+
+<!-- ========== SLIDE 2: PROBLEM ========== -->
+<section class="slide" id="s2">
+<div class="slide-content">
+    <div class="section-label reveal">The Problem</div>
+    <h2 class="reveal d1">School software digitizes <span class="accent">results</span>,<br>not the <span class="accent">work</span> of teaching.</h2>
+    <div class="problem-layout reveal d2">
+        <div class="donut-container">
+            <div class="donut-ring"></div>
+            <div class="donut-center">
+                <div class="donut-pct">90%</div>
+                <div class="donut-label">of teacher time<br>is untouched</div>
+            </div>
+        </div>
+        <div class="problem-cols">
+            <div>
+                <div class="problem-col-header" style="border-color:var(--accent);color:var(--accent)">Where time actually goes</div>
+                <ul class="problem-list hot">
+                    <li>Lesson planning &amp; RPP/ATP creation</li>
+                    <li>Building assessments &amp; <em>soal</em></li>
+                    <li>Grading essays (manual, one by one)</li>
+                    <li>Compiling <em>Modul Ajar</em></li>
+                    <li>Building schedules (takes a week)</li>
+                </ul>
+            </div>
+            <div>
+                <div class="problem-col-header" style="border-color:var(--navy-700);color:var(--text-muted)">What existing LMS covers</div>
+                <ul class="problem-list cold">
+                    <li>Attendance (check-in/check-out)</li>
+                    <li>Gradebook (input final scores)</li>
+                    <li><em>Rapor</em> generation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <p class="bottom-note reveal d3">"<em>Kurikulum Merdeka</em> amplified this &mdash; adding ATP, Modul Ajar, P5 requirements &mdash; but the problem predates it."</p>
+</div>
+</section>
+
+<!-- ========== SLIDE 3: VALIDATION ========== -->
+<section class="slide" id="s3">
+<div class="slide-content">
+    <div class="section-label reveal">Customer Validation</div>
+    <h2 class="reveal d1">What schools <span class="accent">told us</span>.</h2>
+    <div class="stats-row reveal d1">
+        <div class="stat-pill"><span class="num">7</span><span class="label">Schools</span></div>
+        <div class="stat-pill"><span class="num">2</span><span class="label"><em>Kepala Sekolah</em></span></div>
+        <div class="stat-pill"><span class="num">5</span><span class="label">Teachers</span></div>
+    </div>
+    <div class="findings-grid reveal d2">
+        <div class="finding-card">
+            <h4>11 separate systems daily</h4>
+            <p>Excel, Word, Google Forms, WhatsApp, iRapor, Dapodik&hellip; Only 12 of ~70 teachers adopted Pijar. It doesn't cover enough.</p>
+        </div>
+        <div class="finding-card">
+            <h4>Time sinks: planning &amp; grading</h4>
+            <p>RPP creation and essay grading eat the most hours. Teachers use ChatGPT to cope, but formatting breaks on transfer.</p>
+        </div>
+        <div class="finding-card">
+            <h4>"Input sekali, terintegrasi"</h4>
+            <p>Universal ask: one system, enter data once, it flows everywhere. Current tools force 2-3x data re-entry.</p>
+        </div>
+    </div>
+    <div class="callout reveal d3"><strong style="color:var(--accent)">Teacher response:</strong> Positive feedback via direct conversations. Multiple teachers interested in trying Pikira once it ships. Active WhatsApp threads with follow-up questions about features.</div>
+</div>
+</section>
+
+<!-- ========== SLIDE 4: COMPETITIVE ========== -->
+<section class="slide" id="s4">
+<div class="slide-content">
+    <div class="section-label reveal">Competitive Landscape</div>
+    <h2 class="reveal d1">Why existing tools <span class="accent">can't catch up</span>.</h2>
+    <div class="reveal d2" style="overflow-x:auto">
+    <table class="comp-table">
+        <thead><tr><th>Capability</th><th>Sokrates</th><th>Quintal</th><th>Pijar</th><th>Pikira</th></tr></thead>
+        <tbody>
+            <tr><td>Attendance</td><td class="chk">&#10003;</td><td class="chk">&#10003;</td><td class="chk">&#10003;</td><td class="pikira chk">&#10003;</td></tr>
+            <tr><td>Gradebook</td><td class="chk">&#10003;</td><td class="chk">&#10003;</td><td>Partial</td><td class="pikira chk">&#10003;</td></tr>
+            <tr><td>Rapor generation</td><td class="chk">&#10003;</td><td class="chk">&#10003;</td><td class="x">&#10005;</td><td class="pikira chk">&#10003;</td></tr>
+            <tr class="hl"><td><strong>TP/ATP authoring</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira">AI-generated <span class="tag tag--shipped">Shipped</span></td></tr>
+            <tr class="hl"><td><strong>Modul Ajar builder</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira">AI-generated <span class="tag tag--shipped">Shipped</span></td></tr>
+            <tr class="hl"><td><strong>AI soal generation</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira"><span class="tag tag--progress">In progress</span></td></tr>
+            <tr class="hl"><td><strong>AI essay grading</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira"><span class="tag tag--progress">In progress</span></td></tr>
+            <tr class="hl"><td><strong>Jadwal algorithm</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira"><span class="tag tag--progress">In progress</span></td></tr>
+            <tr class="hl"><td><strong>Learning analytics</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira"><span class="tag tag--planned">Planned</span></td></tr>
+        </tbody>
+    </table>
+    </div>
+    <div class="insight-callout reveal d3">Existing tools model grades as their core data. AI-powered curriculum planning needs the entire teaching pipeline as structured data &mdash; and you can't bolt that onto a gradebook.</div>
+</div>
+</section>
+
+<!-- ========== SLIDE 5: INSIGHT + AI MOAT ========== -->
+<section class="slide" id="s5">
+<div class="slide-content">
+    <div class="section-label reveal">Our Insight</div>
+    <h2 class="reveal d1">Build from the <span class="accent">curriculum</span>, not the gradebook.</h2>
+    <div class="pipeline-visual reveal d2">
+        <span class="pipe-node active">CP</span><span class="pipe-arrow">&rarr;</span>
+        <span class="pipe-node active">TP</span><span class="pipe-arrow">&rarr;</span>
+        <span class="pipe-node active">ATP</span><span class="pipe-arrow">&rarr;</span>
+        <span class="pipe-node active">Modul Ajar</span><span class="pipe-arrow">&rarr;</span>
+        <span class="pipe-node dim">Assessment</span><span class="pipe-arrow">&rarr;</span>
+        <span class="pipe-node dim">Grade</span><span class="pipe-arrow">&rarr;</span>
+        <span class="pipe-node dim">Rapor</span>
+    </div>
+    <div class="moat-cards reveal d3">
+        <div class="moat-card">
+            <h4>Grounded in <em>Kurikulum Merdeka</em></h4>
+            <p>Every AI generation draws from structured CP/TP data and public BSKAP PDFs &mdash; not generic knowledge. ATPs reference real learning objectives.</p>
+        </div>
+        <div class="moat-card">
+            <h4>School-Specific Context</h4>
+            <p>Pikira knows the class, the students, previous assessments. AI generates <em>soal</em> tuned to actual learning gaps &mdash; context ChatGPT will never have.</p>
+        </div>
+        <div class="moat-card">
+            <h4>Compounding Data Moat</h4>
+            <p>Every assessment graded feeds back into smarter suggestions. The more a school uses Pikira, the better it gets. Generic AI can't compete.</p>
+        </div>
+    </div>
+    <div class="vs-chatgpt reveal d4">&#x1F916; Why not just ChatGPT? &rarr; <span class="better">Context is the moat.</span> It doesn't know your curriculum, students, or school.</div>
+</div>
+</section>
+
+<!-- ========== SLIDE 6: ANALOGIES ========== -->
+<section class="slide" id="s6">
+<div class="slide-content">
+    <div class="section-label reveal">"But the market already has LMS players."</div>
+    <h2 class="reveal d1">Architecture <span class="accent">determines destiny</span>.</h2>
+    <div class="analogy-grid reveal d2">
+        <div class="analogy-card">
+            <div class="analogy-logos">
+                <span class="logo-text" style="color:#5E6AD2">Linear</span>
+                <span class="vs-badge">vs</span>
+                <span class="logo-text" style="color:#0052CC">Jira</span>
+            </div>
+            <p>Jira dominated PM. Linear won by building around speed &mdash; you can't make Jira fast with a plugin.</p>
+        </div>
+        <div class="analogy-card">
+            <div class="analogy-logos">
+                <span class="logo-text" style="color:#fff">Notion</span>
+                <span class="vs-badge">vs</span>
+                <span class="logo-text" style="color:#1868DB">Confluence</span>
+            </div>
+            <p>Notion's block model enabled features Confluence's page architecture couldn't support without a rewrite.</p>
+        </div>
+        <div class="analogy-card">
+            <div class="analogy-logos">
+                <span class="logo-text" style="color:#00C4CC">Canva</span>
+                <span class="vs-badge">vs</span>
+                <span class="logo-text" style="color:#FF0000">Adobe</span>
+            </div>
+            <p>Canva built for a different user around a different workflow. Adobe couldn't cannibalize their pro tools.</p>
+        </div>
+    </div>
+    <div class="punchline-box reveal d3">Sokrates/Quintal built around the <strong>gradebook</strong>. Pikira builds around the <strong class="accent">curriculum pipeline</strong>. Our AI workflow can't exist as a Sokrates add-on &mdash; just like Linear couldn't be a Jira plugin.</div>
+</div>
+</section>
+
+<!-- ========== SLIDE 7: VISION ========== -->
+<section class="slide" id="s7">
+<div class="slide-content">
+    <div class="section-label reveal">The Vision</div>
+    <h2 class="reveal d1">Agents transformed how developers <span class="accent">code</span>.<br>We're doing the same for how teachers <span class="accent">teach</span>.</h2>
+    <p class="reveal d1" style="color:var(--text-dim);font-size:var(--small)">AI handles the manual work. Teachers focus their thinking where it actually matters.</p>
+    <div class="vision-split reveal d2">
+        <div class="vision-panel">
+            <div class="vision-col-title">Step 1 &mdash; Workflow Automation</div>
+            <p class="vision-desc">Teacher picks a learning objective. Pikira generates the ATP, drafts the Modul Ajar, creates assessment <em>soal</em>, grades student work. The teacher reviews, adjusts, approves &mdash; never starts from a blank page.</p>
+            <div style="display:flex;gap:0.3em;flex-wrap:wrap;margin-top:auto">
+                <span class="tag tag--shipped">ATP shipped</span>
+                <span class="tag tag--shipped">Modul Ajar shipped</span>
+                <span class="tag tag--progress">Soal in progress</span>
+            </div>
+        </div>
+        <div class="vision-panel">
+            <div class="vision-col-title">Step 2 &mdash; Teaching Intelligence</div>
+            <p class="vision-desc">Because every assessment connects to specific learning objectives, Pikira surfaces patterns no teacher could spot manually:</p>
+            <div class="insight-quote">"Kelas 11B struggles with trig identities across 3 assessments &mdash; revisit TP 4.2"</div>
+            <div class="insight-quote">"5 students passed PG but failed essays on cell division &mdash; articulation gap"</div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- ========== SLIDE 8: MARKET & GTM ========== -->
+<section class="slide" id="s8">
+<div class="slide-content">
+    <div class="section-label reveal">Market &amp; Go-to-Market</div>
+    <h2 class="reveal d1">Indonesia's <span class="accent">$3.2B</span> EdTech market, growing <span class="accent">12%</span> yearly.</h2>
+    <div class="market-stats reveal d2">
+        <div class="market-stat"><div class="num">270K+</div><div class="label">Schools nationwide</div></div>
+        <div class="market-stat"><div class="num">19K+</div><div class="label">Private primary schools</div></div>
+        <div class="market-stat"><div class="num">56%</div><div class="label">Private share of SMP</div></div>
+        <div class="market-stat"><div class="num">3.7M</div><div class="label">Teachers in Indonesia</div></div>
+    </div>
+    <p class="source reveal d2">Sources: Ken Research Indonesia EdTech Report 2024; BPS Statistik Pendidikan 2023; Dapodik 2023</p>
+    <div class="funnel reveal d3">
+        <div class="funnel-step">
+            <div class="step-num">1</div>
+            <div class="step-text"><strong>Design partnerships</strong> from teacher network &rarr; deep feedback loops with early adopters</div>
+        </div>
+        <div class="funnel-arrow">&darr;</div>
+        <div class="funnel-step">
+            <div class="step-num">2</div>
+            <div class="step-text"><strong>Founding school pilots</strong> (3-5 schools) &rarr; usage data + case studies</div>
+        </div>
+        <div class="funnel-arrow">&darr;</div>
+        <div class="funnel-step">
+            <div class="step-num">3</div>
+            <div class="step-text"><strong>Case study flywheel:</strong> each pilot &rarr; 2-3 referral intros from <em>kepsek</em></div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- ========== SLIDE 9: BUSINESS MODEL ========== -->
+<section class="slide" id="s9">
+<div class="slide-content">
+    <div class="section-label reveal">Business Model</div>
+    <h2 class="reveal d1">Tiered by <span class="accent">school size</span>. Competitors already charge similar.</h2>
+    <div class="pricing-strip reveal d2">
+        <div class="pricing-pill">
+            <div class="tier">Base</div>
+            <div class="target"><em>Negeri</em>, small schools</div>
+            <div class="amount">Rp 2M</div>
+            <div class="period">/school/month</div>
+        </div>
+        <div class="pricing-pill featured">
+            <div class="tier">Standard</div>
+            <div class="target">Mid-tier private</div>
+            <div class="amount">Rp 4.5M</div>
+            <div class="period">/school/month</div>
+        </div>
+        <div class="pricing-pill">
+            <div class="tier">Premium</div>
+            <div class="target">Large/elite private</div>
+            <div class="amount">Rp 5.5M</div>
+            <div class="period">/school/month</div>
+        </div>
+    </div>
+    <p class="reveal d2" style="font-size:var(--small);color:var(--text-dim);margin-top:calc(-1 * var(--gap))">Higher tiers unlock advanced AI features: learning analytics, custom report templates, priority support.</p>
+    <div class="growth-chart reveal d3">
+        <svg viewBox="0 0 400 120" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Grid lines -->
+            <line x1="60" y1="10" x2="60" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+            <line x1="200" y1="10" x2="200" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+            <line x1="340" y1="10" x2="340" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+            <!-- Area fill -->
+            <path d="M60,85 Q130,75 200,55 Q270,30 340,10 L340,100 L60,100 Z" fill="url(#areaGrad)" opacity="0.3"/>
+            <!-- Line -->
+            <path d="M60,85 Q130,75 200,55 Q270,30 340,10" stroke="#e8853d" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <!-- Dots -->
+            <circle cx="60" cy="85" r="4" fill="#e8853d"/>
+            <circle cx="200" cy="55" r="4" fill="#e8853d"/>
+            <circle cx="340" cy="10" r="5" fill="#e8853d" stroke="#031525" stroke-width="2"/>
+            <defs>
+                <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#e8853d" stop-opacity="0.4"/>
+                    <stop offset="100%" stop-color="#e8853d" stop-opacity="0"/>
+                </linearGradient>
+            </defs>
+        </svg>
+        <!-- Labels positioned over chart -->
+        <div class="growth-label" style="left:15%;bottom:0">
+            <span class="val">Rp 20M</span>
+            <span class="sub">5 schools &middot; Aug '26</span>
+        </div>
+        <div class="growth-label" style="left:50%;bottom:0">
+            <span class="val">Rp 40M</span>
+            <span class="sub">10 schools &middot; End '26</span>
+        </div>
+        <div class="growth-label" style="left:85%;bottom:0">
+            <span class="val">Rp 120M</span>
+            <span class="sub">30 schools &middot; Mid '27</span>
+        </div>
+    </div>
+    <p class="growth-math reveal d4">5 schools &times; Rp 4M avg = Rp 20M MRR &rarr; growing with pilot-to-referral flywheel</p>
+</div>
+</section>
+
+<!-- ========== SLIDE 10: TRACTION ========== -->
+<section class="slide" id="s10">
+<div class="slide-content">
+    <div class="section-label reveal">Traction</div>
+    <h2 class="reveal d1">What we've done in <span class="accent">4 weeks</span>.</h2>
+    <div class="timeline-visual reveal d2">
+        <div class="tl-item">
+            <div class="tl-label">Week 1-2 &mdash; Discovery</div>
+            <div class="tl-content">Customer discovery: <strong>2 <em>kepala sekolah</em> + 5 teachers, 5 schools.</strong> Registered PT Perorangan. Validated problem-solution fit.</div>
+        </div>
+        <div class="tl-item">
+            <div class="tl-label">Week 3 &mdash; Foundation</div>
+            <div class="tl-content">Hired product designer. Shipped codebase foundation &mdash; broken-down requirements, multi-tenant architecture, structured schema. Agentic dev guardrails for shipping fast.</div>
+        </div>
+        <div class="tl-item current">
+            <div class="tl-label">Week 4 &mdash; Now</div>
+            <div class="tl-content"><strong>AI shipped:</strong> ATP generation, Modul Ajar generation. <strong>In progress:</strong> <em>jadwal</em> algo, <em>soal</em> generation, AI grading. Teachers responding positively &mdash; active conversations ongoing.</div>
+        </div>
+    </div>
+    <div class="stat-banner reveal d3">2 founders &middot; 4 weeks &middot; 2 AI features shipped &middot; 7 schools interviewed &middot; teachers engaged</div>
+    <p class="honest-note reveal d4">Pre-launch. AI features work, architecture solid, UI in design. Nothing in production yet. Target: design partnerships in April.</p>
+</div>
+</section>
+
+<!-- ========== SLIDE 11: TEAM ========== -->
+<section class="slide" id="s11">
+<div class="slide-content">
+    <div class="section-label reveal">The Team</div>
+    <h2 class="reveal d1">Built to <span class="accent">ship fast</span>.</h2>
+    <div class="team-cards reveal d2">
+        <div class="team-card">
+            <img class="team-avatar" src="qin-photo.png" alt="Muttaqin" style="object-fit:cover">
+            <div class="team-info">
+                <h4>Muttaqin Muzakkir</h4>
+                <div class="role">Co-Founder</div>
+                <ul>
+                    <li>Sistem Informasi, Universitas Indonesia</li>
+                    <li>2x startup intern, high-ownership product engineer</li>
+                    <li>AI policy speaker &mdash; Komdigi &amp; Google</li>
+                    <li>Drives software architecture &amp; product</li>
+                </ul>
+            </div>
+        </div>
+        <div class="team-card">
+            <div class="team-avatar">D</div>
+            <div class="team-info">
+                <h4>Denis</h4>
+                <div class="role">Co-Founder</div>
+                <ul>
+                    <li>Sistem Informasi, Universitas Indonesia</li>
+                    <li>5x data science competition winner</li>
+                    <li>Drives AI engine &amp; model pipeline</li>
+                    <li>Shared ownership on product &amp; legal</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <p class="ship-note reveal d3">No fixed CEO/CTO split &mdash; we share roles dynamically. Muttaqin drives software, Denis drives AI. Product and legal, we both own. Designer working in parallel.</p>
+    <p class="honest-note reveal d4" style="text-align:center">"What we're looking for: a senior product leader who can challenge our thinking &mdash; on prioritization, positioning, and the decisions we don't know we're getting wrong."</p>
+</div>
+</section>
+
+<!-- ========== SLIDE 12: ROADMAP ========== -->
+<section class="slide" id="s12">
+<div class="slide-content">
+    <div class="section-label reveal">Roadmap</div>
+    <h2 class="reveal d1">What's <span class="accent">next</span>.</h2>
+    <div class="h-timeline reveal d2">
+        <div class="h-tl-item active">
+            <div class="h-tl-dot"></div>
+            <div class="h-tl-card">
+                <div class="h-tl-period">Mar '26</div>
+                <div class="h-tl-school">Break. UTBK prep.</div>
+                <div class="h-tl-milestone">Complete UI. Ship AI.</div>
+            </div>
+        </div>
+        <div class="h-tl-item active">
+            <div class="h-tl-dot"></div>
+            <div class="h-tl-card">
+                <div class="h-tl-period">Apr '26</div>
+                <div class="h-tl-school">Schools resume.</div>
+                <div class="h-tl-milestone"><strong>Design partnerships.</strong></div>
+                <div class="h-tl-p2mw">P2MW proposal</div>
+            </div>
+        </div>
+        <div class="h-tl-item">
+            <div class="h-tl-dot"></div>
+            <div class="h-tl-card">
+                <div class="h-tl-period">May-Jun</div>
+                <div class="h-tl-school">Active semester.</div>
+                <div class="h-tl-milestone">Iterate. Case studies.</div>
+                <div class="h-tl-p2mw">Monthly reports</div>
+            </div>
+        </div>
+        <div class="h-tl-item highlight">
+            <div class="h-tl-dot"></div>
+            <div class="h-tl-card">
+                <div class="h-tl-period">Jul-Aug</div>
+                <div class="h-tl-school"><strong>NEW YEAR</strong></div>
+                <div class="h-tl-milestone"><strong>Adoption wave.<br>5 schools.</strong></div>
+            </div>
+        </div>
+        <div class="h-tl-item">
+            <div class="h-tl-dot"></div>
+            <div class="h-tl-card">
+                <div class="h-tl-period">Sep-Dec</div>
+                <div class="h-tl-school">Semester 1</div>
+                <div class="h-tl-milestone">10 schools. Paid.</div>
+                <div class="h-tl-p2mw">KMI Expo</div>
+            </div>
+        </div>
+    </div>
+    <div class="callout reveal d3">July-August is when schools adopt new tools &mdash; the new academic year reset. Everything before that is about having proof points ready for that window.</div>
+</div>
+</section>
+
+<!-- ========== SLIDE 13: ASK ========== -->
+<section class="slide" id="s13">
+<div class="slide-content">
+    <div class="section-label reveal">The Ask</div>
+    <h2 class="reveal d1">Be our <em>dosen pendamping</em>.<br><span class="accent">And the advisor who tells us what we're getting wrong.</span></h2>
+    <div class="ask-grid reveal d2">
+        <div class="ask-col">
+            <h4>The Commitment</h4>
+            <ul>
+                <li>Monthly check-in (P2MW, May-Sep)</li>
+                <li>Proposal review before submission</li>
+                <li>Product direction at decision points</li>
+            </ul>
+        </div>
+        <div class="ask-col">
+            <h4>Why You</h4>
+            <ul>
+                <li>Muttaqin took your Digital Product Management class &mdash; has been recommending it since. There's a lot more we could learn from you beyond the classroom.</li>
+                <li>You've built products from zero-to-one and scaled them. We need someone who's made the mistakes we haven't made yet.</li>
+            </ul>
+        </div>
+        <div class="ask-col">
+            <h4>What We Need</h4>
+            <ul>
+                <li>Product intuition &mdash; what to build vs. defer</li>
+                <li>Network intros to schools or <em>Dinas Pendidikan</em></li>
+                <li>Honest pushback &mdash; "this won't work" early</li>
+            </ul>
+        </div>
+    </div>
+    <div class="benefit-bar reveal d3">
+        <div>
+            <h4>What's in it for you</h4>
+            <p>A live case study you're shaping &mdash; not from a textbook, but a real startup responding to your feedback in real time. Monthly check-ins, not a board seat. <em>Sertifikat Dosen Pendamping</em> from Ditjen Dikti included.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- ========== SLIDE 14: CLOSE ========== -->
+<section class="slide slide--close" id="s14">
+<div class="slide-content">
+    <img class="cover-logo-img reveal" src="pikira-logo.png" alt="Pikira" style="height:clamp(50px,10vh,100px)">
+    <div class="cover-wordmark reveal d1" style="font-size:clamp(1.8rem,5vw,3.5rem)">PIKIRA</div>
+    <p class="reveal d2" style="font-size:clamp(0.85rem,1.6vw,1.15rem);color:var(--text-dim);font-style:italic">"Turning teaching from admin work back into teaching."</p>
+    <div class="cover-meta reveal d3">
+        <span>Muttaqin Muzakkir</span>
+        <span>muttaqin.muzakkir@gmail.com</span>
+        <span style="color:var(--accent);margin-top:0.2em">P2MW 2026 &middot; Bisnis Digital &middot; Tahapan Awal</span>
+    </div>
+</div>
+</section>
+
+<!-- NAV -->
+<nav class="nav-dots" aria-label="Slide navigation"></nav>
+<div class="slide-counter"></div>
+
+<script>
+(function() {
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.querySelector('.nav-dots');
+    const counter = document.querySelector('.slide-counter');
+    let current = 0, scrolling = false;
+
+    slides.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'nav-dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', 'Slide ' + (i + 1));
+        d.addEventListener('click', () => go(i));
+        dotsContainer.appendChild(d);
+    });
+    update();
+
+    function go(i) {
+        if (i < 0 || i >= slides.length) return;
+        current = i;
+        slides[i].scrollIntoView({ behavior: 'smooth' });
+        update();
+    }
+    function update() {
+        dotsContainer.querySelectorAll('.nav-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+        counter.textContent = (current + 1) + ' / ' + slides.length;
+    }
+
+    document.addEventListener('keydown', e => {
+        if (['ArrowDown','ArrowRight',' ','PageDown'].includes(e.key)) { e.preventDefault(); go(current + 1); }
+        else if (['ArrowUp','ArrowLeft','PageUp'].includes(e.key)) { e.preventDefault(); go(current - 1); }
+        else if (e.key === 'Home') { e.preventDefault(); go(0); }
+        else if (e.key === 'End') { e.preventDefault(); go(slides.length - 1); }
+    });
+
+    let wt;
+    document.addEventListener('wheel', e => {
+        if (scrolling) return;
+        clearTimeout(wt);
+        wt = setTimeout(() => {
+            if (Math.abs(e.deltaY) > 30) {
+                scrolling = true;
+                go(e.deltaY > 0 ? current + 1 : current - 1);
+                setTimeout(() => scrolling = false, 600);
+            }
+        }, 50);
+    }, { passive: true });
+
+    let ty = 0, tx = 0;
+    document.addEventListener('touchstart', e => { ty = e.touches[0].clientY; tx = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', e => {
+        const dy = ty - e.changedTouches[0].clientY, dx = tx - e.changedTouches[0].clientX;
+        if (Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 50) go(dy > 0 ? current + 1 : current - 1);
+    }, { passive: true });
+
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const idx = Array.from(slides).indexOf(entry.target);
+                if (idx !== -1) { current = idx; update(); }
+                entry.target.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+            }
+        });
+    }, { threshold: 0.5 });
+    slides.forEach(s => obs.observe(s));
+    slides[0].querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+})();
+</script>
+</body>
+</html>
