@@ -302,11 +302,12 @@ h3 { font-size: var(--h3); font-weight: 700; }
 .moat-card p { font-size: var(--tiny); color: var(--text-dim); line-height: 1.35; }
 
 .vs-chatgpt {
-    display: inline-flex; align-items: center; gap: 0.4em;
-    background: rgba(255,255,255,0.04); border-radius: 100px;
-    padding: 0.25em 0.8em; font-size: var(--tiny); color: var(--text-muted);
+    display: flex; align-items: baseline; gap: 0.5em; flex-wrap: wrap;
+    background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px; padding: 0.6em 1em;
+    font-size: var(--small); color: var(--text-dim); line-height: 1.4;
 }
-.vs-chatgpt .better { color: var(--green); font-weight: 600; }
+.vs-chatgpt .better { color: var(--green); font-weight: 700; white-space: nowrap; }
 
 /* ============================================
    SLIDE 6: ANALOGIES
