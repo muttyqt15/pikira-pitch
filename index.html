@@ -598,6 +598,53 @@ h3 { font-size: var(--h3); font-weight: 700; }
 .slide--close .slide-content { align-items: center; text-align: center; }
 
 /* ============================================
+   FAQ APPENDIX
+   ============================================ */
+.faq-appendix {
+    scroll-snap-align: start;
+    background: var(--navy-950);
+    min-height: 100vh;
+    padding: clamp(2rem, 6vw, 5rem) var(--pad);
+    overflow-y: auto;
+}
+.faq-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.faq-title {
+    font-size: var(--h2);
+    font-weight: 700;
+    margin-bottom: 0.3em;
+}
+.faq-subtitle {
+    font-size: var(--body);
+    margin-bottom: clamp(1.5rem, 4vh, 3rem);
+}
+.faq-grid {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.8rem, 2vh, 1.5rem);
+}
+.faq-item {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: clamp(0.8rem, 2vw, 1.4rem) clamp(1rem, 2.5vw, 1.6rem);
+}
+.faq-item h3 {
+    font-size: var(--body);
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.4em;
+    line-height: 1.35;
+}
+.faq-item p {
+    font-size: var(--small);
+    color: var(--text-dim);
+    line-height: 1.55;
+}
+
+/* ============================================
    NAV & ANIMATIONS
    ============================================ */
 .nav-dots {
@@ -1182,6 +1229,76 @@ h3 { font-size: var(--h3); font-weight: 700; }
         <span>Muttaqin Muzakkir</span>
         <a href="https://wa.me/6281218722101" target="_blank" style="color:var(--text-dim);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.15)">wa.me/6281218722101</a>
         <span style="color:var(--accent);margin-top:0.2em">P2MW 2026 &middot; Bisnis Digital &middot; Tahapan Awal</span>
+    </div>
+</div>
+</section>
+
+<!-- ========== APPENDIX: FAQ ========== -->
+<section class="faq-appendix" id="faq">
+<div class="faq-inner">
+    <h2 class="faq-title">Questions you're probably already thinking.</h2>
+    <p class="faq-subtitle dim">We'd rather answer them here than dodge them in the meeting.</p>
+
+    <div class="faq-grid">
+        <div class="faq-item">
+            <h3>"You're 2 people pre-launch — why should I bet my time on this?"</h3>
+            <p>Pre-launch, yes. Pre-work, no. In 4 weeks we validated with 5 schools (2 <em>kepala sekolah</em>, 5 teachers), registered a PT Perorangan, shipped 2 working AI features (ATP generation, Modul Ajar generation), and hired a designer with UI already in production. We have teachers at MAN 2 Jakarta actively giving us feedback. Pilots start in April, iterate May–June, then hit the July–August adoption window when schools reset for the new academic year. We know what we're doing next.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>"The EdTech graveyard is full of LMS startups."</h3>
+            <p>Every existing player — Sokrates, Quintal, Pijar — built around the gradebook. Grades are the <em>end</em> of the teaching workflow. We start from the beginning: the curriculum pipeline as structured, connected data. That's not a feature gap you can close with a plugin. It's a foundation difference. Same reason Linear couldn't be a Jira plugin — the core data model determines what's possible on top.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>"You don't have product-market fit yet."</h3>
+            <p>We don't, and we're not pretending we do. What we have is strong problem validation: every school described the same pain — 11 disconnected tools, hours lost on planning and grading, data re-entered 2–3x. Teachers are already using ChatGPT to cope, which tells you demand exists but the solution doesn't. Next steps: founding school pilots in April, real usage data by May, iterate through the semester, proof points ready for the July–August tool adoption window.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>"AI features are easy to copy. What's the moat?"</h3>
+            <p>Two layers. First, architectural — our curriculum pipeline is structured data that AI can reason over. Competitors would need to rebuild from scratch. Second, context. Pikira pulls from public textbook PDFs (SIBI/<em>Buku Sekolah Elektronik</em>), the teacher's own ATP, their RPP, their past interactions. ChatGPT generates generic lesson plans. Pikira generates contextual ones — aligned to the specific <em>kurikulum</em>, the specific school's ATP, the specific teacher's style. That context compounds with every use, and you can't replicate it without the same integrated data layer.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>"What happens if P2MW doesn't work out?"</h3>
+            <p>P2MW is a forcing function, not a dependency. We chose it over UI Incubate specifically because the 70/30 IP royalty split was unacceptable — we want connections and structure, not money. The Rp 15M funding is nice but not critical. If P2MW falls through, the company continues. We have a registered PT, a working product, and a pilot pipeline.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>"How do you actually make money? Schools are slow to pay."</h3>
+            <p>Per-school SaaS subscription, tiered: Rp 2M/month for <em>negeri</em> and small schools, Rp 4.5M mid-tier private, Rp 5.5M large/elite private. We start with private schools — they have budget authority and faster decision cycles. Conservative target: 10 schools at Rp 4.5M average = Rp 45M MRR by end of 2026. The buyer is the <em>kepala sekolah</em>, GTM is warm intros through teacher networks.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>"Who's the buyer and who's the user?"</h3>
+            <p>The user is the teacher. The buyer is the <em>kepala sekolah</em>. Our play: land through teacher adoption (they feel the pain), then the <em>kepala sekolah</em> sees consolidated data and reduced admin burden. We don't sell top-down first. We get teachers using it, then convert the school.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>"You have a lot of features listed. What's the prioritization?"</h3>
+            <p>Ship what teachers need to survive the pilot — <em>soal</em> generation, AI grading, <em>jadwal</em> algorithm. Defer everything else. School ops expansion (SPP, PPDB, parent comms) is explicitly post-traction. This is actually exactly why we want you — we know we'll face hard tradeoffs once pilots start, and we need someone who's done this before to help us figure out what to cut.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>"What was the negative signal from validation?"</h3>
+            <p>Adoption resistance at scale. Pijar was deployed at one school but only 12 of ~70 teachers actually used it. Teachers default to what they know — Excel, Word, WhatsApp. Our bet is that covering enough of their workflow makes switching cost worth it. But we haven't proven that yet. That's what pilots are for.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>"What's your technical risk?"</h3>
+            <p>AI quality on Indonesian curriculum content. ATP and Modul Ajar generation work well, but essay grading in Bahasa Indonesia with rubric alignment is genuinely hard. If AI grading isn't trustworthy, teachers won't use it — and that's a big part of our value prop. We're mitigating by grounding AI with contextual data: SIBI textbooks, the teacher's own materials, their rubric definitions.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>"What does success look like in 6 months? What kills you?"</h3>
+            <p>Success: 5–10 schools on paid pilots, teachers using it daily, 2–3 referral intros from <em>kepala sekolah</em>. What kills us: teachers try it and churn because AI output quality isn't good enough, or onboarding friction is too high and schools stall after signing up.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>"Why me specifically?"</h3>
+            <p>Because we don't need a signature. We need someone who's actually built product at zero-to-one and failed. You know what kills startups at this stage — not the obvious stuff, the subtle stuff. Wrong sequencing, building for the wrong persona, over-engineering before validation. Most <em>dosen pendamping</em> would just approve monthly reports. We want pushback.</p>
+        </div>
     </div>
 </div>
 </section>
