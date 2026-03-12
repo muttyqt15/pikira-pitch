@@ -601,12 +601,33 @@ h3 { font-size: var(--h3); font-weight: 700; }
    FAQ APPENDIX
    ============================================ */
 .faq-appendix {
-    scroll-snap-align: start;
+    scroll-snap-align: none;
     background: var(--navy-950);
     min-height: 100vh;
-    padding: clamp(2rem, 6vw, 5rem) var(--pad);
-    overflow-y: auto;
+    padding: clamp(2rem, 6vw, 5rem) var(--pad) clamp(4rem, 10vh, 8rem);
 }
+.faq-cta {
+    text-align: center;
+    margin-top: clamp(2rem, 5vh, 4rem);
+    padding-top: clamp(1.5rem, 3vh, 2.5rem);
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+.faq-cta p {
+    font-size: var(--h3);
+    font-weight: 600;
+    margin-bottom: 0.6em;
+}
+.faq-cta a {
+    display: inline-block;
+    color: var(--accent);
+    font-size: var(--body);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.15em;
+    transition: opacity 0.2s;
+}
+.faq-cta a:hover { opacity: 0.8; }
 .faq-inner {
     max-width: 900px;
     margin: 0 auto;
@@ -1300,6 +1321,11 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <h3>"Why me specifically?"</h3>
             <p>Because we don't need a signature. We need someone who's actually built product at zero-to-one and failed. You know what kills startups at this stage — not the obvious stuff, the subtle stuff. Wrong sequencing, building for the wrong persona, over-engineering before validation. Most <em>dosen pendamping</em> would just approve monthly reports. We want pushback.</p>
         </div>
+    </div>
+
+    <div class="faq-cta">
+        <p>If any of this sounds interesting, let's talk.</p>
+        <a href="https://wa.me/6281218722101" target="_blank">wa.me/6281218722101</a>
     </div>
 </div>
 </section>
