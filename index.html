@@ -906,12 +906,16 @@ h3 { font-size: var(--h3); font-weight: 700; }
     </div>
     <div class="findings-grid reveal d2">
         <div class="finding-card">
-            <h4>11 separate systems daily</h4>
-            <p>Excel, Word, Google Forms, WhatsApp, iRapor, Dapodik&hellip; Only 12 of ~70 teachers adopted Pijar. It doesn't cover enough.</p>
+            <h4>Every step is a different tool</h4>
+            <p>One teacher's assessment flow: write <em>soal</em> in Word, convert formulas to images, upload to Google Forms, download responses, grade by hand in Excel, copy scores into iRapor. Six steps across four tools for a single exam.</p>
         </div>
         <div class="finding-card">
             <h4>Time sinks: planning &amp; grading</h4>
             <p>RPP creation and essay grading eat the most hours. Teachers use ChatGPT to cope, but formatting breaks on transfer.</p>
+        </div>
+        <div class="finding-card">
+            <h4>Rigid tools, flexible workarounds</h4>
+            <p>At one school using Sokrates, late submissions are blocked entirely. Teachers collect late work on WhatsApp. The tool doesn't adapt to how teachers actually work, so they route around it.</p>
         </div>
         <div class="finding-card">
             <h4>"Input sekali, terintegrasi"</h4>
@@ -926,7 +930,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 <section class="slide" id="s4">
 <div class="slide-content">
     <div class="section-label reveal">Competitive Landscape</div>
-    <h2 class="reveal d1">Why existing tools <span class="accent">can't catch up</span>.</h2>
+    <h2 class="reveal d1">Why existing tools <span class="accent">haven't caught up</span>.</h2>
     <div class="reveal d2" style="overflow-x:auto">
     <table class="comp-table">
         <thead><tr><th>Capability</th><th>Sokrates</th><th>Quintal</th><th>Pijar</th><th>Pikira</th></tr></thead>
@@ -969,7 +973,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
         </div>
         <div class="moat-card">
             <h4>School-Specific Context</h4>
-            <p>Pikira knows the class, the students, previous assessments. AI generates <em>soal</em> tuned to actual learning gaps. Context ChatGPT doesn't have.</p>
+            <p>As teachers use Pikira, it learns their context: their ATP, their assessments, their grading patterns. Over time, AI suggestions get more specific to their school. This is where we're building toward.</p>
         </div>
         <div class="moat-card">
             <h4>Gets smarter with use</h4>
@@ -1024,7 +1028,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
     <div class="vision-split reveal d2">
         <div class="vision-panel">
             <div class="vision-col-title">Step 1: Workflow Automation</div>
-            <p class="vision-desc">Teacher picks a learning objective. Pikira generates the ATP, drafts the Modul Ajar, creates assessment <em>soal</em>, grades student work. The teacher reviews, adjusts, approves. Never starts from a blank page.</p>
+            <p class="vision-desc">Teacher picks a learning objective. Pikira generates the ATP and drafts the Modul Ajar (built). Next: create assessment <em>soal</em> and grade student work (in progress). The teacher reviews, adjusts, approves. Never starts from a blank page.</p>
             <div style="display:flex;gap:0.3em;flex-wrap:wrap;margin-top:auto">
                 <span class="tag tag--built">ATP built</span>
                 <span class="tag tag--built">Modul Ajar built</span>
@@ -1056,7 +1060,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
     <div class="funnel reveal d3">
         <div class="funnel-step">
             <div class="step-num">1</div>
-            <div class="step-text"><strong>Design partnerships</strong> (planned) from teacher network &rarr; deep feedback loops with early adopters</div>
+            <div class="step-text"><strong>Teacher conversations</strong> &rarr; early feedback loops &rarr; founding school pilots</div>
         </div>
         <div class="funnel-arrow">&darr;</div>
         <div class="funnel-step">
@@ -1149,14 +1153,14 @@ h3 { font-size: var(--h3); font-weight: 700; }
         </div>
         <div class="tl-item">
             <div class="tl-label">Week 3: Foundation</div>
-            <div class="tl-content">Hired product designer. Shipped codebase foundation: broken-down requirements, multi-tenant architecture, structured schema. Agentic dev guardrails for shipping fast.</div>
+            <div class="tl-content">Hired product designer. Built technical foundation: multi-tenant architecture, database schema, structured API. Set up AI-assisted dev workflow that lets 2 people ship like a bigger team.</div>
         </div>
         <div class="tl-item current">
             <div class="tl-label">Week 4: Now</div>
             <div class="tl-content"><strong>AI built:</strong> ATP generation, Modul Ajar generation. <strong>In progress:</strong> <em>jadwal</em> algo, <em>soal</em> generation, AI grading. Registered PT Perorangan. Teachers responding positively, active conversations ongoing.</div>
         </div>
     </div>
-    <div class="stat-banner reveal d3">2 founders &middot; 4 weeks &middot; 2 AI features built &middot; 2 <em>kepsek</em> + 10 teachers &middot; 3 schools engaged</div>
+    <div class="stat-banner reveal d3">2 founders &middot; 4 weeks &middot; 2 AI features built &middot; 2 <em>kepsek</em> + 10 teachers &middot; actively talking to schools</div>
     <p class="honest-note reveal d4">Pre-launch. AI features work, architecture solid, UI in design. Nothing in production yet. Goal: formalize design partnerships in April.</p>
 </div>
 </section>
@@ -1313,7 +1317,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
     <div class="faq-grid">
         <div class="faq-item">
             <h3>"You're 2 people pre-launch. Why should I bet my time on this?"</h3>
-            <p>Pre-launch, yes. Pre-work, no. In 4 weeks we talked to 2 <em>kepala sekolah</em> and 10 teachers, registered a PT Perorangan, built 2 working AI features (ATP generation, Modul Ajar generation), and hired a designer with UI already in production. We have teachers from 3 different schools actively giving us feedback. Our plan is to formalize design partnerships in April: teachers testing the product and shaping it with us. Paid pilots follow once the product is proven. Then we hit the July-August adoption window when schools reset for the new academic year. We know what we're doing next.</p>
+            <p>Pre-launch, yes. Pre-work, no. In 4 weeks we talked to 2 <em>kepala sekolah</em> and 10 teachers, registered a PT Perorangan, built 2 working AI features (ATP generation, Modul Ajar generation), and hired a designer with UI in active development. We have teachers from 3 different schools actively giving us feedback. Our plan is to formalize design partnerships in April: teachers testing the product and shaping it with us. Paid pilots follow once the product is proven. Then we hit the July-August adoption window when schools reset for the new academic year. We know what we're doing next.</p>
         </div>
 
         <div class="faq-item">
