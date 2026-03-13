@@ -106,33 +106,32 @@ h3 { font-size: var(--h3); font-weight: 700; }
     transition: color 0.2s;
 }
 .term:hover { color: var(--accent); }
-.term .tip {
-    visibility: hidden;
-    opacity: 0;
+.term .tip { display: none; }
+
+#tip-bar {
     position: fixed;
-    top: 0.8rem;
-    left: 0.8rem;
-    right: 0.8rem;
+    top: 0; left: 0; right: 0;
     background: var(--navy-800);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
     color: var(--text);
     font-size: var(--small);
-    font-weight: 400;
-    font-style: normal;
     line-height: 1.4;
-    padding: 0.6em 1em;
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.15);
-    white-space: normal;
-    pointer-events: none;
-    transition: opacity 0.2s, visibility 0.2s;
-    z-index: 9999;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+    padding: 0.55em 1.2em;
     text-align: center;
+    z-index: 9999;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }
-.term:hover .tip,
-.term.active .tip {
-    visibility: visible;
+#tip-bar.visible {
+    transform: translateY(0);
     opacity: 1;
+}
+#tip-bar .tip-label {
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: 0.4em;
 }
 
 .card {
@@ -1368,6 +1367,8 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </div>
 </section>
 
+<div id="tip-bar"></div>
+
 <!-- NAV -->
 <nav class="nav-dots" aria-label="Slide navigation"></nav>
 <div class="slide-counter"></div>
@@ -1438,18 +1439,39 @@ h3 { font-size: var(--h3); font-weight: 700; }
     slides.forEach(s => obs.observe(s));
     slides[0].querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
 
-    // Tooltip tap for mobile
-    document.querySelectorAll('.term').forEach(t => {
-        t.addEventListener('click', e => {
+    // Global tip bar
+    const tipBar = document.getElementById('tip-bar');
+    let tipTimer;
+    function showTip(term) {
+        const tip = term.querySelector('.tip');
+        if (!tip) return;
+        const label = term.childNodes[0].textContent.trim();
+        tipBar.textContent = '';
+        const span = document.createElement('span');
+        span.className = 'tip-label';
+        span.textContent = label;
+        tipBar.appendChild(span);
+        tipBar.appendChild(document.createTextNode(tip.textContent));
+        tipBar.classList.add('visible');
+        clearTimeout(tipTimer);
+    }
+    function hideTip() {
+        tipTimer = setTimeout(function() { tipBar.classList.remove('visible'); }, 200);
+    }
+    document.querySelectorAll('.term').forEach(function(t) {
+        t.addEventListener('mouseenter', function() { showTip(t); });
+        t.addEventListener('mouseleave', hideTip);
+        t.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            document.querySelectorAll('.term.active').forEach(o => { if (o !== t) o.classList.remove('active'); });
-            t.classList.toggle('active');
+            if (tipBar.classList.contains('visible')) {
+                tipBar.classList.remove('visible');
+            } else {
+                showTip(t);
+            }
         });
     });
-    document.addEventListener('click', () => {
-        document.querySelectorAll('.term.active').forEach(t => t.classList.remove('active'));
-    });
+    document.addEventListener('click', function() { tipBar.classList.remove('visible'); });
 })();
 </script>
 </body>
