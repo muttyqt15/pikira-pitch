@@ -98,6 +98,57 @@ h3 { font-size: var(--h3); font-weight: 700; }
 .small { font-size: var(--small); }
 .tiny { font-size: var(--tiny); }
 
+.term {
+    position: relative;
+    cursor: help;
+    border-bottom: 1.5px dashed var(--navy-400);
+    color: var(--text);
+    transition: color 0.2s;
+}
+.term:hover { color: var(--accent); }
+.term .tip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--navy-800);
+    color: var(--text);
+    font-size: var(--small);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.4;
+    padding: 0.45em 0.75em;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.2s, visibility 0.2s;
+    z-index: 200;
+}
+.term .tip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: var(--navy-800);
+}
+.term:hover .tip,
+.term.active .tip {
+    visibility: visible;
+    opacity: 1;
+}
+@media (max-width: 600px) {
+    .term .tip {
+        white-space: normal;
+        min-width: 160px;
+        max-width: 220px;
+    }
+}
+
 .card {
     background: var(--bg-card);
     border: 1px solid rgba(255,255,255,0.06);
@@ -823,7 +874,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <div>
                 <div class="problem-col-header" style="border-color:var(--accent);color:var(--accent)">Where time actually goes</div>
                 <ul class="problem-list hot">
-                    <li>Lesson planning &amp; RPP/ATP creation</li>
+                    <li>Lesson planning &amp; <span class="term">RPP<span class="tip">Rencana Pelaksanaan Pembelajaran (lesson plan)</span></span>/<span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span> creation</li>
                     <li>Building assessments &amp; <em>soal</em></li>
                     <li>Grading essays (manual, one by one)</li>
                     <li>Compiling <em>Modul Ajar</em></li>
@@ -840,7 +891,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
             </div>
         </div>
     </div>
-    <p class="bottom-note reveal d3">"<em>Kurikulum Merdeka</em> amplified this, adding ATP, Modul Ajar, P5 requirements. But the problem predates it."</p>
+    <p class="bottom-note reveal d3">"<em>Kurikulum Merdeka</em> amplified this, adding ATP, Modul Ajar, <span class="term">P5<span class="tip">Projek Penguatan Profil Pelajar Pancasila</span></span> requirements. But the problem predates it."</p>
 </div>
 </section>
 
@@ -883,7 +934,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <tr><td>Attendance</td><td class="chk">&#10003;</td><td class="chk">&#10003;</td><td class="chk">&#10003;</td><td class="pikira chk">&#10003;</td></tr>
             <tr><td>Gradebook</td><td class="chk">&#10003;</td><td class="chk">&#10003;</td><td>Partial</td><td class="pikira chk">&#10003;</td></tr>
             <tr><td>Rapor generation</td><td class="chk">&#10003;</td><td class="chk">&#10003;</td><td class="x">&#10005;</td><td class="pikira chk">&#10003;</td></tr>
-            <tr class="hl"><td><strong>TP/ATP authoring</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira">AI-generated <span class="tag tag--built">Built</span></td></tr>
+            <tr class="hl"><td><strong><span class="term">TP<span class="tip">Tujuan Pembelajaran</span></span>/<span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span> authoring</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira">AI-generated <span class="tag tag--built">Built</span></td></tr>
             <tr class="hl"><td><strong>Modul Ajar builder</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira">AI-generated <span class="tag tag--built">Built</span></td></tr>
             <tr class="hl"><td><strong>AI soal generation</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira"><span class="tag tag--progress">In progress</span></td></tr>
             <tr class="hl"><td><strong>AI essay grading</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira"><span class="tag tag--progress">In progress</span></td></tr>
@@ -903,9 +954,9 @@ h3 { font-size: var(--h3); font-weight: 700; }
     <h2 class="reveal d1">Start where teachers start. Build from the <span class="accent">curriculum</span>, not the gradebook.</h2>
     <p class="reveal d1" style="color:var(--text-dim);font-size:var(--small);max-width:52em">Pikira structures the <em>Kurikulum Merdeka</em> pipeline as connected data that AI can reason over. Because the curriculum is machine-readable, AI can generate ATPs, draft Modul Ajar, create <em>soal</em>, and grade against rubrics. None of which is possible when curriculum data lives in PDFs and Word docs.</p>
     <div class="pipeline-visual reveal d2">
-        <span class="pipe-node active">CP</span><span class="pipe-arrow">&rarr;</span>
-        <span class="pipe-node active">TP</span><span class="pipe-arrow">&rarr;</span>
-        <span class="pipe-node active">ATP</span><span class="pipe-arrow">&rarr;</span>
+        <span class="pipe-node active"><span class="term">CP<span class="tip">Capaian Pembelajaran (learning outcomes)</span></span></span><span class="pipe-arrow">&rarr;</span>
+        <span class="pipe-node active"><span class="term">TP<span class="tip">Tujuan Pembelajaran (learning objectives)</span></span></span><span class="pipe-arrow">&rarr;</span>
+        <span class="pipe-node active"><span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span></span><span class="pipe-arrow">&rarr;</span>
         <span class="pipe-node active">Modul Ajar</span><span class="pipe-arrow">&rarr;</span>
         <span class="pipe-node dim">Assessment</span><span class="pipe-arrow">&rarr;</span>
         <span class="pipe-node dim">Grade</span><span class="pipe-arrow">&rarr;</span>
@@ -914,7 +965,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
     <div class="moat-cards reveal d3">
         <div class="moat-card">
             <h4>Grounded in <em>Kurikulum Merdeka</em></h4>
-            <p>Every AI generation draws from structured CP/TP data and public BSKAP PDFs, not generic knowledge. ATPs reference real learning objectives.</p>
+            <p>Every AI generation draws from structured CP/TP data and public <span class="term">BSKAP<span class="tip">Badan Standar, Kurikulum, dan Asesmen Pendidikan</span></span> PDFs, not generic knowledge. ATPs reference real learning objectives.</p>
         </div>
         <div class="moat-card">
             <h4>School-Specific Context</h4>
@@ -984,7 +1035,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <div class="vision-col-title">Step 2: Teaching Intelligence</div>
             <p class="vision-desc">Because every assessment connects to specific learning objectives, Pikira surfaces patterns no teacher could spot manually:</p>
             <div class="insight-quote">"Kelas 11B struggles with trig identities across 3 assessments. Revisit TP 4.2"</div>
-            <div class="insight-quote">"5 students passed PG but failed essays on cell division. Articulation gap"</div>
+            <div class="insight-quote">"5 students passed <span class="term">PG<span class="tip">Pilihan Ganda (multiple choice)</span></span> but failed essays on cell division. Articulation gap"</div>
         </div>
     </div>
 </div>
@@ -1279,7 +1330,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 
         <div class="faq-item">
             <h3>"AI features are easy to copy. What's the moat?"</h3>
-            <p>Two layers. First, architectural: our curriculum pipeline is structured data that AI can reason over. Competitors would need to rebuild from scratch. Second, context. Pikira pulls from public textbook PDFs (SIBI/<em>Buku Sekolah Elektronik</em>), the teacher's own ATP, their RPP, their past interactions. ChatGPT generates generic lesson plans. Pikira generates contextual ones, aligned to the specific <em>kurikulum</em>, the specific school's ATP, the specific teacher's style. That context compounds with every use, and you can't replicate it without the same integrated data layer.</p>
+            <p>Two layers. First, architectural: our curriculum pipeline is structured data that AI can reason over. Competitors would need to rebuild from scratch. Second, context. Pikira pulls from public textbook PDFs (<span class="term">SIBI<span class="tip">Sistem Informasi Buku Indonesia</span></span>/<em>Buku Sekolah Elektronik</em>), the teacher's own ATP, their RPP, their past interactions. ChatGPT generates generic lesson plans. Pikira generates contextual ones, aligned to the specific <em>kurikulum</em>, the specific school's ATP, the specific teacher's style. That context compounds with every use, and you can't replicate it without the same integrated data layer.</p>
         </div>
 
         <div class="faq-item">
@@ -1299,7 +1350,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 
         <div class="faq-item">
             <h3>"You have a lot of features listed. What's the prioritization?"</h3>
-            <p>Ship what teachers need to survive the pilot: <em>soal</em> generation, AI grading, <em>jadwal</em> algorithm. Defer everything else. School ops expansion (SPP, PPDB, parent comms) is explicitly post-traction. This is actually exactly why we want you. We know we'll face hard tradeoffs once pilots start, and we need someone who's done this before to help us figure out what to cut.</p>
+            <p>Ship what teachers need to survive the pilot: <em>soal</em> generation, AI grading, <em>jadwal</em> algorithm. Defer everything else. School ops expansion (<span class="term">SPP<span class="tip">Sumbangan Pembinaan Pendidikan (tuition billing)</span></span>, <span class="term">PPDB<span class="tip">Penerimaan Peserta Didik Baru (student admissions)</span></span>, parent comms) is explicitly post-traction. This is actually exactly why we want you. We know we'll face hard tradeoffs once pilots start, and we need someone who's done this before to help us figure out what to cut.</p>
         </div>
 
         <div class="faq-item">
@@ -1309,7 +1360,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 
         <div class="faq-item">
             <h3>"What's your technical risk?"</h3>
-            <p>AI quality on Indonesian curriculum content. ATP and Modul Ajar generation work well, but essay grading in Bahasa Indonesia with rubric alignment is genuinely hard. If AI grading isn't trustworthy, teachers won't use it, and that's a big part of our value prop. We're mitigating by grounding AI with contextual data: SIBI textbooks, the teacher's own materials, their rubric definitions.</p>
+            <p>AI quality on Indonesian curriculum content. ATP and Modul Ajar generation work well, but essay grading in Bahasa Indonesia with rubric alignment is genuinely hard. If AI grading isn't trustworthy, teachers won't use it, and that's a big part of our value prop. We're mitigating by grounding AI with contextual data: <span class="term">SIBI<span class="tip">Sistem Informasi Buku Indonesia</span></span> textbooks, the teacher's own materials, their rubric definitions.</p>
         </div>
 
         <div class="faq-item">
@@ -1399,6 +1450,19 @@ h3 { font-size: var(--h3); font-weight: 700; }
     }, { threshold: 0.5 });
     slides.forEach(s => obs.observe(s));
     slides[0].querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+
+    // Tooltip tap for mobile
+    document.querySelectorAll('.term').forEach(t => {
+        t.addEventListener('click', e => {
+            e.preventDefault();
+            e.stopPropagation();
+            document.querySelectorAll('.term.active').forEach(o => { if (o !== t) o.classList.remove('active'); });
+            t.classList.toggle('active');
+        });
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.term.active').forEach(t => t.classList.remove('active'));
+    });
 })();
 </script>
 </body>
