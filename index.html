@@ -314,6 +314,10 @@ h3 { font-size: var(--h3); font-weight: 700; }
     display: flex; align-items: center; justify-content: center;
     gap: clamp(0.15rem, 0.4vw, 0.3rem); flex-wrap: wrap;
 }
+@media (max-width: 431px) {
+    .pipeline-visual { flex-direction: column; gap: 0.15rem; }
+    .pipe-arrow { transform: rotate(90deg); }
+}
 .pipe-node {
     padding: 0.3em 0.65em; border-radius: 6px;
     font-size: var(--tiny); font-weight: 600; white-space: nowrap;
@@ -1321,7 +1325,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 
         <div class="faq-item">
             <h3>"What happens if P2MW doesn't work out?"</h3>
-            <p>P2MW is a forcing function, not a dependency. We chose it over UI Incubate specifically because the 70/30 IP royalty split was unacceptable. We want connections and structure, not money. The Rp 15M funding is nice but not critical. If P2MW falls through, the company continues. We have a registered PT, a working product, and a pilot pipeline.</p>
+            <p>P2MW is a forcing function, not a dependency. We evaluated other programs like UI Incubate, but P2MW's terms were a better fit: no IP royalty obligations, and the focus is on mentorship and structure over funding. The Rp 15M helps, but it's not what we're here for. If P2MW falls through, the company continues. We have a registered PT, a working product, and a pilot pipeline.</p>
         </div>
 
         <div class="faq-item">
