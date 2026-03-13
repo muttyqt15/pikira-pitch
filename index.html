@@ -110,21 +110,34 @@ h3 { font-size: var(--h3); font-weight: 700; }
     visibility: hidden;
     opacity: 0;
     position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    right: auto;
+    top: auto;
     background: var(--navy-800);
     color: var(--text);
     font-size: var(--small);
     font-weight: 400;
     font-style: normal;
     line-height: 1.4;
-    padding: 0.5em 0.8em;
-    border-radius: 8px;
+    padding: 0.6em 1em;
+    border-radius: 10px;
     border: 1px solid rgba(255,255,255,0.15);
     white-space: normal;
-    max-width: min(280px, 90vw);
+    max-width: min(320px, calc(100vw - 2rem));
     pointer-events: none;
     transition: opacity 0.2s, visibility 0.2s;
     z-index: 9999;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+}
+@media (max-width: 768px) {
+    .term .tip {
+        bottom: auto;
+        top: 1rem;
+        left: 1rem;
+        right: 1rem;
+        max-width: none;
+    }
 }
 .term:hover .tip,
 .term.active .tip {
@@ -1437,41 +1450,13 @@ h3 { font-size: var(--h3); font-weight: 700; }
     slides.forEach(s => obs.observe(s));
     slides[0].querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
 
-    // Tooltip positioning + mobile tap
-    function positionTip(term) {
-        const tip = term.querySelector('.tip');
-        if (!tip) return;
-        const r = term.getBoundingClientRect();
-        tip.style.left = '';
-        tip.style.right = '';
-        tip.style.top = '';
-        tip.style.bottom = '';
-        // Position above the term
-        tip.style.visibility = 'hidden';
-        tip.style.opacity = '0';
-        tip.style.display = 'block';
-        const tipW = tip.offsetWidth;
-        let left = r.left + r.width / 2 - tipW / 2;
-        if (left < 8) left = 8;
-        if (left + tipW > window.innerWidth - 8) left = window.innerWidth - 8 - tipW;
-        tip.style.left = left + 'px';
-        tip.style.top = (r.top - tip.offsetHeight - 6) + 'px';
-        // If it would go above viewport, show below instead
-        if (r.top - tip.offsetHeight - 6 < 4) {
-            tip.style.top = (r.bottom + 6) + 'px';
-        }
-        tip.style.display = '';
-        tip.style.visibility = '';
-        tip.style.opacity = '';
-    }
+    // Tooltip tap for mobile
     document.querySelectorAll('.term').forEach(t => {
-        t.addEventListener('mouseenter', () => positionTip(t));
         t.addEventListener('click', e => {
             e.preventDefault();
             e.stopPropagation();
             document.querySelectorAll('.term.active').forEach(o => { if (o !== t) o.classList.remove('active'); });
             t.classList.toggle('active');
-            if (t.classList.contains('active')) positionTip(t);
         });
     });
     document.addEventListener('click', () => {
