@@ -1464,11 +1464,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
         t.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            if (tipBar.classList.contains('visible')) {
-                tipBar.classList.remove('visible');
-            } else {
-                showTip(t);
-            }
+            showTip(t);
         });
     });
     document.addEventListener('click', function() { tipBar.classList.remove('visible'); });
