@@ -695,6 +695,79 @@ h3 { font-size: var(--h3); font-weight: 700; }
     transition: opacity 0.2s;
 }
 .faq-cta a:hover { opacity: 0.8; }
+
+/* ============================================
+   BMC APPENDIX
+   ============================================ */
+.bmc-appendix {
+    background: var(--navy-950);
+    padding: clamp(2rem, 6vw, 5rem) var(--pad) clamp(4rem, 10vh, 8rem);
+}
+.bmc-inner { max-width: 1100px; margin: 0 auto; }
+.bmc-title { font-size: var(--h2); font-weight: 700; margin-bottom: 0.3em; }
+.bmc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 1.5em;
+}
+.bmc-cell {
+    background: var(--navy-900);
+    padding: clamp(0.5rem, 1.2vw, 1rem);
+    font-size: var(--tiny);
+    color: var(--text-dim);
+    line-height: 1.4;
+}
+.bmc-cell h4 {
+    font-size: var(--tiny);
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.4em;
+}
+.bmc-cell ul {
+    list-style: none; padding: 0;
+    display: flex; flex-direction: column; gap: 0.3em;
+}
+.bmc-cell li {
+    padding-left: 0.8em; position: relative;
+}
+.bmc-cell li::before {
+    content: ''; position: absolute; left: 0; top: 0.45em;
+    width: 4px; height: 4px; border-radius: 1px;
+    background: var(--navy-500);
+}
+.bmc-cell .tag-v { color: var(--green); font-weight: 600; font-size: 0.85em; }
+.bmc-cell .tag-h { color: var(--yellow); font-weight: 600; font-size: 0.85em; }
+/* Grid placement */
+.bmc-partners { grid-column: 1; grid-row: 1 / 3; }
+.bmc-activities { grid-column: 2; grid-row: 1; }
+.bmc-resources { grid-column: 2; grid-row: 2; }
+.bmc-value { grid-column: 3; grid-row: 1 / 3; }
+.bmc-relationships { grid-column: 4; grid-row: 1; }
+.bmc-channels { grid-column: 4; grid-row: 2; }
+.bmc-segments { grid-column: 5; grid-row: 1 / 3; }
+.bmc-costs { grid-column: 1 / 4; grid-row: 3; }
+.bmc-revenue { grid-column: 4 / 6; grid-row: 3; }
+@media (max-width: 768px) {
+    .bmc-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+    .bmc-partners, .bmc-activities, .bmc-resources,
+    .bmc-value, .bmc-relationships, .bmc-channels,
+    .bmc-segments, .bmc-costs, .bmc-revenue {
+        grid-column: auto; grid-row: auto;
+    }
+    .bmc-value { grid-column: 1 / -1; }
+    .bmc-costs { grid-column: 1; }
+    .bmc-revenue { grid-column: 2; }
+}
 .faq-inner {
     max-width: 900px;
     margin: 0 auto;
@@ -1310,7 +1383,10 @@ h3 { font-size: var(--h3); font-weight: 700; }
         <a href="https://wa.me/6281218722101" target="_blank" style="color:var(--text-dim);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.15)">Muttaqin's WhatsApp: wa.me/6281218722101</a>
         <span style="color:var(--text-muted);margin-top:0.2em;font-size:var(--tiny)">Sistem Informasi, Universitas Indonesia</span>
     </div>
-    <a href="#faq" class="reveal d4" style="margin-top:clamp(1rem,3vh,2rem);font-size:var(--small);color:var(--text-muted);text-decoration:none;border-bottom:1px dashed var(--navy-600);transition:color 0.2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">&darr; Still skeptical? We answered 5 objections below.</a>
+    <div class="reveal d4" style="margin-top:clamp(1rem,3vh,2rem);display:flex;flex-direction:column;gap:0.4em;align-items:center">
+        <a href="#faq" style="font-size:var(--small);color:var(--text-muted);text-decoration:none;border-bottom:1px dashed var(--navy-600);transition:color 0.2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">&darr; 5 objections answered below</a>
+        <a href="#bmc" style="font-size:var(--small);color:var(--text-muted);text-decoration:none;border-bottom:1px dashed var(--navy-600);transition:color 0.2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">&darr; Business Model Canvas</a>
+    </div>
 </div>
 </section>
 
@@ -1350,6 +1426,132 @@ h3 { font-size: var(--h3); font-weight: 700; }
     <div class="faq-cta">
         <p>If any of this sounds interesting, let's talk.</p>
         <a href="https://wa.me/6281218722101" target="_blank">Muttaqin's WhatsApp: wa.me/6281218722101</a>
+    </div>
+</div>
+</section>
+
+<!-- ========== APPENDIX: BMC ========== -->
+<section class="bmc-appendix" id="bmc">
+<div class="bmc-inner">
+    <h2 class="bmc-title">Business Model Canvas</h2>
+    <p class="dim" style="font-size:var(--small)"><span class="tag-v" style="color:var(--green);font-weight:600">[V]</span> = Validated through fieldwork &nbsp; <span class="tag-h" style="color:var(--yellow);font-weight:600">[H]</span> = Hypothesis, not yet tested</p>
+
+    <div class="bmc-grid">
+        <!-- Key Partners -->
+        <div class="bmc-cell bmc-partners">
+            <h4>Key Partners</h4>
+            <ul>
+                <li>Pilot schools (3-5) - classroom access, real feedback <span class="tag-v">[V]</span></li>
+                <li><span class="term">Kepsek<span class="tip">School principal</span></span> &amp; <span class="term">Wakakurikulum<span class="tip">Vice principal for curriculum affairs</span></span> as internal champions</li>
+                <li>LLM API providers (largest variable cost)</li>
+                <li>Cloud infra (Cloudflare Workers, PostgreSQL)</li>
+                <li>University mentor / <span class="term">dosen pendamping<span class="tip">Faculty advisor/mentor</span></span></li>
+            </ul>
+        </div>
+
+        <!-- Key Activities -->
+        <div class="bmc-cell bmc-activities">
+            <h4>Key Activities</h4>
+            <ul>
+                <li>AI copilot dev: planning <span class="tag-v">[V]</span>, assessment, grading, analysis</li>
+                <li>Field research &amp; school visits <span class="tag-v">[V]</span></li>
+                <li>Curriculum alignment (<span class="term">CP<span class="tip">Capaian Pembelajaran</span></span> > <span class="term">TP<span class="tip">Tujuan Pembelajaran</span></span> > <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span>)</li>
+                <li>Onboarding &amp; adoption support</li>
+                <li>Context layer accumulation (the moat)</li>
+            </ul>
+        </div>
+
+        <!-- Key Resources -->
+        <div class="bmc-cell bmc-resources">
+            <h4>Key Resources</h4>
+            <ul>
+                <li>AI-native architecture (generation-first) <span class="tag-v">[V]</span></li>
+                <li><span class="term">Kurikulum Merdeka<span class="tip">Indonesia's national curriculum framework</span></span> mapping <span class="tag-v">[V]</span></li>
+                <li>School context data (compounds over time) <span class="tag-h">[H]</span></li>
+                <li>Two technical founders with curriculum knowledge <span class="tag-v">[V]</span></li>
+                <li>Teacher interview insights <span class="tag-v">[V]</span></li>
+            </ul>
+        </div>
+
+        <!-- Value Propositions -->
+        <div class="bmc-cell bmc-value">
+            <h4>Value Propositions</h4>
+            <p style="font-weight:600;color:var(--text);margin-bottom:0.4em">For Teachers <span class="tag-v">[V]</span></p>
+            <ul>
+                <li>AI generates <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span>, <span class="term">Modul Ajar<span class="tip">Teaching module</span></span>, <span class="term">soal<span class="tip">Exam questions</span></span> (with LaTeX for STEM), assists grading</li>
+                <li>Review and refine, never start from zero</li>
+            </ul>
+            <p style="font-weight:600;color:var(--text);margin:0.6em 0 0.4em">For Principals <span class="tag-h">[H]</span></p>
+            <ul>
+                <li>Real-time visibility into academic operations</li>
+                <li>Quality floor rises - every teacher starts from AI drafts</li>
+            </ul>
+            <p style="font-weight:600;color:var(--text);margin:0.6em 0 0.4em">For <span class="term">Yayasan<span class="tip">School foundation (governing body)</span></span> <span class="tag-h">[H]</span></p>
+            <ul>
+                <li>Documentation always ready, not scrambled before <span class="term">akreditasi<span class="tip">School accreditation</span></span></li>
+                <li>Institutional resilience, not individual heroics</li>
+            </ul>
+            <p style="color:var(--accent);font-weight:600;margin-top:0.6em;font-size:0.9em">Moat: the feedback loop. Assessment informs planning. No other tool connects this.</p>
+        </div>
+
+        <!-- Customer Relationships -->
+        <div class="bmc-cell bmc-relationships">
+            <h4>Customer Relationships</h4>
+            <ul>
+                <li>High-touch co-design during pilot <span class="tag-v">[V]</span></li>
+                <li>Workflow-aligned onboarding (not another unused app)</li>
+                <li>Adoption monitoring - intervene if teachers disengage</li>
+                <li>Transition to self-service + check-ins at scale <span class="tag-h">[H]</span></li>
+            </ul>
+            <p style="color:var(--text-muted);font-style:italic;margin-top:0.4em">70% low IT fluency. Must reduce work from day one.</p>
+        </div>
+
+        <!-- Channels -->
+        <div class="bmc-cell bmc-channels">
+            <h4>Channels</h4>
+            <ul>
+                <li>Direct principal outreach &amp; school visits <span class="tag-v">[V]</span></li>
+                <li>University / P2MW network <span class="tag-h">[H]</span></li>
+                <li>Teacher word-of-mouth (post-adoption) <span class="tag-h">[H]</span></li>
+                <li><span class="term">Yayasan<span class="tip">School foundation</span></span> network referrals <span class="tag-h">[H]</span></li>
+            </ul>
+        </div>
+
+        <!-- Customer Segments -->
+        <div class="bmc-cell bmc-segments">
+            <h4>Customer Segments</h4>
+            <p style="font-weight:600;color:var(--text);margin-bottom:0.3em">Indonesian private K-12 schools</p>
+            <ul>
+                <li><strong>Principal</strong> - buyer, decision maker. Cares about visibility, <span class="term">akreditasi<span class="tip">School accreditation</span></span>, <span class="term">PPDB<span class="tip">Student admissions</span></span></li>
+                <li><strong>Teachers</strong> - daily users. Want time back from admin</li>
+                <li><strong><span class="term">Yayasan<span class="tip">School foundation</span></span></strong> - budget sponsor. Want consistent quality</li>
+            </ul>
+            <p style="color:var(--text-muted);margin-top:0.4em">Beachhead: Jabodetabek SMP/SMA on <span class="term">Kurikulum Merdeka<span class="tip">Indonesia's national curriculum</span></span> <span class="tag-h">[H]</span></p>
+        </div>
+
+        <!-- Cost Structure -->
+        <div class="bmc-cell bmc-costs">
+            <h4>Cost Structure</h4>
+            <p style="font-weight:600;color:var(--text);margin-bottom:0.3em">Value-driven, not cost-driven</p>
+            <ul>
+                <li><strong>Fixed:</strong> Founder time (engineering, research, onboarding), cloud infra</li>
+                <li><strong>Variable:</strong> LLM API calls - largest variable cost, scales with usage</li>
+                <li><strong>Advantage:</strong> Two founders iterate faster than Telkom's product team. No org overhead</li>
+            </ul>
+        </div>
+
+        <!-- Revenue Streams -->
+        <div class="bmc-cell bmc-revenue">
+            <h4>Revenue Streams</h4>
+            <p style="font-weight:600;color:var(--text);margin-bottom:0.3em">Flat rate per school <span class="tag-h">[H]</span></p>
+            <ul>
+                <li>Anchor: <span class="term">UMR<span class="tip">Upah Minimum Regional (minimum wage)</span></span> Jakarta ~Rp 5.5M/bulan</li>
+                <li>5 schools = ~Rp 27.5M MRR</li>
+                <li>10 schools = ~Rp 55M MRR</li>
+                <li>Upsell: base copilot > analytics > <span class="term">akreditasi<span class="tip">School accreditation</span></span> reports</li>
+            </ul>
+            <p style="color:var(--text-muted);margin-top:0.3em">Free during pilot. Commercial from Sep 2026.</p>
+        </div>
     </div>
 </div>
 </section>
