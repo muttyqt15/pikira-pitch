@@ -921,10 +921,10 @@ h3 { font-size: var(--h3); font-weight: 700; }
         <thead><tr><th>Step</th><th><span class="term">PMM<span class="tip">Platform Merdeka Mengajar: free government platform for teachers</span></span></th><th>ChatGPT</th><th><span class="term">Quintal<span class="tip">Competitor: school admin &amp; academic platform</span></span></th><th><span class="term">Sokrates<span class="tip">Competitor: school management system for private schools</span></span></th><th><span class="term">Pijar<span class="tip">Competitor: Kemendikbud-backed LMS, free for public schools</span></span></th><th>Pikira</th></tr></thead>
         <tbody>
             <tr><td colspan="7" style="font-size:var(--tiny);color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;padding:0.5em 0.5em 0.3em;border:none">Academic work (where quality is determined)</td></tr>
-            <tr class="hl"><td><strong>Plan (ATP)</strong></td><td class="x">Templates</td><td class="x">Can draft</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira">AI generates <span class="tag tag--built">Built</span></td></tr>
+            <tr class="hl"><td><strong>Plan (<span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span>)</strong></td><td class="x">Templates</td><td class="x">Can draft</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira">AI generates <span class="tag tag--built">Built</span></td></tr>
             <tr class="hl"><td><strong>Soal</strong></td><td class="x">&#10005;</td><td class="x">No LaTeX</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">CBT only</td><td class="pikira">AI + LaTeX <span class="tag tag--progress">In progress</span></td></tr>
             <tr class="hl"><td><strong>Grade</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">Input</td><td class="x">Input</td><td class="x">Input</td><td class="pikira">AI-assisted <span class="tag tag--progress">In progress</span></td></tr>
-            <tr class="hl"><td><strong>Analyze</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">Basic</td><td class="x">Dashboard</td><td class="x">Dashboard</td><td class="pikira">Per-TP <span class="tag tag--planned">Planned</span></td></tr>
+            <tr class="hl"><td><strong>Analyze</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">Basic</td><td class="x">Dashboard</td><td class="x">Dashboard</td><td class="pikira">Per-<span class="term">TP<span class="tip">Tujuan Pembelajaran (learning objectives)</span></span> <span class="tag tag--planned">Planned</span></td></tr>
             <tr><td colspan="7" style="font-size:var(--tiny);color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;padding:0.5em 0.5em 0.3em;border:none">Operations (table stakes)</td></tr>
             <tr><td>Admin</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="chk">Strong</td><td class="chk">Strong</td><td class="chk">Some</td><td class="pikira"><span class="tag tag--planned">Planned</span></td></tr>
             <tr class="hl"><td><strong>Connected loop</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira">Connected</td></tr>
@@ -957,7 +957,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <span class="pipe-node active"><span class="term">CP<span class="tip">Capaian Pembelajaran (learning outcomes)</span></span></span><span class="pipe-arrow">&rarr;</span>
             <span class="pipe-node active"><span class="term">TP<span class="tip">Tujuan Pembelajaran (learning objectives)</span></span></span><span class="pipe-arrow">&rarr;</span>
             <span class="pipe-node active"><span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span></span><span class="pipe-arrow">&rarr;</span>
-            <span class="pipe-node active">Modul Ajar</span><span class="pipe-arrow">&rarr;</span>
+            <span class="pipe-node active"><span class="term">Modul Ajar<span class="tip">Teaching module (lesson plans, materials, assessments)</span></span></span><span class="pipe-arrow">&rarr;</span>
             <span class="pipe-node dim">Assessment</span><span class="pipe-arrow">&rarr;</span>
             <span class="pipe-node dim">Grade</span><span class="pipe-arrow">&rarr;</span>
             <span class="pipe-node dim">Analysis</span>
@@ -967,7 +967,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
     <div class="moat-cards reveal d3">
         <div class="moat-card">
             <h4>Grounded in <span class="term">Kurikulum Merdeka<span class="tip">Indonesia's current national curriculum framework (2022)</span></span></h4>
-            <p>Every AI generation draws from structured CP/TP data and public <span class="term">BSKAP<span class="tip">Badan Standar, Kurikulum, dan Asesmen Pendidikan</span></span> PDFs, not generic knowledge.</p>
+            <p>Every AI generation draws from structured <span class="term">CP<span class="tip">Capaian Pembelajaran (learning outcomes)</span></span>/<span class="term">TP<span class="tip">Tujuan Pembelajaran (learning objectives)</span></span> data and public <span class="term">BSKAP<span class="tip">Badan Standar, Kurikulum, dan Asesmen Pendidikan</span></span> PDFs, not generic knowledge.</p>
         </div>
         <div class="moat-card">
             <h4>One Store, One Context</h4>
@@ -1057,11 +1057,11 @@ h3 { font-size: var(--h3); font-weight: 700; }
     <div class="vision-split reveal d2">
         <div class="vision-panel">
             <div class="vision-col-title">Step 1: AI-Powered Academic Cycle</div>
-            <p class="vision-desc">Teacher picks a learning objective. Pikira generates the ATP and drafts the Modul Ajar (built). Next: create assessment <span class="term">soal<span class="tip">Exam/test questions</span></span> and grade student work (in progress). The teacher reviews, adjusts, approves. Never starts from a blank page.</p>
+            <p class="vision-desc">Teacher picks a learning objective. Pikira generates the <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span> and drafts the <span class="term">Modul Ajar<span class="tip">Teaching module (lesson plans, materials, assessments)</span></span> (built). Next: create assessment <span class="term">soal<span class="tip">Exam/test questions</span></span> and grade student work (in progress). The teacher reviews, adjusts, approves. Never starts from a blank page.</p>
             <img src="modul-ajar-select.png" alt="Pikira Modul Ajar AI generation with editing controls" style="width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.1);margin-top:0.3em">
             <div style="display:flex;gap:0.3em;flex-wrap:wrap;margin-top:auto">
-                <span class="tag tag--built">ATP built</span>
-                <span class="tag tag--built">Modul Ajar built</span>
+                <span class="tag tag--built"><span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span> built</span>
+                <span class="tag tag--built"><span class="term">Modul Ajar<span class="tip">Teaching module (lesson plans, materials, assessments)</span></span> built</span>
                 <span class="tag tag--progress">Soal in progress</span>
                 <span class="tag tag--progress">Grading in progress</span>
             </div>
@@ -1071,7 +1071,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <p class="vision-desc">AI generates. Teacher reviews, adjusts, approves. Every edit is tracked with a diff view — the teacher's judgment is always the final word.</p>
             <img src="modul-ajar-diff.png" alt="Pikira diff view showing teacher edits to AI-generated content" style="width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.1);margin-top:0.3em">
             <div class="vision-col-title" style="margin-top:0.5em">Where connected data leads <span class="tag tag--planned">Planned</span></div>
-            <div class="insight-quote">"Kelas 11B struggles with trig identities across 3 assessments. Revisit TP 4.2"</div>
+            <div class="insight-quote">"Kelas 11B struggles with trig identities across 3 assessments. Revisit <span class="term">TP<span class="tip">Tujuan Pembelajaran (learning objective)</span></span> 4.2"</div>
         </div>
     </div>
     <div class="vision-bottom reveal d3">The goal: replace the patchwork of <span class="term">Quintal<span class="tip">Competitor: school admin &amp; academic platform</span></span>, <span class="term">Pijar<span class="tip">Competitor: Kemendikbud-backed LMS</span></span>, Excel, Google Forms, Word, and ChatGPT with one platform where AI is built into every layer. Input once, flows everywhere.</div>
@@ -1120,7 +1120,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 <div class="slide-content">
     <div class="section-label reveal">Business Model</div>
     <h2 class="reveal d1">Cheaper than one employee. Works across <span class="accent">every classroom</span>.</h2>
-    <p class="reveal d1" style="font-size:var(--small);color:var(--text-dim);max-width:52em">Imagine you could hire one employee who drafts every ATP, writes every <span class="term">soal<span class="tip">Exam/test questions</span></span> with perfect formatting, helps grade every essay, and builds the <span class="term">jadwal<span class="tip">School timetable/schedule</span></span> in hours instead of a week. They work across every classroom, never take <span class="term">cuti<span class="tip">Leave/time off</span></span>, and get smarter every semester because they remember every teacher's preferences and every student's weak spots. That's Pikira. And it costs less than <span class="term">UMR<span class="tip">Upah Minimum Regional (regional minimum wage)</span></span>.</p>
+    <p class="reveal d1" style="font-size:var(--small);color:var(--text-dim);max-width:52em">Imagine you could hire one employee who drafts every <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span>, writes every <span class="term">soal<span class="tip">Exam/test questions</span></span> with perfect formatting, helps grade every essay, and builds the <span class="term">jadwal<span class="tip">School timetable/schedule</span></span> in hours instead of a week. They work across every classroom, never take <span class="term">cuti<span class="tip">Leave/time off</span></span>, and get smarter every semester because they remember every teacher's preferences and every student's weak spots. That's Pikira. And it costs less than <span class="term">UMR<span class="tip">Upah Minimum Regional (regional minimum wage)</span></span>.</p>
     <!-- UMR comparison -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)" class="reveal d2">
         <div class="card" style="text-align:center;border:1px solid var(--navy-700)">
@@ -1169,7 +1169,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
         </div>
         <div class="tl-item current">
             <div class="tl-label">Week 4: Now</div>
-            <div class="tl-content"><strong>AI built:</strong> ATP generation, Modul Ajar generation. <strong>In progress:</strong> <span class="term">jadwal<span class="tip">School timetable/schedule</span></span> algo, <span class="term">soal<span class="tip">Exam/test questions</span></span> generation, AI grading. Registered <span class="term">PT Perorangan<span class="tip">Indonesian sole proprietorship company registration</span></span>. Teachers responding positively, active conversations ongoing.</div>
+            <div class="tl-content"><strong>AI built:</strong> <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span> generation, <span class="term">Modul Ajar<span class="tip">Teaching module</span></span> generation. <strong>In progress:</strong> <span class="term">jadwal<span class="tip">School timetable/schedule</span></span> algo, <span class="term">soal<span class="tip">Exam/test questions</span></span> generation, AI grading. Registered <span class="term">PT Perorangan<span class="tip">Indonesian sole proprietorship company registration</span></span>. Teachers responding positively, active conversations ongoing.</div>
         </div>
     </div>
     <div class="stat-banner reveal d3">2 founders &middot; 4 weeks &middot; 2 AI features built &middot; 2 principals + 10 teachers interviewed &middot; pipeline: 2 schools, targeting 8-10</div>
@@ -1204,7 +1204,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
                 <ul>
                     <li>Sistem Informasi, Universitas Indonesia</li>
                     <li>4x data science competition champion, including <span class="term">Gemastik<span class="tip">Pagelaran Mahasiswa Nasional Bidang Teknologi Informasi dan Komunikasi (national IT competition by Kemendikbud)</span></span></li>
-                    <li>Built the ATP and Modul Ajar generation models</li>
+                    <li>Built the <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span> and <span class="term">Modul Ajar<span class="tip">Teaching module</span></span> generation models</li>
                 </ul>
             </div>
         </div>
@@ -1323,7 +1323,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
     <div class="faq-grid">
         <div class="faq-item">
             <h3>"You're 2 people pre-launch. Why should I bet my time on this?"</h3>
-            <p>Pre-launch, yes. Pre-work, no. In 4 weeks we talked to 2 principals and 10 teachers, registered a <span class="term">PT Perorangan<span class="tip">Indonesian sole proprietorship company</span></span>, built 2 working AI features (ATP generation, Modul Ajar generation), and hired a designer with UI in active development. We have 2 schools in active conversation. Our plan: formal <span class="term">design partnerships<span class="tip">Schools co-design the product, providing feedback in exchange for better pricing</span></span> starting April, iterate through the semester, then hit the July-August adoption wave when schools reset for the new academic year. Paid pilots follow once the product is proven. We know what we're doing next.</p>
+            <p>Pre-launch, yes. Pre-work, no. In 4 weeks we talked to 2 principals and 10 teachers, registered a <span class="term">PT Perorangan<span class="tip">Indonesian sole proprietorship company</span></span>, built 2 working AI features (<span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span> generation, <span class="term">Modul Ajar<span class="tip">Teaching module</span></span> generation), and hired a designer with UI in active development. We have 2 schools in active conversation. Our plan: formal <span class="term">design partnerships<span class="tip">Schools co-design the product, providing feedback in exchange for better pricing</span></span> starting April, iterate through the semester, then hit the July-August adoption wave when schools reset for the new academic year. Paid pilots follow once the product is proven. We know what we're doing next.</p>
         </div>
 
         <div class="faq-item">
@@ -1333,7 +1333,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 
         <div class="faq-item">
             <h3>"AI features are easy to copy. What's the moat?"</h3>
-            <p>Two layers. First, architectural: our curriculum pipeline is structured data that AI can reason over. Competitors would need to rebuild from scratch. Second, context. Pikira pulls from public textbook PDFs (<span class="term">Buku Sekolah Elektronik<span class="tip">Free government-published digital textbooks</span></span>), the teacher's own ATP, their Modul Ajar, their past interactions. ChatGPT generates generic lesson plans. Pikira generates contextual ones, aligned to the specific <span class="term">kurikulum<span class="tip">Curriculum framework</span></span>, the specific school's ATP, the specific teacher's style. That context compounds with every use, and you can't replicate it without the same integrated data layer. AI grading in Bahasa Indonesia with rubric alignment is genuinely hard - that's our biggest technical risk, and we're mitigating by grounding AI with the teacher's own materials and rubric definitions.</p>
+            <p>Two layers. First, architectural: our curriculum pipeline is structured data that AI can reason over. Competitors would need to rebuild from scratch. Second, context. Pikira pulls from public textbook PDFs (<span class="term">Buku Sekolah Elektronik<span class="tip">Free government-published digital textbooks</span></span>), the teacher's own <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span>, their <span class="term">Modul Ajar<span class="tip">Teaching module</span></span>, their past interactions. ChatGPT generates generic lesson plans. Pikira generates contextual ones, aligned to the specific <span class="term">kurikulum<span class="tip">Curriculum framework</span></span>, the specific school's <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span>, the specific teacher's style. That context compounds with every use, and you can't replicate it without the same integrated data layer. AI grading in Bahasa Indonesia with rubric alignment is genuinely hard - that's our biggest technical risk, and we're mitigating by grounding AI with the teacher's own materials and rubric definitions.</p>
         </div>
 
         <div class="faq-item">
