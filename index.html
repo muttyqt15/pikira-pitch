@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pikira Pitch Deck — AI-Native Academic OS for Indonesian K-12</title>
+<title>Pikira Pitch Deck — Academic Copilot for Indonesian Schools</title>
 <link rel="icon" type="image/png" href="pikira-logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -12,7 +12,7 @@
    ============================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; overflow-x: hidden; }
-html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
 
 body {
     background: var(--bg);
@@ -25,7 +25,7 @@ body {
 
 .slide {
     width: 100vw; height: 100vh; height: 100dvh;
-    overflow: hidden; scroll-snap-align: start;
+    overflow: hidden;
     display: flex; flex-direction: column; position: relative;
 }
 .slide-content {
@@ -642,7 +642,6 @@ h3 { font-size: var(--h3); font-weight: 700; }
    FAQ APPENDIX
    ============================================ */
 .faq-appendix {
-    scroll-snap-align: none;
     background: var(--navy-950);
     min-height: 100vh;
     padding: clamp(2rem, 6vw, 5rem) var(--pad) clamp(4rem, 10vh, 8rem);
@@ -836,8 +835,8 @@ h3 { font-size: var(--h3); font-weight: 700; }
     <img class="cover-logo-img reveal" src="pikira-logo.png" alt="Pikira">
     <div class="cover-wordmark reveal d1">PIKIRA</div>
     <div class="cover-divider reveal d2"></div>
-    <p class="cover-tagline reveal d2" style="font-size:clamp(0.9rem,1.8vw,1.3rem);font-weight:600">Let teachers teach again.</p>
-    <p class="reveal d2" style="font-size:var(--small);color:var(--text-dim);margin-top:-0.5em">AI-Native Academic Operating System for Indonesian K-12</p>
+    <p class="cover-tagline reveal d2" style="font-size:clamp(0.9rem,1.8vw,1.3rem);font-weight:600">Academic Copilot for Indonesian Schools</p>
+    <p class="reveal d2" style="font-size:var(--small);color:var(--text-dim);margin-top:-0.5em">Let teachers teach again. Give <em>kepala sekolah</em> visibility into academic quality.</p>
     <div class="cover-meta reveal d3">
         <span style="font-weight:600;color:var(--accent)">Pitch Deck</span>
         <span>Muttaqin Muzakkir &amp; Daanish Inayat Rahman &middot; March 2026</span>
@@ -849,37 +848,41 @@ h3 { font-size: var(--h3); font-weight: 700; }
 <section class="slide" id="s2">
 <div class="slide-content">
     <div class="section-label reveal">The Problem</div>
-    <h2 class="reveal d1">School software digitizes <span class="accent">results</span>,<br>not the <span class="accent">work</span> of teaching.</h2>
-    <div class="problem-layout reveal d2">
-        <div class="donut-container">
-            <div class="donut-ring"></div>
-            <div class="donut-center">
-                <div class="donut-pct" style="font-size:clamp(1rem,2.5vw,1.6rem)">Most</div>
-                <div class="donut-label">teacher time<br>is untouched</div>
-            </div>
+    <h2 class="reveal d1">Three problems. One missing system.</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-sm)" class="reveal d2">
+        <div class="card" style="border-top:3px solid var(--accent)">
+            <h3 style="font-size:var(--small);color:var(--accent);margin-bottom:0.3em">The Teacher's Day</h3>
+            <ul class="problem-list hot" style="font-size:var(--tiny)">
+                <li>10+ disconnected tools: Excel, Word, Google Forms, <span class="term">iRapor<span class="tip">Government report card system</span></span>, Pijar, ChatGPT, Dapodik</li>
+                <li>Grading takes the most time, but Forms only auto-grades MC &mdash; <strong>teachers avoid essay assessments entirely</strong></li>
+                <li>STEM teachers: math formulas break between ChatGPT, Word, and Forms &mdash; manual screenshotting per question</li>
+                <li><span class="term">Kurikulum Merdeka<span class="tip">Indonesia's current national curriculum framework (2022)</span></span> added <span class="term">guru wali<span class="tip">Homeroom teacher tracking students grade 10-12 with monthly journal deadlines</span></span>, more ATP, Modul Ajar, <span class="term">P5<span class="tip">Projek Penguatan Profil Pelajar Pancasila</span></span></li>
+                <li>Scheduling built by hand over a full week</li>
+                <li>70% of teachers still building basic IT fluency</li>
+            </ul>
+            <p style="font-size:var(--tiny);color:var(--accent);font-style:italic;margin-top:0.4em">"Guru capeknya di administrasi."</p>
         </div>
-        <div class="problem-cols">
-            <div>
-                <div class="problem-col-header" style="border-color:var(--accent);color:var(--accent)">Where time actually goes</div>
-                <ul class="problem-list hot">
-                    <li>Lesson planning &amp; <span class="term">Modul Ajar<span class="tip">Teaching module (Kurikulum Merdeka lesson plan format)</span></span>/<span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span> creation</li>
-                    <li>Building assessments &amp; <em>soal</em></li>
-                    <li>Grading essays (manual, one by one)</li>
-                    <li>Compiling <em><span class="term">Modul Ajar<span class="tip">Teaching module document (lesson plans, materials, assessments bundled together)</span></span></em></li>
-                    <li>Building schedules (takes a week)</li>
-                </ul>
-            </div>
-            <div>
-                <div class="problem-col-header" style="border-color:var(--navy-700);color:var(--text-muted)">What existing LMS covers</div>
-                <ul class="problem-list cold">
-                    <li>Attendance (check-in/check-out)</li>
-                    <li>Gradebook (input final scores)</li>
-                    <li><em>Rapor</em> generation</li>
-                </ul>
-            </div>
+        <div class="card" style="border-top:3px solid var(--yellow)">
+            <h3 style="font-size:var(--small);color:var(--yellow);margin-bottom:0.3em">The <em>Kepsek's</em> Blindspot</h3>
+            <ul class="problem-list hot" style="font-size:var(--tiny)">
+                <li style="--bullet-color:var(--yellow)">Teaching quality across the school is <strong>invisible to leadership</strong></li>
+                <li>Monitoring via CCTV and hallway walks</li>
+                <li>Academic performance surfaces at end-of-semester <em>rapat pleno</em> &mdash; too late to intervene</li>
+                <li><span class="term">BAN-PDM<span class="tip">Badan Akreditasi Nasional Pendidikan Dasar dan Menengah</span></span> 2024 shift to performance-based <em>akreditasi</em> made evidence scrambling harder</li>
+                <li>Low <span class="term">Rapor Pendidikan<span class="tip">School-level performance report from Kemendikbud</span></span> "Kualitas Pembelajaran" scores &mdash; no way to pinpoint why</li>
+            </ul>
+        </div>
+        <div class="card" style="border-top:3px solid var(--blue)">
+            <h3 style="font-size:var(--small);color:var(--blue);margin-bottom:0.3em">The School's Survival</h3>
+            <ul class="problem-list hot" style="font-size:var(--tiny)">
+                <li>Private schools face declining enrollment from <em>zonasi</em>, birth rates, and competition</li>
+                <li>Reputation depends on demonstrable quality</li>
+                <li>Government designed <span class="term">Kurikulum Merdeka<span class="tip">Indonesia's current national curriculum framework (2022)</span></span> as a connected pipeline but no tool helps schools run academic work as one integrated system</li>
+            </ul>
+            <p style="font-size:var(--tiny);color:var(--text-dim);font-style:italic;margin-top:0.4em">"She wants to input data once and have it flow everywhere. That doesn't exist yet."</p>
         </div>
     </div>
-    <p class="bottom-note reveal d3">"<em><span class="term">Kurikulum Merdeka<span class="tip">Indonesia's current national curriculum framework (2022), emphasizing flexible learning paths</span></span></em> amplified this, adding ATP, Modul Ajar, <span class="term">P5<span class="tip">Projek Penguatan Profil Pelajar Pancasila</span></span> requirements. But the problem predates it."</p>
+    <p class="bottom-note reveal d3">The problem predates <em>Kurikulum Merdeka</em>. But the curriculum widened the gap between what's demanded and what tools deliver.</p>
 </div>
 </section>
 
@@ -891,21 +894,27 @@ h3 { font-size: var(--h3); font-weight: 700; }
     <div class="stats-row reveal d1">
         <div class="stat-pill"><span class="num">2</span><span class="label"><em>Kepala Sekolah</em></span></div>
         <div class="stat-pill"><span class="num">10</span><span class="label">Teachers</span></div>
+        <div class="stat-pill"><span class="num">2</span><span class="label">Schools</span></div>
     </div>
-    <div class="findings-grid reveal d2">
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap-sm)" class="reveal d2">
         <div class="finding-card">
             <h4>Every step is a different tool</h4>
-            <p>One teacher's assessment flow: write <em>soal</em> in Word, convert formulas to images, upload to Google Forms, download responses, grade by hand in Excel, copy scores into <span class="term">iRapor<span class="tip">Government report card system for entering student grades</span></span>. Six steps across four tools for a single exam.</p>
+            <p>Write <em>soal</em> in Word, convert formulas to images, upload to Google Forms, download responses, grade by hand in Excel, copy into <span class="term">iRapor<span class="tip">Government report card system</span></span>. Six steps, four tools, one exam. She wants to input data once and have it flow everywhere. That doesn't exist yet.</p>
         </div>
         <div class="finding-card">
-            <h4>Time sinks: planning &amp; grading</h4>
-            <p>Modul Ajar creation and essay grading eat the most hours. Teachers use ChatGPT to cope, but formatting breaks on transfer.</p>
+            <h4>Teachers avoid essays entirely</h4>
+            <p>Google Forms only auto-grades multiple choice. <em>Rapor</em> deadlines won't wait. So teachers skip open-ended assessments. Tool limitations are degrading teaching quality.</p>
         </div>
         <div class="finding-card">
-            <h4>Rigid tools, flexible workarounds</h4>
-            <p>At one school using <span class="term">Sokrates<span class="tip">Competitor: school management system popular with private schools</span></span>, late submissions are blocked entirely. Teachers collect late work on WhatsApp. The tool doesn't adapt to how teachers actually work, so they route around it.</p>
+            <h4>STEM formula nightmare</h4>
+            <p>Math formulas break between ChatGPT, Word, and Forms. Teachers manually screenshot each question. STEM teachers spend more time formatting than writing.</p>
+        </div>
+        <div class="finding-card">
+            <h4>Rigid tools, creative workarounds</h4>
+            <p><span class="term">Sokrates<span class="tip">Competitor: school management system for private schools</span></span> blocks late submissions entirely. Teachers collect late work on WhatsApp. Tools don't adapt to how teachers work, so they route around them.</p>
         </div>
     </div>
+    <div class="callout reveal d3" style="font-size:var(--tiny)">~50% of planning is already done with AI, but output breaks when moved between tools. Teachers reformat manually anyway. The demand is proven. The solution doesn't exist.</div>
 </div>
 </section>
 
@@ -913,27 +922,33 @@ h3 { font-size: var(--h3); font-weight: 700; }
 <section class="slide" id="s4">
 <div class="slide-content">
     <div class="section-label reveal">Competitive Landscape</div>
-    <h2 class="reveal d1">Why existing tools <span class="accent">haven't caught up</span>.</h2>
+    <h2 class="reveal d1">The top rows are <span class="accent">empty</span> across every competitor.</h2>
     <div class="reveal d2" style="overflow-x:auto">
     <table class="comp-table">
-        <thead><tr><th>Capability</th><th><span class="term">Sokrates<span class="tip">Competitor: school management system for private schools</span></span></th><th><span class="term">Quintal<span class="tip">Competitor: school admin &amp; academic platform</span></span></th><th><span class="term">Pijar<span class="tip">Competitor: Kemendikbud-backed LMS, free for public schools</span></span></th><th>Pikira</th></tr></thead>
+        <thead><tr><th>Step</th><th><span class="term">PMM<span class="tip">Platform Merdeka Mengajar: free government platform for teachers</span></span></th><th>ChatGPT</th><th><span class="term">Quintal<span class="tip">Competitor: school admin &amp; academic platform</span></span></th><th><span class="term">Sokrates<span class="tip">Competitor: school management system for private schools</span></span></th><th><span class="term">Pijar<span class="tip">Competitor: Kemendikbud-backed LMS, free for public schools</span></span></th><th>Pikira</th></tr></thead>
         <tbody>
-            <tr><td colspan="5" style="font-size:var(--tiny);color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;padding:0.3em 0.5em;border:none">Table stakes</td></tr>
-            <tr><td>Attendance</td><td class="chk">&#10003;</td><td class="chk">&#10003;</td><td class="chk">&#10003;</td><td class="pikira chk">&#10003;</td></tr>
-            <tr><td>Gradebook</td><td class="chk">&#10003;</td><td class="chk">&#10003;</td><td class="chk">&#10003;</td><td class="pikira chk">&#10003;</td></tr>
-            <tr><td>Rapor generation</td><td class="chk">&#10003;</td><td class="chk">&#10003;</td><td class="chk">&#10003;</td><td class="pikira chk">&#10003;</td></tr>
-            <tr><td colspan="5" style="font-size:var(--tiny);color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;padding:0.5em 0.5em 0.3em;border:none">Where Pikira differentiates</td></tr>
-            <tr class="hl"><td><strong><span class="term">TP<span class="tip">Tujuan Pembelajaran</span></span>/<span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span> authoring</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira">AI-generated <span class="tag tag--built">Built</span></td></tr>
-            <tr class="hl"><td><strong>Modul Ajar builder</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira">AI-generated <span class="tag tag--built">Built</span></td></tr>
-            <tr class="hl"><td><strong>AI soal generation</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira"><span class="tag tag--progress">In progress</span></td></tr>
-            <tr class="hl"><td><strong>AI essay grading</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira"><span class="tag tag--progress">In progress</span></td></tr>
-            <tr class="hl"><td><strong>Jadwal algorithm</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira"><span class="tag tag--progress">In progress</span></td></tr>
-            <tr class="hl"><td><strong>Learning analytics</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira"><span class="tag tag--planned">Planned</span></td></tr>
+            <tr><td colspan="7" style="font-size:var(--tiny);color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;padding:0.5em 0.5em 0.3em;border:none">Academic work (where quality is determined)</td></tr>
+            <tr class="hl"><td><strong>Plan (ATP)</strong></td><td class="x">Templates</td><td class="x">Can draft</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira">AI generates <span class="tag tag--built">Built</span></td></tr>
+            <tr class="hl"><td><strong>Soal</strong></td><td class="x">&#10005;</td><td class="x">No LaTeX</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">CBT only</td><td class="pikira">AI + LaTeX <span class="tag tag--progress">In progress</span></td></tr>
+            <tr class="hl"><td><strong>Grade</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">Input</td><td class="x">Input</td><td class="x">Input</td><td class="pikira">AI-assisted <span class="tag tag--progress">In progress</span></td></tr>
+            <tr class="hl"><td><strong>Analyze</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">Basic</td><td class="x">Dashboard</td><td class="x">Dashboard</td><td class="pikira">Per-TP <span class="tag tag--planned">Planned</span></td></tr>
+            <tr><td colspan="7" style="font-size:var(--tiny);color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;padding:0.5em 0.5em 0.3em;border:none">Operations (table stakes)</td></tr>
+            <tr><td>Admin</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="chk">Strong</td><td class="chk">Strong</td><td class="chk">Some</td><td class="pikira"><span class="tag tag--planned">Planned</span></td></tr>
+            <tr class="hl"><td><strong>Connected loop</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira">Connected</td></tr>
         </tbody>
     </table>
     </div>
-    <div class="insight-callout reveal d3">Every feature on our roadmap traces back to a specific time sink teachers described in interviews. ATP generation: hours lost writing lesson plans from scratch. <em>Soal</em> generation: converting formulas to images just to upload to Google Forms. AI grading: teachers avoiding essay questions entirely because there's no time to grade them. <em>Jadwal</em>: a week of manual scheduling <em>"pakai perasaan."</em> We didn't start with a feature list. We started with the workflow.</div>
-    <p class="reveal d4" style="font-size:var(--tiny);color:var(--text-muted);margin-top:0.3em">Attendance, gradebook, and <em>rapor</em> are table stakes. Everyone has them. And bolting AI onto an existing LMS won't fix this either. The AI needs structured curriculum data to work with.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-sm)" class="reveal d3">
+        <div class="insight-callout"><strong>"Why not just use..."</strong><br>
+            <span style="font-size:var(--tiny)"><strong style="color:var(--accent)">PMM (free)</strong> &mdash; Templates to fill in. Doesn't generate, grade, analyze, or connect anything.<br>
+            <strong style="color:var(--accent)">ChatGPT (free)</strong> &mdash; No curriculum structure, no school context, no LaTeX, no feedback loop. A calculator vs an operating system.<br>
+            <strong style="color:var(--accent)">Quintal/Sokrates</strong> &mdash; Records what teachers produce. Pikira produces it. They'd have to rebuild from scratch.<br>
+            <strong style="color:var(--accent)">Hire another guru</strong> &mdash; One guru improves one classroom. Pikira raises the baseline across every classroom.</span>
+        </div>
+        <div class="insight-callout"><strong>Why it can't be retrofitted.</strong><br>
+            <span style="font-size:var(--tiny)">Existing tools' data models, UX, and architecture assume teachers do the work and software captures the output. Adding generation to a recording system is a rebuild, not a feature. Pikira is built AI-first from day one.</span>
+        </div>
+    </div>
 </div>
 </section>
 
@@ -941,32 +956,36 @@ h3 { font-size: var(--h3); font-weight: 700; }
 <section class="slide" id="s5">
 <div class="slide-content">
     <div class="section-label reveal">Our Insight</div>
-    <h2 class="reveal d1">Start where teachers start. Build from the <span class="accent">curriculum</span>, not the gradebook.</h2>
-    <p class="reveal d1" style="color:var(--text-dim);font-size:var(--small);max-width:52em">Pikira structures the <em>Kurikulum Merdeka</em> pipeline as connected data that AI can reason over. Because the curriculum is machine-readable, AI can generate ATPs, draft Modul Ajar, create <em>soal</em>, and grade against rubrics. None of which is possible when curriculum data lives in PDFs and Word docs.</p>
-    <div class="pipeline-visual reveal d2">
-        <span class="pipe-node active"><span class="term">CP<span class="tip">Capaian Pembelajaran (learning outcomes)</span></span></span><span class="pipe-arrow">&rarr;</span>
-        <span class="pipe-node active"><span class="term">TP<span class="tip">Tujuan Pembelajaran (learning objectives)</span></span></span><span class="pipe-arrow">&rarr;</span>
-        <span class="pipe-node active"><span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span></span><span class="pipe-arrow">&rarr;</span>
-        <span class="pipe-node active">Modul Ajar</span><span class="pipe-arrow">&rarr;</span>
-        <span class="pipe-node dim">Assessment</span><span class="pipe-arrow">&rarr;</span>
-        <span class="pipe-node dim">Grade</span><span class="pipe-arrow">&rarr;</span>
-        <span class="pipe-node dim">Rapor</span>
+    <h2 class="reveal d1">Every tool sits at the <span class="accent">end</span>. Pikira sits at the <span class="accent">beginning</span>.</h2>
+    <p class="reveal d1" style="color:var(--text-dim);font-size:var(--small);max-width:52em">Every school tool today records the result after teachers do the work. Pikira generates the plan, drafts the materials, creates the assessments, assists the grading, surfaces the insights, and feeds it back into the next cycle. The teacher stays in charge &mdash; but never starts from zero.</p>
+    <!-- Loop visual: pipeline with feedback arrow -->
+    <div class="reveal d2" style="position:relative">
+        <div class="pipeline-visual">
+            <span class="pipe-node active"><span class="term">CP<span class="tip">Capaian Pembelajaran (learning outcomes)</span></span></span><span class="pipe-arrow">&rarr;</span>
+            <span class="pipe-node active"><span class="term">TP<span class="tip">Tujuan Pembelajaran (learning objectives)</span></span></span><span class="pipe-arrow">&rarr;</span>
+            <span class="pipe-node active"><span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span></span><span class="pipe-arrow">&rarr;</span>
+            <span class="pipe-node active">Modul Ajar</span><span class="pipe-arrow">&rarr;</span>
+            <span class="pipe-node dim">Assessment</span><span class="pipe-arrow">&rarr;</span>
+            <span class="pipe-node dim">Grade</span><span class="pipe-arrow">&rarr;</span>
+            <span class="pipe-node dim">Analysis</span>
+        </div>
+        <div style="text-align:center;font-size:var(--tiny);color:var(--accent);margin-top:0.3em">&larr; Analysis feeds back: which TPs need revisiting, which students are at risk, what to adjust next &rarr;</div>
     </div>
     <div class="moat-cards reveal d3">
         <div class="moat-card">
             <h4>Grounded in <em>Kurikulum Merdeka</em></h4>
-            <p>Every AI generation draws from structured CP/TP data and public <span class="term">BSKAP<span class="tip">Badan Standar, Kurikulum, dan Asesmen Pendidikan</span></span> PDFs, not generic knowledge. ATPs reference real learning objectives.</p>
+            <p>Every AI generation draws from structured CP/TP data and public <span class="term">BSKAP<span class="tip">Badan Standar, Kurikulum, dan Asesmen Pendidikan</span></span> PDFs, not generic knowledge.</p>
         </div>
         <div class="moat-card">
-            <h4>School-Specific Context</h4>
-            <p>As teachers use Pikira, it learns their context: their ATP, their assessments, their grading patterns. Over time, AI suggestions get more specific to their school. This is where we're building toward.</p>
+            <h4>One Store, One Context</h4>
+            <p>Every feature writes to one unified data store: teacher edits, assessment results, attendance patterns, scheduling decisions. Every feature reads from it before generating. No feature silos.</p>
         </div>
         <div class="moat-card">
-            <h4>Gets smarter with use</h4>
-            <p>Every assessment graded feeds back into smarter suggestions. The more a school uses Pikira, the better it gets. Generic AI can't compete.</p>
+            <h4>Context Compounds</h4>
+            <p>A school on Pikira for a year gets fundamentally better output than a school on day one. This is the moat. Competitors can copy features, but not a year of accumulated school context.</p>
         </div>
     </div>
-    <div class="vs-chatgpt reveal d4">&#x1F916; Why not just ChatGPT? &rarr; <span class="better">Context is the moat.</span> It doesn't know your curriculum, students, or school.</div>
+    <div class="vs-chatgpt reveal d4">&#x1F916; Why not just ChatGPT? &rarr; <span class="better">A calculator vs an operating system.</span> No curriculum structure, no school context, no LaTeX, no feedback loop. Context is the moat.</div>
 </div>
 </section>
 
@@ -1005,34 +1024,71 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </div>
 </section>
 
-<!-- ========== SLIDE 7: VISION ========== -->
+<!-- ========== SLIDE 7: VALUE CHAIN ========== -->
 <section class="slide" id="s7">
 <div class="slide-content">
+    <div class="section-label reveal">How Value Flows</div>
+    <h2 class="reveal d1">From product to <span class="accent">institutional outcome</span>.</h2>
+    <div class="reveal d2" style="display:flex;flex-direction:column;gap:0.3em">
+        <div style="display:flex;align-items:center;gap:0.6em;background:var(--bg-card);border-radius:8px;padding:0.4em 0.8em;border-left:3px solid var(--accent)">
+            <span style="font-size:var(--h3);font-weight:800;color:var(--accent);min-width:1.5em">1</span>
+            <span style="font-size:var(--small)">AI generates quality materials aligned to curriculum structure</span>
+        </div>
+        <div style="text-align:center;color:var(--navy-600);font-size:var(--tiny)">&darr;</div>
+        <div style="display:flex;align-items:center;gap:0.6em;background:var(--bg-card);border-radius:8px;padding:0.4em 0.8em;border-left:3px solid var(--accent)">
+            <span style="font-size:var(--h3);font-weight:800;color:var(--accent);min-width:1.5em">2</span>
+            <span style="font-size:var(--small)">Teachers start from quality drafts, have time for open-ended assessments (AI-assisted grading)</span>
+        </div>
+        <div style="text-align:center;color:var(--navy-600);font-size:var(--tiny)">&darr;</div>
+        <div style="display:flex;align-items:center;gap:0.6em;background:var(--bg-card);border-radius:8px;padding:0.4em 0.8em;border-left:3px solid var(--accent)">
+            <span style="font-size:var(--h3);font-weight:800;color:var(--accent);min-width:1.5em">3</span>
+            <span style="font-size:var(--small)">Minimum baseline of academic preparation <strong>rises across classrooms</strong> (set by AI quality, not individual teacher capacity)</span>
+        </div>
+        <div style="text-align:center;color:var(--navy-600);font-size:var(--tiny)">&darr;</div>
+        <div style="display:flex;align-items:center;gap:0.6em;background:var(--bg-card);border-radius:8px;padding:0.4em 0.8em;border-left:3px solid var(--yellow)">
+            <span style="font-size:var(--h3);font-weight:800;color:var(--yellow);min-width:1.5em">4</span>
+            <span style="font-size:var(--small)"><em>Kepsek</em> sees what's happening across the school through connected data</span>
+        </div>
+        <div style="text-align:center;color:var(--navy-600);font-size:var(--tiny)">&darr;</div>
+        <div style="display:flex;align-items:center;gap:0.6em;background:var(--bg-card);border-radius:8px;padding:0.4em 0.8em;border-left:3px solid var(--blue)">
+            <span style="font-size:var(--h3);font-weight:800;color:var(--blue);min-width:1.5em">5</span>
+            <span style="font-size:var(--small)"><span class="term">Rapor Pendidikan<span class="tip">School-level performance report from Kemendikbud</span></span> "Kualitas Pembelajaran" improves &rarr; <em>akreditasi</em> score rises &rarr; PPDB positioning strengthens</span>
+        </div>
+    </div>
+    <div class="callout reveal d3" style="font-size:var(--tiny)">Steps 1-3: validated by the design partnership. Steps 4-5: follow if the early chain holds. Success doesn't depend on individual teacher motivation &mdash; the system enforces quality by default.</div>
+</div>
+</section>
+
+<!-- ========== SLIDE 8: VISION ========== -->
+<section class="slide" id="s8">
+<div class="slide-content">
     <div class="section-label reveal">The Vision</div>
-    <h2 class="reveal d1">AI changed how developers <span class="accent">write code</span>.<br>We're applying the same approach to how teachers <span class="accent">plan and grade</span>.</h2>
-    <p class="reveal d1" style="color:var(--text-dim);font-size:var(--small)">AI handles the manual work. Teachers focus their thinking where it actually matters.</p>
+    <h2 class="reveal d1">The same shift that happened in <span class="accent">finance</span>, <span class="accent">legal</span>, and <span class="accent">accounting</span> is coming to education.</h2>
+    <p class="reveal d1" style="color:var(--text-dim);font-size:var(--small)">Ramp, Harvey, Numeric: AI does the default work, humans refine it. We're building it for Indonesian schools.</p>
     <div class="vision-split reveal d2">
         <div class="vision-panel">
-            <div class="vision-col-title">Step 1: Workflow Automation</div>
+            <div class="vision-col-title">Step 1: AI-Powered Academic Cycle</div>
             <p class="vision-desc">Teacher picks a learning objective. Pikira generates the ATP and drafts the Modul Ajar (built). Next: create assessment <em>soal</em> and grade student work (in progress). The teacher reviews, adjusts, approves. Never starts from a blank page.</p>
             <div style="display:flex;gap:0.3em;flex-wrap:wrap;margin-top:auto">
                 <span class="tag tag--built">ATP built</span>
                 <span class="tag tag--built">Modul Ajar built</span>
                 <span class="tag tag--progress">Soal in progress</span>
+                <span class="tag tag--progress">Grading in progress</span>
             </div>
         </div>
         <div class="vision-panel">
-            <div class="vision-col-title">Step 2: Where Connected Data Leads</div>
+            <div class="vision-col-title">Step 2: Connected Data &amp; Insights <span class="tag tag--planned">Planned</span></div>
             <p class="vision-desc">Once assessments connect to specific learning objectives, Pikira can surface patterns no teacher could spot manually:</p>
             <div class="insight-quote">"Kelas 11B struggles with trig identities across 3 assessments. Revisit TP 4.2"</div>
             <div class="insight-quote">"5 students passed <span class="term">PG<span class="tip">Pilihan Ganda (multiple choice)</span></span> but failed essays on cell division. Articulation gap"</div>
         </div>
     </div>
+    <div class="vision-bottom reveal d3">The goal: replace the patchwork of Quintal, Pijar, Excel, Google Forms, Word, and ChatGPT with one platform where AI is built into every layer. Input once, flows everywhere.</div>
 </div>
 </section>
 
 <!-- ========== SLIDE 8: MARKET & GTM ========== -->
-<section class="slide" id="s8">
+<section class="slide" id="s9">
 <div class="slide-content">
     <div class="section-label reveal">Market &amp; Go-to-Market</div>
     <h2 class="reveal d1">Indonesia's <span class="accent">$3.2B</span> EdTech market, growing <span class="accent">12%</span> yearly.</h2>
@@ -1043,62 +1099,84 @@ h3 { font-size: var(--h3); font-weight: 700; }
         <div class="market-stat"><div class="num">3.7M</div><div class="label">Teachers in Indonesia</div></div>
     </div>
     <p class="source reveal d2">Sources: Ken Research Indonesia EdTech Report 2024; BPS Statistik Pendidikan 2023; Dapodik 2023</p>
+    <p class="reveal d2" style="font-size:var(--small);color:var(--text-dim)"><strong style="color:var(--text)">Beachhead: private schools.</strong> They have budget authority, faster decision cycles, and face existential enrollment pressure where demonstrable academic quality is the differentiator.</p>
     <div class="funnel reveal d3">
         <div class="funnel-step">
             <div class="step-num">1</div>
-            <div class="step-text"><strong>Teacher conversations</strong> &rarr; early feedback loops &rarr; founding school pilots</div>
+            <div class="step-text"><strong>Observation &amp; research</strong> (8-10 schools) &rarr; validate problem, map workflow</div>
         </div>
         <div class="funnel-arrow">&darr;</div>
         <div class="funnel-step">
             <div class="step-num">2</div>
-            <div class="step-text"><strong>Founding school pilots</strong> (3-5 schools) &rarr; usage data + case studies</div>
+            <div class="step-text"><strong>Prototype testing</strong> (5-6 schools) &rarr; teachers test product, shape features</div>
         </div>
         <div class="funnel-arrow">&darr;</div>
         <div class="funnel-step">
             <div class="step-num">3</div>
-            <div class="step-text"><strong>Case study flywheel:</strong> each pilot &rarr; 2-3 referral intros from <em>kepsek</em></div>
+            <div class="step-text"><strong>Formal pilots</strong> (3-5 schools) &rarr; real data, formal agreements, case studies</div>
+        </div>
+        <div class="funnel-arrow">&darr;</div>
+        <div class="funnel-step">
+            <div class="step-num">4</div>
+            <div class="step-text"><strong>Commercial transition</strong> &rarr; paid subscriptions, <em>kepsek</em> referral flywheel</div>
         </div>
     </div>
 </div>
 </section>
 
 <!-- ========== SLIDE 9: BUSINESS MODEL ========== -->
-<section class="slide" id="s9">
+<section class="slide" id="s10">
 <div class="slide-content">
-    <div class="section-label reveal">Business Model</div>
-    <h2 class="reveal d1">Tiered by <span class="accent">school size</span>. <span class="term">Quintal<span class="tip">Competitor: school admin &amp; academic platform</span></span> charges ~Rp 4.5M/mo for 300 students.</h2>
-    <div class="pricing-strip reveal d2">
+    <div class="section-label reveal">The Offer</div>
+    <h2 class="reveal d1">Not a subscription to a tool. An academic system that makes the school <span class="accent">run better</span>.</h2>
+    <p class="reveal d1" style="font-size:var(--small);color:var(--text-dim)"><em>Kepsek</em> doesn't buy AI. They buy institutional academic improvement. The price question comes last, not first.</p>
+    <!-- Three buyers -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-sm)" class="reveal d2">
+        <div class="card" style="border-left:3px solid var(--accent);padding:0.6em 0.8em">
+            <div style="font-size:var(--tiny);font-weight:700;color:var(--accent)">Kepsek buys</div>
+            <p style="font-size:var(--tiny);color:var(--text-dim)">Visibility into teaching quality, <em>akreditasi</em> positioning, PPDB differentiation</p>
+        </div>
+        <div class="card" style="border-left:3px solid var(--green);padding:0.6em 0.8em">
+            <div style="font-size:var(--tiny);font-weight:700;color:var(--green)">Teachers buy</div>
+            <p style="font-size:var(--tiny);color:var(--text-dim)">Time back: drafts ready Monday morning, grading that doesn't eat evenings, <em>soal</em> formatting that works</p>
+        </div>
+        <div class="card" style="border-left:3px solid var(--blue);padding:0.6em 0.8em">
+            <div style="font-size:var(--tiny);font-weight:700;color:var(--blue)">Yayasan buys</div>
+            <p style="font-size:var(--tiny);color:var(--text-dim)">Institutional resilience: consistent quality, documentation always ready, a modernization story</p>
+        </div>
+    </div>
+    <!-- Feature-tiered pricing -->
+    <div class="pricing-strip reveal d3">
         <div class="pricing-pill">
-            <div class="tier">Base</div>
-            <div class="target"><em>Negeri</em>, small schools</div>
-            <div class="amount">Rp 2M</div>
+            <div class="tier">Essentials</div>
+            <div class="target">Buyer: <em>Waka</em></div>
+            <div style="font-size:var(--tiny);color:var(--text-dim);line-height:1.3;margin:0.2em 0">Admin ops: attendance, <em>rapor</em>, scheduling</div>
+            <div class="amount" style="font-size:var(--small)">Target: ~Rp 2M</div>
             <div class="period">/school/month</div>
         </div>
         <div class="pricing-pill featured">
-            <div class="tier">Standard</div>
-            <div class="target">Mid-tier private</div>
-            <div class="amount">Rp 4.5M</div>
+            <div class="tier">Copilot</div>
+            <div class="target">Buyer: Teachers via <em>kepsek</em></div>
+            <div style="font-size:var(--tiny);color:var(--text-dim);line-height:1.3;margin:0.2em 0">+ AI generation: planning, assessment, grading</div>
+            <div class="amount" style="font-size:var(--small)">Target: ~Rp 4M</div>
             <div class="period">/school/month</div>
         </div>
         <div class="pricing-pill">
-            <div class="tier">Premium</div>
-            <div class="target">Large/elite private</div>
-            <div class="amount">Rp 5.5M</div>
+            <div class="tier">Copilot + Insights</div>
+            <div class="target">Buyer: <em>Kepsek / Yayasan</em></div>
+            <div style="font-size:var(--tiny);color:var(--text-dim);line-height:1.3;margin:0.2em 0">+ Analytics: per-TP mastery, teacher patterns, <em>akreditasi</em> readiness</div>
+            <div class="amount" style="font-size:var(--small)">Target: ~Rp 5.5M</div>
             <div class="period">/school/month</div>
         </div>
     </div>
-    <p class="reveal d2" style="font-size:var(--small);color:var(--text-dim);margin-top:calc(-1 * var(--gap))">Higher tiers unlock advanced AI features: learning analytics, custom report templates, priority support.</p>
-    <div class="growth-chart reveal d3">
+    <p class="reveal d3" style="font-size:var(--tiny);color:var(--text-muted);margin-top:calc(-0.5 * var(--gap))">Flat rate per school, tiered by features. Not per-student &mdash; that's how admin tools price. We're a different category. Exact price points TBD based on API costs and willingness-to-pay signals from pilots.</p>
+    <div class="growth-chart reveal d4">
         <svg viewBox="0 0 400 120" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Grid lines -->
             <line x1="60" y1="10" x2="60" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
             <line x1="200" y1="10" x2="200" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
             <line x1="340" y1="10" x2="340" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-            <!-- Area fill -->
             <path d="M60,85 Q130,75 200,55 Q270,30 340,10 L340,100 L60,100 Z" fill="url(#areaGrad)" opacity="0.3"/>
-            <!-- Line -->
             <path d="M60,85 Q130,75 200,55 Q270,30 340,10" stroke="#e8853d" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-            <!-- Dots -->
             <circle cx="60" cy="85" r="4" fill="#e8853d"/>
             <circle cx="200" cy="55" r="4" fill="#e8853d"/>
             <circle cx="340" cy="10" r="5" fill="#e8853d" stroke="#031525" stroke-width="2"/>
@@ -1109,26 +1187,24 @@ h3 { font-size: var(--h3); font-weight: 700; }
                 </linearGradient>
             </defs>
         </svg>
-        <!-- Labels positioned over chart -->
         <div class="growth-label" style="left:15%;bottom:0">
-            <span class="val">Rp 20M</span>
+            <span class="val">~Rp 20M</span>
             <span class="sub">5 schools &middot; Aug '26</span>
         </div>
         <div class="growth-label" style="left:50%;bottom:0">
-            <span class="val">Rp 40M</span>
+            <span class="val">~Rp 40M</span>
             <span class="sub">10 schools &middot; End '26</span>
         </div>
         <div class="growth-label" style="left:85%;bottom:0">
-            <span class="val">Rp 80M</span>
+            <span class="val">~Rp 80M</span>
             <span class="sub">20 schools &middot; Mid '27</span>
         </div>
     </div>
-    <p class="growth-math reveal d4">5 schools &times; Rp 4M avg = Rp 20M MRR &rarr; growing with pilot-to-referral flywheel</p>
 </div>
 </section>
 
 <!-- ========== SLIDE 10: TRACTION ========== -->
-<section class="slide" id="s10">
+<section class="slide" id="s11">
 <div class="slide-content">
     <div class="section-label reveal">Traction</div>
     <h2 class="reveal d1">What we've done in <span class="accent">4 weeks</span>.</h2>
@@ -1146,13 +1222,13 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <div class="tl-content"><strong>AI built:</strong> ATP generation, Modul Ajar generation. <strong>In progress:</strong> <em>jadwal</em> algo, <em>soal</em> generation, AI grading. Registered PT Perorangan. Teachers responding positively, active conversations ongoing.</div>
         </div>
     </div>
-    <div class="stat-banner reveal d3">2 founders &middot; 4 weeks &middot; 2 AI features built &middot; 2 <em>kepsek</em> + 10 teachers &middot; 2 schools in active conversation</div>
-    <p class="honest-note reveal d4">Pre-launch. AI features work, architecture solid, UI in design. Nothing in production yet. Goal: formalize <span class="term">design partnerships<span class="tip">Early collaborations where schools co-design the product with us, providing feedback in exchange for better pricing</span></span> in April.</p>
+    <div class="stat-banner reveal d3">2 founders &middot; 4 weeks &middot; 2 AI features built &middot; 2 <em>kepsek</em> + 10 teachers interviewed &middot; pipeline: 2 schools, targeting 8-10</div>
+    <p class="honest-note reveal d4">Pre-launch. AI features work, architecture solid, UI in design. Nothing in production yet. Next: research visits in April (observation &amp; workflow mapping), working toward formal pilot partnerships by August.</p>
 </div>
 </section>
 
 <!-- ========== SLIDE 11: TEAM ========== -->
-<section class="slide" id="s11">
+<section class="slide" id="s12">
 <div class="slide-content">
     <div class="section-label reveal">The Team</div>
     <h2 class="reveal d1">Built to <span class="accent">ship fast</span>.</h2>
@@ -1183,13 +1259,15 @@ h3 { font-size: var(--h3); font-weight: 700; }
             </div>
         </div>
     </div>
-    <p class="ship-note reveal d3">Muttaqin leads software and product. Daanish leads AI and data. Everything else we share. Designer working in parallel.</p>
-    <p class="honest-note reveal d4" style="text-align:center">"What we're looking for: a senior product leader who can challenge our thinking: prioritization, positioning, and the decisions we don't know we're getting wrong."</p>
+    <div class="reveal d3" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-sm)">
+        <div class="callout" style="font-size:var(--tiny)"><strong>The pivot story.</strong> We started with an AI-native LMS idea, discovered through fieldwork that the problem is the entire academic operation, and pivoted. We build what we find, not what we assume.</div>
+        <div class="callout" style="font-size:var(--tiny)"><strong>Why two is enough.</strong> Two founders iterate faster than Telkom's product team. The first 5 schools need depth and responsiveness, not scale. Most edtech here is built by engineers who don't know curriculum structure, or educators who can't build software. Pikira needs both.</div>
+    </div>
 </div>
 </section>
 
 <!-- ========== SLIDE 12: ROADMAP ========== -->
-<section class="slide" id="s12">
+<section class="slide" id="s13">
 <div class="slide-content">
     <div class="section-label reveal">Roadmap</div>
     <h2 class="reveal d1">What's <span class="accent">next</span>.</h2>
@@ -1207,7 +1285,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <div class="h-tl-card">
                 <div class="h-tl-period">Apr '26</div>
                 <div class="h-tl-school">Schools resume.</div>
-                <div class="h-tl-milestone"><strong><span class="term">Design partnerships<span class="tip">Early collaborations where schools co-design the product with us, providing feedback in exchange for better pricing</span></span> (target).</strong></div>
+                <div class="h-tl-milestone"><strong>Research visits</strong> (observation, workflow mapping, 8-10 schools)</div>
                 <div class="h-tl-p2mw">P2MW proposal</div>
             </div>
         </div>
@@ -1216,7 +1294,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <div class="h-tl-card">
                 <div class="h-tl-period">May-Jun</div>
                 <div class="h-tl-school">Active semester.</div>
-                <div class="h-tl-milestone">Iterate. Case studies.</div>
+                <div class="h-tl-milestone">Prototype testing with 5-6 schools. Iterate with real feedback.</div>
                 <div class="h-tl-p2mw">Monthly reports</div>
             </div>
         </div>
@@ -1225,7 +1303,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <div class="h-tl-card">
                 <div class="h-tl-period">Jul-Aug</div>
                 <div class="h-tl-school"><strong>NEW YEAR</strong></div>
-                <div class="h-tl-milestone"><strong>Adoption wave.<br>5 schools.</strong></div>
+                <div class="h-tl-milestone"><strong>Formal <span class="term">design partnerships<span class="tip">Schools co-design the product with us, providing feedback in exchange for better pricing</span></span>.<br>3-5 pilot schools.</strong></div>
             </div>
         </div>
         <div class="h-tl-item">
@@ -1233,7 +1311,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <div class="h-tl-card">
                 <div class="h-tl-period">Sep-Dec</div>
                 <div class="h-tl-school">Semester 1</div>
-                <div class="h-tl-milestone">10 schools. Paid.</div>
+                <div class="h-tl-milestone">Convert pilots to paid. Target: 5-10 schools.</div>
                 <div class="h-tl-p2mw">KMI Expo</div>
             </div>
         </div>
@@ -1243,7 +1321,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </section>
 
 <!-- ========== SLIDE 13: ASK ========== -->
-<section class="slide" id="s13">
+<section class="slide" id="s14">
 <div class="slide-content">
     <div class="section-label reveal">The Ask</div>
     <h2 class="reveal d1">Be our <em>dosen pendamping</em>.<br><span class="accent">And the mentor who tells us what we're getting wrong.</span></h2>
@@ -1259,17 +1337,9 @@ h3 { font-size: var(--h3); font-weight: 700; }
         <div class="ask-col">
             <h4>What We're Looking For</h4>
             <ul>
-                <li>Product experience: someone who's built from zero-to-one and knows what kills early-stage startups.</li>
-                <li>A network in schools or <em>Dinas Pendidikan</em> that can open doors for pilots.</li>
-                <li>Honest pushback. We need someone who'll say "this won't work" early, not after we've shipped it.</li>
-            </ul>
-        </div>
-        <div class="ask-col">
-            <h4>What We Need</h4>
-            <ul>
-                <li>Product intuition: what to build vs. defer</li>
-                <li>Network intros to schools or <em>Dinas Pendidikan</em></li>
-                <li>Honest pushback. Tell us "this won't work" early</li>
+                <li>Product experience: someone who's built from zero-to-one and knows what kills early-stage startups</li>
+                <li>A network in schools or <em>Dinas Pendidikan</em> that can open doors for pilots</li>
+                <li>Honest pushback: "this won't work" early, not after we've shipped it</li>
             </ul>
         </div>
     </div>
@@ -1283,7 +1353,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </section>
 
 <!-- ========== SLIDE 14: CLOSE ========== -->
-<section class="slide slide--close" id="s14">
+<section class="slide slide--close" id="s15">
 <div class="slide-content">
     <img class="cover-logo-img reveal" src="pikira-logo.png" alt="Pikira" style="height:clamp(50px,10vh,100px)">
     <div class="cover-wordmark reveal d1" style="font-size:clamp(1.8rem,5vw,3.5rem)">PIKIRA</div>
@@ -1293,7 +1363,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
         <a href="https://wa.me/6281218722101" target="_blank" style="color:var(--text-dim);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.15)">Muttaqin's WhatsApp: wa.me/6281218722101</a>
         <span style="color:var(--accent);margin-top:0.2em"><span class="term">P2MW<span class="tip">Program Pembinaan Mahasiswa Wirausaha (national student entrepreneurship program by Kemendikbud)</span></span> 2026 &middot; Bisnis Digital &middot; Tahapan Awal</span>
     </div>
-    <a href="#faq" class="reveal d4" style="margin-top:clamp(1rem,3vh,2rem);font-size:var(--small);color:var(--text-muted);text-decoration:none;border-bottom:1px dashed var(--navy-600);transition:color 0.2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">&darr; Still skeptical? We answered 12 objections below.</a>
+    <a href="#faq" class="reveal d4" style="margin-top:clamp(1rem,3vh,2rem);font-size:var(--small);color:var(--text-muted);text-decoration:none;border-bottom:1px dashed var(--navy-600);transition:color 0.2s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">&darr; Still skeptical? We answered 13 objections below.</a>
 </div>
 </section>
 
@@ -1306,7 +1376,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
     <div class="faq-grid">
         <div class="faq-item">
             <h3>"You're 2 people pre-launch. Why should I bet my time on this?"</h3>
-            <p>Pre-launch, yes. Pre-work, no. In 4 weeks we talked to 2 <em>kepala sekolah</em> and 10 teachers, registered a PT Perorangan, built 2 working AI features (ATP generation, Modul Ajar generation), and hired a designer with UI in active development. We have 2 schools in active conversation. Our plan is to formalize <span class="term">design partnerships<span class="tip">Early collaborations where schools co-design the product with us, providing feedback in exchange for better pricing</span></span> in April: teachers testing the product and shaping it with us. Paid pilots follow once the product is proven. Then we hit the July-August adoption window when schools reset for the new academic year. We know what we're doing next.</p>
+            <p>Pre-launch, yes. Pre-work, no. In 4 weeks we talked to 2 <em>kepala sekolah</em> and 10 teachers, registered a PT Perorangan, built 2 working AI features (ATP generation, Modul Ajar generation), and hired a designer with UI in active development. We have 2 schools in active conversation. Our plan: research visits starting April (observation, workflow mapping), prototype testing May-June, formal <span class="term">design partnerships<span class="tip">Schools co-design the product, providing feedback in exchange for better pricing</span></span> in July-August when the new academic year starts. Paid pilots follow once the product is proven. We know what we're doing next.</p>
         </div>
 
         <div class="faq-item">
@@ -1316,22 +1386,22 @@ h3 { font-size: var(--h3); font-weight: 700; }
 
         <div class="faq-item">
             <h3>"You don't have product-market fit yet."</h3>
-            <p>We don't, and we're not pretending we do. What we have is strong problem validation: every school described the same pain: hours lost on planning and grading, multiple tools for a single workflow, data re-entered across systems. Teachers are already using ChatGPT to cope, which tells you demand exists but the solution doesn't. Next steps: <span class="term">design partnerships<span class="tip">Early collaborations where schools co-design the product with us, providing feedback in exchange for better pricing</span></span> in April (teachers testing and shaping the product), iterate through the semester with real usage data, then convert to paid pilots once the product is proven. Proof points ready for the July-August tool adoption window.</p>
+            <p>We don't, and we're not pretending we do. What we have is strong problem validation: every school described the same pain: hours lost on planning and grading, multiple tools for a single workflow, data re-entered across systems. Teachers are already using ChatGPT to cope, which tells you demand exists but the solution doesn't. Next steps: research visits in April (observation, workflow mapping), prototype testing May-June, formal design partnerships in July-August when the new academic year starts. Convert to paid pilots once the product is proven.</p>
         </div>
 
         <div class="faq-item">
             <h3>"AI features are easy to copy. What's the moat?"</h3>
-            <p>Two layers. First, architectural: our curriculum pipeline is structured data that AI can reason over. Competitors would need to rebuild from scratch. Second, context. Pikira pulls from public textbook PDFs (<span class="term">SIBI<span class="tip">Sistem Informasi Buku Indonesia</span></span>/<em>Buku Sekolah Elektronik</em>), the teacher's own ATP, their Modul Ajar, their past interactions. ChatGPT generates generic lesson plans. Pikira generates contextual ones, aligned to the specific <em>kurikulum</em>, the specific school's ATP, the specific teacher's style. That context compounds with every use, and you can't replicate it without the same integrated data layer.</p>
+            <p>Two layers. First, architectural: our curriculum pipeline is structured data that AI can reason over. Competitors would need to rebuild from scratch. Second, context. Pikira pulls from public textbook PDFs (<em>Buku Sekolah Elektronik</em>), the teacher's own ATP, their Modul Ajar, their past interactions. ChatGPT generates generic lesson plans. Pikira generates contextual ones, aligned to the specific <em>kurikulum</em>, the specific school's ATP, the specific teacher's style. That context compounds with every use, and you can't replicate it without the same integrated data layer.</p>
         </div>
 
         <div class="faq-item">
             <h3>"What happens if P2MW doesn't work out?"</h3>
-            <p>P2MW is a forcing function, not a dependency. We evaluated other programs like UI Incubate, but P2MW's terms were a better fit: no IP royalty obligations, and the focus is on mentorship and structure over funding. The Rp 15M helps, but it's not what we're here for. If P2MW falls through, the company continues. We have a registered PT, an active build toward a prototype, and a pipeline of schools to approach for <span class="term">design partnerships<span class="tip">Early collaborations where schools co-design the product with us, providing feedback in exchange for better pricing</span></span>.</p>
+            <p>P2MW is a forcing function, not a dependency. We evaluated other programs like UI Incubate, but P2MW's terms were a better fit: no IP royalty obligations, and the focus is on mentorship and structure over funding. The Rp 15M helps, but it's not what we're here for. If P2MW falls through, the company continues. We have a registered PT, an active build toward a prototype, and a pipeline of schools to approach for research visits and pilot partnerships.</p>
         </div>
 
         <div class="faq-item">
             <h3>"How do you actually make money? Schools are slow to pay."</h3>
-            <p>Per-school SaaS subscription, tiered: Rp 2M/month for <em>negeri</em> and small schools, Rp 4.5M mid-tier private, Rp 5.5M large/elite private. We start with private schools because they have budget authority and faster decision cycles. Conservative target: 10 schools at Rp 4.5M average = Rp 45M MRR by end of 2026. The buyer is the <em>kepala sekolah</em>, GTM is warm intros through teacher networks.</p>
+            <p>Flat rate per school, tiered by features &mdash; not per-student (that's how admin tools price, and we're a different category). Three tiers: Essentials (admin ops, ~Rp 2M), Copilot (+ AI generation, ~Rp 4M), Copilot + Insights (+ analytics, ~Rp 5.5M). Different buyers per tier: <em>Waka</em> buys Essentials, teachers via <em>kepsek</em> buy Copilot, <em>kepsek/yayasan</em> buys Insights. Price points TBD based on API costs and willingness-to-pay from pilots. We start with private schools because they have budget authority and faster decision cycles.</p>
         </div>
 
         <div class="faq-item">
@@ -1351,12 +1421,17 @@ h3 { font-size: var(--h3); font-weight: 700; }
 
         <div class="faq-item">
             <h3>"What's your technical risk?"</h3>
-            <p>AI quality on Indonesian curriculum content. ATP and Modul Ajar generation work well, but essay grading in Bahasa Indonesia with rubric alignment is genuinely hard. If AI grading isn't trustworthy, teachers won't use it, and that's a big part of our value prop. We're mitigating by grounding AI with contextual data: <span class="term">SIBI<span class="tip">Sistem Informasi Buku Indonesia</span></span> textbooks, the teacher's own materials, their rubric definitions.</p>
+            <p>AI quality on Indonesian curriculum content. ATP and Modul Ajar generation work well, but essay grading in Bahasa Indonesia with rubric alignment is genuinely hard. If AI grading isn't trustworthy, teachers won't use it, and that's a big part of our value prop. We're mitigating by grounding AI with contextual data: public textbook PDFs, the teacher's own materials, their rubric definitions.</p>
         </div>
 
         <div class="faq-item">
             <h3>"What does success look like in 6 months? What kills you?"</h3>
             <p>Success: 5-10 schools on paid pilots, teachers using it daily, 2-3 referral intros from <em>kepala sekolah</em>. What kills us: teachers try it and churn because AI output quality isn't good enough, or onboarding friction is too high and schools stall after signing up.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>"What are the honest risks?"</h3>
+            <p><strong>Is the gap worth paying for?</strong> Teachers already cope with PMM, ChatGPT, and reused files. The quality difference has to be obvious and immediate. <strong>Adoption.</strong> If teachers don't use it, nothing works. 70% are still building IT fluency. The product has to reduce work from day one, not add a system to learn. <strong>Incumbents.</strong> Telkom has distribution. BINUS has relationships. If any of them ship AI generation, the market may not distinguish between bolted-on features and an AI-native system. Speed to the feedback loop &mdash; where school data makes the copilot smarter &mdash; is the moat.</p>
         </div>
 
         <div class="faq-item">
