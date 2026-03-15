@@ -96,7 +96,10 @@ h3 { font-size: var(--h3); font-weight: 700; }
 .tiny { font-size: var(--tiny); }
 
 .problem-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-sm); }
-@media (max-width: 768px) { .problem-cards { grid-template-columns: 1fr; } }
+@media (max-width: 768px) {
+    .problem-cards { grid-template-columns: 1fr; gap: var(--gap); }
+    #s2 { min-height: auto; padding-top: 2rem; padding-bottom: 2rem; }
+}
 
 .cover-index {
     display: grid; grid-template-columns: 1fr 1fr;
@@ -846,41 +849,41 @@ h3 { font-size: var(--h3); font-weight: 700; }
     </div>
     <div class="reveal d4 cover-index">
         <a href="#s2">1. Problem</a>
-        <a href="#s3">2. Validation</a>
-        <a href="#s4">3. Landscape</a>
-        <a href="#s5">4. Insight</a>
-        <a href="#s6">5. Pattern</a>
-        <a href="#s7">6. Value Chain</a>
-        <a href="#s8">7. Vision</a>
-        <a href="#s9">8. Market</a>
-        <a href="#s10">9. Pricing</a>
-        <a href="#s11">10. Traction</a>
-        <a href="#s12">11. Team</a>
-        <a href="#s13">12. Roadmap</a>
-        <a href="#s14">13. Ask</a>
+        <a href="#s3">2. Landscape</a>
+        <a href="#s4">3. Insight</a>
+        <a href="#s5">4. Pattern</a>
+        <a href="#s6">5. Value Chain</a>
+        <a href="#s7">6. Vision</a>
+        <a href="#s8">7. Market</a>
+        <a href="#s9">8. Pricing</a>
+        <a href="#s10">9. Traction</a>
+        <a href="#s11">10. Team</a>
+        <a href="#s12">11. Roadmap</a>
+        <a href="#s13">12. Ask</a>
     </div>
 </div>
 </section>
 
-<!-- ========== SLIDE 2: PROBLEM ========== -->
+<!-- ========== SLIDE 2: PROBLEM & VALIDATION ========== -->
 <section class="slide" id="s2">
 <div class="slide-content">
     <div class="section-label reveal">The Problem</div>
-    <h2 class="reveal d1">Three problems. One missing system.</h2>
+    <h2 class="reveal d1">The academic operation has <span class="accent">no system</span> underneath it.</h2>
+    <p class="reveal d1" style="font-size:var(--small);color:var(--text-dim)">We talked to 2 principals and 10 teachers across 2 schools. They all described the same thing.</p>
     <div class="problem-cards reveal d2">
         <div class="card" style="border-top:3px solid var(--accent)">
             <h3 style="font-size:var(--small);color:var(--accent);margin-bottom:0.3em">The Teacher's Day</h3>
             <ul class="problem-list hot" style="font-size:var(--tiny)">
-                <li>10+ disconnected tools: Excel, Word, Google Forms, <span class="term">iRapor<span class="tip">Government report card system</span></span>, <span class="term">Pijar<span class="tip">Kemendikbud-backed LMS</span></span>, ChatGPT, <span class="term">Dapodik<span class="tip">Data Pokok Pendidikan (national education database system)</span></span></li>
+                <li>10+ disconnected tools: Excel, Word, Google Forms, <span class="term">e-Rapor<span class="tip">Government report card system</span></span>, <span class="term">Pijar<span class="tip">Kemendikbud-backed LMS</span></span>, ChatGPT, <span class="term">Dapodik<span class="tip">Data Pokok Pendidikan (national education database system)</span></span></li>
                 <li>Grading takes the most time, but Forms only auto-grades MC - <strong>teachers avoid essay assessments entirely</strong></li>
                 <li>70% of teachers still building basic IT fluency</li>
             </ul>
             <p style="font-size:var(--tiny);color:var(--accent);font-style:italic;margin-top:0.4em">"Guru capeknya di administrasi."</p>
         </div>
         <div class="card" style="border-top:3px solid var(--yellow)">
-            <h3 style="font-size:var(--small);color:var(--yellow);margin-bottom:0.3em">The <span class="term">Kepsek's<span class="tip">Kepala Sekolah (school principal)</span></span> Blindspot</h3>
+            <h3 style="font-size:var(--small);color:var(--yellow);margin-bottom:0.3em">The Principal's Blindspot</h3>
             <ul class="problem-list hot" style="font-size:var(--tiny)">
-                <li style="--bullet-color:var(--yellow)">Teaching quality across the school is <strong>invisible to leadership</strong></li>
+                <li>Teaching quality across the school is <strong>invisible to leadership</strong></li>
                 <li>Monitoring via CCTV and hallway walks</li>
                 <li><span class="term">BAN-PDM<span class="tip">Badan Akreditasi Nasional Pendidikan Dasar dan Menengah</span></span> 2024 shift to performance-based <span class="term">akreditasi<span class="tip">School accreditation process by BAN-PDM, now performance-based</span></span> made evidence scrambling harder</li>
             </ul>
@@ -890,49 +893,26 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <ul class="problem-list hot" style="font-size:var(--tiny)">
                 <li>Private schools face declining enrollment from <span class="term">zonasi<span class="tip">Government zoning policy that assigns students to nearest public school, increasing competition for private schools</span></span>, birth rates, and competition</li>
                 <li>Reputation depends on demonstrable quality</li>
-                <li>Government designed <span class="term">Kurikulum Merdeka<span class="tip">Indonesia's current national curriculum framework (2022)</span></span> as a connected pipeline but no tool helps schools run academic work as one integrated system</li>
+                <li>No tool helps schools run academic work as one integrated system</li>
             </ul>
-            <p style="font-size:var(--tiny);color:var(--text-dim);font-style:italic;margin-top:0.4em">"She wants to input data once and have it flow everywhere. That doesn't exist yet."</p>
         </div>
     </div>
-    <p class="bottom-note reveal d3">The problem predates <span class="term">Kurikulum Merdeka<span class="tip">Indonesia's current national curriculum framework (2022)</span></span>. But the curriculum widened the gap between what's demanded and what tools deliver.</p>
-</div>
-</section>
-
-<!-- ========== SLIDE 3: VALIDATION ========== -->
-<section class="slide" id="s3">
-<div class="slide-content">
-    <div class="section-label reveal">Customer Validation</div>
-    <h2 class="reveal d1">What schools <span class="accent">told us</span>.</h2>
-    <div class="stats-row reveal d1">
-        <div class="stat-pill"><span class="num">2</span><span class="label">Principals</span></div>
-        <div class="stat-pill"><span class="num">10</span><span class="label">Teachers</span></div>
-        <div class="stat-pill"><span class="num">2</span><span class="label">Schools</span></div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap-sm)" class="reveal d2">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-sm)" class="reveal d3">
         <div class="finding-card">
             <h4>Six steps, four tools, one exam</h4>
-            <p><span class="term">Soal<span class="tip">Exam/test questions</span></span> in Word, formulas to images, upload to Forms, grade in Excel, copy into <span class="term">iRapor<span class="tip">Government report card system</span></span>. She wants to input once and have it flow everywhere.</p>
+            <p><span class="term">Soal<span class="tip">Exam/test questions</span></span> in Word, formulas to images, upload to Forms, grade in Excel, copy into <span class="term">e-Rapor<span class="tip">Government report card system</span></span>. "She wants to input once and have it flow everywhere."</p>
         </div>
         <div class="finding-card">
-            <h4>Teachers avoid essays entirely</h4>
-            <p>Forms only auto-grades MC. <span class="term">Rapor<span class="tip">Student report card</span></span> deadlines won't wait. Tool limitations are degrading teaching quality.</p>
-        </div>
-        <div class="finding-card">
-            <h4>STEM formula nightmare</h4>
-            <p>Math formulas break between ChatGPT, Word, and Forms. Teachers screenshot each question manually.</p>
-        </div>
-        <div class="finding-card">
-            <h4>Rigid tools, creative workarounds</h4>
-            <p><span class="term">Sokrates<span class="tip">Competitor: school management system for private schools</span></span> blocks late submissions. Teachers collect late work on WhatsApp.</p>
+            <h4>Tools that fight the teacher</h4>
+            <p><span class="term">Sokrates<span class="tip">Competitor: school management system for private schools</span></span> blocks late submissions entirely. Teachers collect late work on WhatsApp. When the tool doesn't match the workflow, teachers route around it.</p>
         </div>
     </div>
-    <div class="stat-banner reveal d3" style="font-size:var(--small)">~50% of planning already uses AI, but output breaks between tools. <strong style="color:var(--accent)">The demand is proven. The solution doesn't exist.</strong></div>
+    <div class="stat-banner reveal d4" style="font-size:var(--small)">~50% of planning already uses AI, but output breaks between tools. <strong style="color:var(--accent)">The demand is proven. The solution doesn't exist.</strong></div>
 </div>
 </section>
 
-<!-- ========== SLIDE 4: COMPETITIVE ========== -->
-<section class="slide" id="s4">
+<!-- ========== SLIDE 3: COMPETITIVE ========== -->
+<section class="slide" id="s3">
 <div class="slide-content">
     <div class="section-label reveal">Competitive Landscape</div>
     <h2 class="reveal d1">The top rows are <span class="accent">empty</span> across every competitor.</h2>
@@ -966,7 +946,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </section>
 
 <!-- ========== SLIDE 5: INSIGHT + AI MOAT ========== -->
-<section class="slide" id="s5">
+<section class="slide" id="s4">
 <div class="slide-content">
     <div class="section-label reveal">Our Insight</div>
     <h2 class="reveal d1">Every school tool records what teachers did.<br>Pikira <span class="accent">does the work</span> so teachers can focus on teaching.</h2>
@@ -1003,7 +983,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </section>
 
 <!-- ========== SLIDE 6: AI-NATIVE PATTERN ========== -->
-<section class="slide" id="s6">
+<section class="slide" id="s5">
 <div class="slide-content">
     <div class="section-label reveal">The Pattern</div>
     <h2 class="reveal d1">AI-native already won in <span class="accent">every other vertical</span>.</h2>
@@ -1033,7 +1013,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </section>
 
 <!-- ========== SLIDE 7: VALUE CHAIN ========== -->
-<section class="slide" id="s7">
+<section class="slide" id="s6">
 <div class="slide-content">
     <div class="section-label reveal">How Value Flows</div>
     <h2 class="reveal d1">From product to <span class="accent">institutional outcome</span>.</h2>
@@ -1069,7 +1049,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </section>
 
 <!-- ========== SLIDE 8: VISION ========== -->
-<section class="slide" id="s8">
+<section class="slide" id="s7">
 <div class="slide-content">
     <div class="section-label reveal">The Vision</div>
     <h2 class="reveal d1">The same shift that happened in <span class="accent">finance</span>, <span class="accent">legal</span>, and <span class="accent">accounting</span> is coming to education.</h2>
@@ -1099,7 +1079,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </section>
 
 <!-- ========== SLIDE 8: MARKET & GTM ========== -->
-<section class="slide" id="s9">
+<section class="slide" id="s8">
 <div class="slide-content">
     <div class="section-label reveal">Market &amp; Go-to-Market</div>
     <h2 class="reveal d1">Indonesia's <span class="accent">$3.2B</span> EdTech market, growing <span class="accent">12%</span> yearly.</h2>
@@ -1114,17 +1094,17 @@ h3 { font-size: var(--h3); font-weight: 700; }
     <div class="funnel reveal d3">
         <div class="funnel-step">
             <div class="step-num">1</div>
-            <div class="step-text"><strong>Observation &amp; research</strong> (8-10 schools) &rarr; validate problem, map workflow</div>
+            <div class="step-text"><strong>Design partnerships</strong> (3-5 schools, April) &rarr; teachers co-design the product</div>
         </div>
         <div class="funnel-arrow">&darr;</div>
         <div class="funnel-step">
             <div class="step-num">2</div>
-            <div class="step-text"><strong>Prototype testing</strong> (5-6 schools) &rarr; teachers test product, shape features</div>
+            <div class="step-text"><strong>Iterate through semester</strong> &rarr; real feedback, real data, case studies</div>
         </div>
         <div class="funnel-arrow">&darr;</div>
         <div class="funnel-step">
             <div class="step-num">3</div>
-            <div class="step-text"><strong>Formal pilots</strong> (3-5 schools) &rarr; real data, formal agreements, case studies</div>
+            <div class="step-text"><strong>Adoption wave</strong> (Jul-Aug new year) &rarr; schools adopt new tools at reset</div>
         </div>
         <div class="funnel-arrow">&darr;</div>
         <div class="funnel-step">
@@ -1136,7 +1116,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </section>
 
 <!-- ========== SLIDE 9: BUSINESS MODEL ========== -->
-<section class="slide" id="s10">
+<section class="slide" id="s9">
 <div class="slide-content">
     <div class="section-label reveal">Business Model</div>
     <h2 class="reveal d1">Cheaper than one employee. Works across <span class="accent">every classroom</span>.</h2>
@@ -1174,7 +1154,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </section>
 
 <!-- ========== SLIDE 10: TRACTION ========== -->
-<section class="slide" id="s11">
+<section class="slide" id="s10">
 <div class="slide-content">
     <div class="section-label reveal">Traction</div>
     <h2 class="reveal d1">What we've done in <span class="accent">4 weeks</span>.</h2>
@@ -1193,12 +1173,12 @@ h3 { font-size: var(--h3); font-weight: 700; }
         </div>
     </div>
     <div class="stat-banner reveal d3">2 founders &middot; 4 weeks &middot; 2 AI features built &middot; 2 principals + 10 teachers interviewed &middot; pipeline: 2 schools, targeting 8-10</div>
-    <p class="honest-note reveal d4">Pre-launch. AI features work, architecture solid, UI in design. Nothing in production yet. Next: research visits in April (observation &amp; workflow mapping), working toward formal pilot partnerships by August.</p>
+    <p class="honest-note reveal d4">Pre-launch. AI features work, architecture solid, UI in design. Nothing in production yet. Next: formal design partnerships starting April, iterating through the semester, ready for the July-August adoption wave.</p>
 </div>
 </section>
 
 <!-- ========== SLIDE 11: TEAM ========== -->
-<section class="slide" id="s12">
+<section class="slide" id="s11">
 <div class="slide-content">
     <div class="section-label reveal">The Team</div>
     <h2 class="reveal d1">Built to <span class="accent">ship fast</span>.</h2>
@@ -1237,7 +1217,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </section>
 
 <!-- ========== SLIDE 12: ROADMAP ========== -->
-<section class="slide" id="s13">
+<section class="slide" id="s12">
 <div class="slide-content">
     <div class="section-label reveal">Roadmap</div>
     <h2 class="reveal d1">What's <span class="accent">next</span>.</h2>
@@ -1255,7 +1235,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <div class="h-tl-card">
                 <div class="h-tl-period">Apr '26</div>
                 <div class="h-tl-school">Schools resume.</div>
-                <div class="h-tl-milestone"><strong>Research visits + prototype testing</strong> (8-10 schools)</div>
+                <div class="h-tl-milestone"><strong>Formal <span class="term">design partnerships<span class="tip">Schools co-design the product with us, providing feedback in exchange for better pricing</span></span></strong> (3-5 schools)</div>
             </div>
         </div>
         <div class="h-tl-item">
@@ -1263,7 +1243,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <div class="h-tl-card">
                 <div class="h-tl-period">May-Jun</div>
                 <div class="h-tl-school">Active semester.</div>
-                <div class="h-tl-milestone">Iterate with real feedback from prototype testing.</div>
+                <div class="h-tl-milestone">Iterate with real feedback. Build case studies.</div>
             </div>
         </div>
         <div class="h-tl-item highlight">
@@ -1271,7 +1251,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <div class="h-tl-card">
                 <div class="h-tl-period">Jul-Aug</div>
                 <div class="h-tl-school"><strong>NEW YEAR</strong></div>
-                <div class="h-tl-milestone"><strong>Formal <span class="term">design partnerships<span class="tip">Schools co-design the product with us, providing feedback in exchange for better pricing</span></span>.<br>3-5 pilot schools.</strong></div>
+                <div class="h-tl-milestone"><strong>Adoption wave.</strong> New academic year = schools adopt new tools.</div>
             </div>
         </div>
         <div class="h-tl-item">
@@ -1288,7 +1268,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </section>
 
 <!-- ========== SLIDE 13: ASK ========== -->
-<section class="slide" id="s14">
+<section class="slide" id="s13">
 <div class="slide-content">
     <div class="section-label reveal">The Ask</div>
     <h2 class="reveal d1">We need a mentor who tells us <span class="accent">what we're getting wrong</span>.</h2>
@@ -1320,7 +1300,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </section>
 
 <!-- ========== SLIDE 14: CLOSE ========== -->
-<section class="slide slide--close" id="s15">
+<section class="slide slide--close" id="s14">
 <div class="slide-content">
     <img class="cover-logo-img reveal" src="pikira-logo.png" alt="Pikira" style="height:clamp(50px,10vh,100px)">
     <div class="cover-wordmark reveal d1" style="font-size:clamp(1.8rem,5vw,3.5rem)">PIKIRA</div>
@@ -1343,7 +1323,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
     <div class="faq-grid">
         <div class="faq-item">
             <h3>"You're 2 people pre-launch. Why should I bet my time on this?"</h3>
-            <p>Pre-launch, yes. Pre-work, no. In 4 weeks we talked to 2 principals and 10 teachers, registered a <span class="term">PT Perorangan<span class="tip">Indonesian sole proprietorship company</span></span>, built 2 working AI features (ATP generation, Modul Ajar generation), and hired a designer with UI in active development. We have 2 schools in active conversation. Our plan: research visits starting April (observation, workflow mapping), prototype testing May-June, formal <span class="term">design partnerships<span class="tip">Schools co-design the product, providing feedback in exchange for better pricing</span></span> in July-August when the new academic year starts. Paid pilots follow once the product is proven. We know what we're doing next.</p>
+            <p>Pre-launch, yes. Pre-work, no. In 4 weeks we talked to 2 principals and 10 teachers, registered a <span class="term">PT Perorangan<span class="tip">Indonesian sole proprietorship company</span></span>, built 2 working AI features (ATP generation, Modul Ajar generation), and hired a designer with UI in active development. We have 2 schools in active conversation. Our plan: formal <span class="term">design partnerships<span class="tip">Schools co-design the product, providing feedback in exchange for better pricing</span></span> starting April, iterate through the semester, then hit the July-August adoption wave when schools reset for the new academic year. Paid pilots follow once the product is proven. We know what we're doing next.</p>
         </div>
 
         <div class="faq-item">
@@ -1386,7 +1366,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
     const piNum = document.querySelector('.page-indicator .current-num');
     const piName = document.getElementById('pi-name');
     const piTotal = document.getElementById('pi-total');
-    const sectionNames = ['Cover','Problem','Validation','Landscape','Insight','Pattern','Value Chain','Vision','Market','Pricing','Traction','Team','Roadmap','Ask',''];
+    const sectionNames = ['Cover','Problem','Landscape','Insight','Pattern','Value Chain','Vision','Market','Pricing','Traction','Team','Roadmap','Ask',''];
     piTotal.textContent = slides.length;
 
     const obs = new IntersectionObserver(entries => {
