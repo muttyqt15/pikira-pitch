@@ -922,17 +922,15 @@ h3 { font-size: var(--h3); font-weight: 700; }
     </div>
     <div class="reveal d4 cover-index">
         <a href="#s2">1. Problem</a>
-        <a href="#s3">2. Landscape</a>
-        <a href="#s4">3. Insight</a>
-        <a href="#s5">4. Pattern</a>
-        <a href="#s6">5. Value Chain</a>
-        <a href="#s7">6. Vision</a>
-        <a href="#s8">7. Market</a>
-        <a href="#s9">8. Pricing</a>
-        <a href="#s10">9. Traction</a>
-        <a href="#s11">10. Team</a>
-        <a href="#s12">11. Roadmap</a>
-        <a href="#s13">12. Ask</a>
+        <a href="#s3">2. The Gap</a>
+        <a href="#s4">3. Pattern</a>
+        <a href="#s5">4. How It Works</a>
+        <a href="#s6">5. Market</a>
+        <a href="#s7">6. Pricing</a>
+        <a href="#s8">7. Traction</a>
+        <a href="#s9">8. Team</a>
+        <a href="#s10">9. Roadmap</a>
+        <a href="#s11">10. Ask</a>
     </div>
 </div>
 </section>
@@ -987,7 +985,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 <!-- ========== SLIDE 3: COMPETITIVE ========== -->
 <section class="slide" id="s3">
 <div class="slide-content">
-    <div class="section-label reveal">Competitive Landscape</div>
+    <div class="section-label reveal">The Gap</div>
     <h2 class="reveal d1">The top rows are <span class="accent">empty</span> across every competitor.</h2>
     <p class="reveal d1" style="font-size:var(--small);color:var(--text-dim)">Existing platforms digitize the documents schools produce — grades, attendance, <span class="term">rapor<span class="tip">Student report card</span></span>. The workflow that produces those documents is untouched. Teachers still do the academic work themselves, then input results. The scores that go in are per-assessment, not linked to curriculum objectives — so dashboards can't tell you where students are actually struggling.</p>
     <div class="reveal d2" style="overflow-x:auto">
@@ -1007,26 +1005,16 @@ h3 { font-size: var(--h3); font-weight: 700; }
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-sm)" class="reveal d3">
         <div class="insight-callout"><strong>"Why not just use..."</strong><br>
-            <span style="font-size:var(--tiny)"><strong style="color:var(--accent)">PMM (free)</strong> - Gives teachers references and templates — but the teacher still builds the <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span>, still writes exam questions manually, still grades by hand. Nothing connects, so you have no visibility into which learning objectives are weak across classrooms.<br>
-            <strong style="color:var(--accent)">ChatGPT (free)</strong> - Teachers already use it to speed things up — that's a good sign. The problem is everything after: they reformat, manually check curriculum alignment, upload elsewhere, and results are flat scores. Every semester, adjustments are based on memory because ChatGPT doesn't remember what happened.<br>
-            <strong style="color:var(--accent)">Quintal/Sokrates</strong> - Your teachers still spend their time building <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span>, formatting exam questions, and grading — then inputting everything into the system. It stores the result, but the work that took hours is untouched. And the scores that go in are per-assessment, not linked to specific learning objectives — so dashboards show averages but can't tell you where students are struggling or why.<br>
-            <strong style="color:var(--accent)">Hire another guru</strong> - One extra hire helps one subject in one grade level and takes months to ramp up. Pikira works across every teacher, every subject from day one — and the curriculum-aware data it produces gives you visibility no individual hire ever could.</span>
+            <span style="font-size:var(--tiny)"><strong style="color:var(--accent)">Free tools (PMM, ChatGPT)</strong> — Teachers already use these, and that's a good sign. The problem: PMM gives templates but teachers still build everything. ChatGPT drafts but output has to be reformatted, checked against curriculum, uploaded elsewhere. Neither remembers what happened last semester — every term starts from scratch.<br>
+            <strong style="color:var(--accent)">Quintal/Sokrates</strong> — Teachers still build <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span>, format exams, grade — then input everything. The system stores results, but scores are per-assessment, not linked to learning objectives. Dashboards show averages but can't tell you where students are struggling.<br>
+            <strong style="color:var(--accent)">Hire another guru</strong> — One hire helps one subject, one grade level, takes months to ramp. Pikira works across every teacher, every subject from day one.</span>
         </div>
         <div class="insight-callout"><strong>Why it can't be retrofitted.</strong><br>
             <span style="font-size:var(--tiny)">Existing tools' data models are designed around storing what teachers produce. To generate curriculum-aligned assessments, link results to specific learning objectives, and feed insights back into planning, you'd need to redesign the data model, the generation pipeline, and the UX. That's not a feature addition — it's a different product.</span>
         </div>
     </div>
-</div>
-</section>
-
-<!-- ========== SLIDE 5: INSIGHT + AI MOAT ========== -->
-<section class="slide" id="s4">
-<div class="slide-content">
-    <div class="section-label reveal">Our Insight</div>
-    <h2 class="reveal d1">Every school tool digitizes the documents.<br>Pikira <span class="accent">digitizes the workflow</span> — and every step produces curriculum-aware data that makes the next step smarter.</h2>
-    <p class="reveal d1" style="color:var(--text-dim);font-size:var(--small);max-width:52em">The teacher stays in charge — reviewing, adjusting, deciding. Their starting point is a draft informed by what actually happened last semester, not a copy of last year tweaked from memory. And every edit makes the system smarter for next time.</p>
-    <!-- Loop visual: pipeline with feedback arrow -->
-    <div class="reveal d2" style="position:relative">
+    <!-- Pipeline visual: from Insight slide -->
+    <div class="reveal d3" style="position:relative">
         <div class="pipeline-visual">
             <span class="pipe-node active"><span class="term">CP<span class="tip">Capaian Pembelajaran (learning outcomes)</span></span></span><span class="pipe-arrow">&rarr;</span>
             <span class="pipe-node active"><span class="term">TP<span class="tip">Tujuan Pembelajaran (learning objectives)</span></span></span><span class="pipe-arrow">&rarr;</span>
@@ -1038,7 +1026,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
         </div>
         <div style="text-align:center;font-size:var(--tiny);color:var(--accent);margin-top:0.3em">&larr; Analysis feeds back: which TPs need revisiting, which students are at risk, what to adjust next &rarr;</div>
     </div>
-    <div class="moat-cards reveal d3">
+    <div class="moat-cards reveal d4">
         <div class="moat-card">
             <h4>Grounded in <span class="term">Kurikulum Merdeka<span class="tip">Indonesia's current national curriculum framework (2022)</span></span></h4>
             <p>Every AI generation draws from structured <span class="term">CP<span class="tip">Capaian Pembelajaran (learning outcomes)</span></span>/<span class="term">TP<span class="tip">Tujuan Pembelajaran (learning objectives)</span></span> data and public <span class="term">BSKAP<span class="tip">Badan Standar, Kurikulum, dan Asesmen Pendidikan</span></span> PDFs, not generic knowledge.</p>
@@ -1052,12 +1040,11 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <p>A school on Pikira for a year gets fundamentally better output than a school on day one. After a year, Pikira knows that Kelas 10A is consistently weak on specific learning objectives, that certain classes do better on the same topics than others, and which students are falling behind across multiple assessments. It flags these patterns and suggests where to dig deeper. A new school on day one doesn't get that.</p>
         </div>
     </div>
-    <div class="vs-chatgpt reveal d4">&#x1F916; Why not just ChatGPT? &rarr; <span class="better">Teachers use it, but the output has to be reformatted, manually checked against the curriculum, and uploaded separately.</span> Results are flat scores. Nothing connects, nothing compounds.</div>
 </div>
 </section>
 
-<!-- ========== SLIDE 6: AI-NATIVE PATTERN ========== -->
-<section class="slide" id="s5">
+<!-- ========== SLIDE 4: AI-NATIVE PATTERN ========== -->
+<section class="slide" id="s4">
 <div class="slide-content">
     <div class="section-label reveal">The Pattern</div>
     <h2 class="reveal d1">AI-native already won in <span class="accent">every other vertical</span>.</h2>
@@ -1087,25 +1074,26 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </div>
 </section>
 
-<!-- ========== SLIDE 7: VALUE CHAIN ========== -->
-<section class="slide" id="s6">
+<!-- ========== SLIDE 5: HOW IT WORKS (merged Value Chain + Vision) ========== -->
+<section class="slide" id="s5">
 <div class="slide-content">
-    <div class="section-label reveal">How Value Flows</div>
-    <h2 class="reveal d1">From product to <span class="accent">institutional outcome</span>.</h2>
+    <div class="section-label reveal">How It Works</div>
+    <h2 class="reveal d1">From AI draft to <span class="accent">institutional outcome</span>.</h2>
+    <!-- Value chain steps -->
     <div class="reveal d2" style="display:flex;flex-direction:column;gap:0.3em">
         <div style="display:flex;align-items:center;gap:0.6em;background:var(--bg-card);border-radius:8px;padding:0.4em 0.8em;border-left:3px solid var(--accent)">
             <span style="font-size:var(--h3);font-weight:800;color:var(--accent);min-width:1.5em">1</span>
-            <span style="font-size:var(--small)">AI generates quality materials aligned to curriculum structure</span>
+            <span style="font-size:var(--small)">AI generates <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span>, <span class="term">Modul Ajar<span class="tip">Teaching module (lesson plans, materials, assessments)</span></span>, and <span class="term">soal<span class="tip">Exam/test questions</span></span> — already aligned to curriculum structure</span>
         </div>
         <div style="text-align:center;color:var(--navy-600);font-size:var(--tiny)">&darr;</div>
         <div style="display:flex;align-items:center;gap:0.6em;background:var(--bg-card);border-radius:8px;padding:0.4em 0.8em;border-left:3px solid var(--accent)">
             <span style="font-size:var(--h3);font-weight:800;color:var(--accent);min-width:1.5em">2</span>
-            <span style="font-size:var(--small)">Teachers do the same work faster — and every assessment they give produces curriculum-aware data showing which specific learning objectives students are strong or weak on.</span>
+            <span style="font-size:var(--small)">Teachers do the same work in a fraction of the time — and every assessment produces curriculum-aware data showing which specific learning objectives students are strong or weak on.</span>
         </div>
         <div style="text-align:center;color:var(--navy-600);font-size:var(--tiny)">&darr;</div>
         <div style="display:flex;align-items:center;gap:0.6em;background:var(--bg-card);border-radius:8px;padding:0.4em 0.8em;border-left:3px solid var(--accent)">
             <span style="font-size:var(--h3);font-weight:800;color:var(--accent);min-width:1.5em">3</span>
-            <span style="font-size:var(--small)">Every teacher's starting point is informed by the curriculum structure and last semester's actual results, creating <strong>consistency across classrooms</strong> that doesn't depend on any individual's memory.</span>
+            <span style="font-size:var(--small)">Creating <strong>consistent curriculum coverage across classrooms</strong> — every teacher's starting point reflects the same learning objectives and last semester's data, not individual memory.</span>
         </div>
         <div style="text-align:center;color:var(--navy-600);font-size:var(--tiny)">&darr;</div>
         <div style="display:flex;align-items:center;gap:0.6em;background:var(--bg-card);border-radius:8px;padding:0.4em 0.8em;border-left:3px solid var(--yellow)">
@@ -1118,22 +1106,11 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <span style="font-size:var(--small)"><span class="term">Rapor Pendidikan<span class="tip">School-level performance report from Kemendikbud</span></span> "Kualitas Pembelajaran" improves &rarr; <span class="term">akreditasi<span class="tip">School accreditation</span></span> score rises &rarr; <span class="term">PPDB<span class="tip">Penerimaan Peserta Didik Baru (new student admissions)</span></span> positioning strengthens</span>
         </div>
     </div>
-    <div class="stat-banner reveal d3" style="font-size:var(--small)"><strong style="color:var(--accent)">The system's default output is already aligned to the curriculum and informed by past results.</strong> Quality doesn't depend on any single teacher's effort on a given day.</div>
-    <div class="callout reveal d3" style="font-size:var(--tiny)"><strong>Without this:</strong> next semester's planning is tweaked from memory. Assessment results sit as flat scores. The principal discovers problems at <span class="term">rapat pleno<span class="tip">End-of-semester plenary meeting</span></span> when it's too late. And when <span class="term">yayasan<span class="tip">School foundation</span></span> asks why <span class="term">Rapor Pendidikan<span class="tip">School-level performance report from Kemendikbud</span></span> scores haven't moved, there's no structured answer.</div>
-    <p class="reveal d3" style="font-size:var(--tiny);color:var(--text-muted);text-align:center">Steps 1-4: validated by the design partnership. Step 5: follows if the early chain holds.</p>
-</div>
-</section>
-
-<!-- ========== SLIDE 8: VISION ========== -->
-<section class="slide" id="s7">
-<div class="slide-content">
-    <div class="section-label reveal">The Vision</div>
-    <h2 class="reveal d1">The same shift that happened in <span class="accent">finance</span>, <span class="accent">legal</span>, and <span class="accent">accounting</span> is coming to education.</h2>
-    <p class="reveal d1" style="color:var(--text-dim);font-size:var(--small)">Ramp, Harvey, Numeric: AI does the default work, humans refine it. We're building it for Indonesian schools.</p>
+    <!-- Vision: product screenshots -->
     <div class="vision-split reveal d2">
         <div class="vision-panel">
-            <div class="vision-col-title">Step 1: AI-Powered Academic Cycle</div>
-            <p class="vision-desc">Teacher picks a learning objective. Pikira generates the <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span> and drafts the <span class="term">Modul Ajar<span class="tip">Teaching module (lesson plans, materials, assessments)</span></span> (built). Next: create assessment <span class="term">soal<span class="tip">Exam/test questions</span></span> and grade student work (in progress). The teacher reviews, adjusts, approves. Starts from a draft that already reflects curriculum structure and last semester's data.</p>
+            <div class="vision-col-title">AI-Powered Academic Cycle</div>
+            <p class="vision-desc">Teachers spend hours building lesson plans from last year's files. With Pikira, they pick a learning objective and get a draft <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span> and <span class="term">Modul Ajar<span class="tip">Teaching module (lesson plans, materials, assessments)</span></span> — already informed by curriculum structure and last semester's results. Review, adjust, approve.</p>
             <img src="modul-ajar-select.png" alt="Pikira Modul Ajar AI generation with editing controls" style="width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.1);margin-top:0.3em">
             <div style="display:flex;gap:0.3em;flex-wrap:wrap;margin-top:auto">
                 <span class="tag tag--built"><span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span> built</span>
@@ -1144,18 +1121,20 @@ h3 { font-size: var(--h3); font-weight: 700; }
         </div>
         <div class="vision-panel">
             <div class="vision-col-title">Teacher stays in charge</div>
-            <p class="vision-desc">AI generates. Teacher reviews, adjusts, approves. Every edit is tracked with a diff view — the teacher's judgment is always the final word.</p>
+            <p class="vision-desc">Instead of building from scratch, the teacher starts from a draft. They review, adjust, approve — every edit tracked with a diff view. Their judgment is always the final word.</p>
             <img src="modul-ajar-diff.png" alt="Pikira diff view showing teacher edits to AI-generated content" style="width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.1);margin-top:0.3em">
             <div class="vision-col-title" style="margin-top:0.5em">Where connected data leads <span class="tag tag--planned">Planned</span></div>
             <div class="insight-quote">"Kelas 10A scored low on GLBB overall — but curriculum-aware data shows 80% get gerak horizontal fine. The gap is specifically gerak vertikal ke atas. And Bu Rina's class did well on it while Pak Andi's didn't. Maybe it's the teaching approach, maybe something else — but now you know where to look and which conversation to have."</div>
         </div>
     </div>
-    <div class="vision-bottom reveal d3">One platform where the academic workflow lives — from planning through assessment through analysis. Schools can start alongside their current tools and expand as they see results. Input once, flows everywhere.</div>
+    <!-- Cost-of-inaction anchor -->
+    <div class="callout reveal d3" style="font-size:var(--tiny)"><strong>Without this:</strong> next semester's planning is tweaked from memory. Assessment results sit as flat scores. The principal discovers problems at <span class="term">rapat pleno<span class="tip">End-of-semester plenary meeting</span></span> when it's too late. And when <span class="term">yayasan<span class="tip">School foundation</span></span> asks why <span class="term">Rapor Pendidikan<span class="tip">School-level performance report from Kemendikbud</span></span> scores haven't moved, there's no structured answer.</div>
+    <p class="reveal d3" style="font-size:var(--tiny);color:var(--text-muted);text-align:center">Steps 1-4: validated by the design partnership. Step 5: we expect to see movement in Rapor Pendidikan scores within 2 semesters if the early chain holds.</p>
 </div>
 </section>
 
-<!-- ========== SLIDE 8: MARKET & GTM ========== -->
-<section class="slide" id="s8">
+<!-- ========== SLIDE 6: MARKET & GTM ========== -->
+<section class="slide" id="s6">
 <div class="slide-content">
     <div class="section-label reveal">Market &amp; Go-to-Market</div>
     <h2 class="reveal d1">Indonesia's <span class="accent">$3.2B</span> EdTech market, growing <span class="accent">12%</span> yearly.</h2>
@@ -1191,12 +1170,12 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </div>
 </section>
 
-<!-- ========== SLIDE 9: BUSINESS MODEL ========== -->
-<section class="slide" id="s9">
+<!-- ========== SLIDE 7: BUSINESS MODEL ========== -->
+<section class="slide" id="s7">
 <div class="slide-content">
     <div class="section-label reveal">Business Model</div>
     <h2 class="reveal d1">Cheaper than one employee. Works across <span class="accent">every classroom</span>.</h2>
-    <p class="reveal d1" style="font-size:var(--small);color:var(--text-dim);max-width:52em">Imagine you could hire one employee who drafts every <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span>, writes every <span class="term">soal<span class="tip">Exam/test questions</span></span> with perfect formatting, helps grade every essay, and builds the <span class="term">jadwal<span class="tip">School timetable/schedule</span></span> in hours instead of a week. They work across every classroom, never take <span class="term">cuti<span class="tip">Leave/time off</span></span>, and get smarter every semester because they remember every teacher's preferences and every student's weak spots. That's Pikira. And it costs less than <span class="term">UMR<span class="tip">Upah Minimum Regional (regional minimum wage)</span></span>. And unlike a new hire, every semester of data makes the system's recommendations more specific — for every teacher, every class, every subject.</p>
+    <p class="reveal d1" style="font-size:var(--small);color:var(--text-dim);max-width:52em">Schools stretch budgets to hire teaching assistants who help with one subject's <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span>, <span class="term">soal<span class="tip">Exam/test questions</span></span>, and grading. Pikira does what that hire does — across every teacher, every subject — for less than <span class="term">UMR<span class="tip">Upah Minimum Regional (regional minimum wage)</span></span>. And every semester of use makes its output more specific to your school.</p>
     <!-- UMR comparison -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)" class="reveal d2">
         <div class="card" style="text-align:center;border:1px solid var(--navy-700)">
@@ -1229,8 +1208,8 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </div>
 </section>
 
-<!-- ========== SLIDE 10: TRACTION ========== -->
-<section class="slide" id="s10">
+<!-- ========== SLIDE 8: TRACTION ========== -->
+<section class="slide" id="s8">
 <div class="slide-content">
     <div class="section-label reveal">Traction</div>
     <h2 class="reveal d1">What we've done in <span class="accent">4 weeks</span>.</h2>
@@ -1248,13 +1227,13 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <div class="tl-content"><strong>AI built:</strong> <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span> generation, <span class="term">Modul Ajar<span class="tip">Teaching module</span></span> generation. <strong>In progress:</strong> <span class="term">jadwal<span class="tip">School timetable/schedule</span></span> algo, <span class="term">soal<span class="tip">Exam/test questions</span></span> generation, AI grading. Registered <span class="term">PT Perorangan<span class="tip">Indonesian sole proprietorship company registration</span></span>. Teachers responding positively, active conversations ongoing.</div>
         </div>
     </div>
-    <div class="stat-banner reveal d3">2 founders &middot; 4 weeks &middot; 2 AI features built &middot; 2 principals + 10 teachers interviewed &middot; pipeline: 2 schools, targeting 8-10</div>
+    <div class="stat-banner reveal d3">2 founders &middot; 4 weeks &middot; 2 AI features built &middot; 2 principals + 10 teachers interviewed &middot; pipeline: 2 schools in conversation, targeting 8-10 by July adoption wave</div>
     <p class="honest-note reveal d4">Pre-launch. AI features work, architecture solid, UI in design. Nothing in production yet. Next: formal design partnerships starting April, iterating through the semester, ready for the July-August adoption wave.</p>
 </div>
 </section>
 
-<!-- ========== SLIDE 11: TEAM ========== -->
-<section class="slide" id="s11">
+<!-- ========== SLIDE 9: TEAM ========== -->
+<section class="slide" id="s9">
 <div class="slide-content">
     <div class="section-label reveal">The Team</div>
     <h2 class="reveal d1">Built to <span class="accent">ship fast</span>.</h2>
@@ -1292,8 +1271,8 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </div>
 </section>
 
-<!-- ========== SLIDE 12: ROADMAP ========== -->
-<section class="slide" id="s12">
+<!-- ========== SLIDE 10: ROADMAP ========== -->
+<section class="slide" id="s10">
 <div class="slide-content">
     <div class="section-label reveal">Roadmap</div>
     <h2 class="reveal d1">What's <span class="accent">next</span>.</h2>
@@ -1343,8 +1322,8 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </div>
 </section>
 
-<!-- ========== SLIDE 13: ASK ========== -->
-<section class="slide" id="s13">
+<!-- ========== SLIDE 11: ASK ========== -->
+<section class="slide" id="s11">
 <div class="slide-content">
     <div class="section-label reveal">The Ask</div>
     <h2 class="reveal d1">We need a mentor who tells us <span class="accent">what we're getting wrong</span>.</h2>
@@ -1375,8 +1354,8 @@ h3 { font-size: var(--h3); font-weight: 700; }
 </div>
 </section>
 
-<!-- ========== SLIDE 14: CLOSE ========== -->
-<section class="slide slide--close" id="s14">
+<!-- ========== SLIDE 12: CLOSE ========== -->
+<section class="slide slide--close" id="s12">
 <div class="slide-content">
     <img class="cover-logo-img reveal" src="pikira-logo.png" alt="Pikira" style="height:clamp(50px,10vh,100px)">
     <div class="cover-wordmark reveal d1" style="font-size:clamp(1.8rem,5vw,3.5rem)">PIKIRA</div>
@@ -1412,7 +1391,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 
         <div class="faq-item">
             <h3>"AI features are easy to copy. What's the moat?"</h3>
-            <p>Two layers. First, architectural: our curriculum pipeline is structured data that AI can reason over. Competitors would need to rebuild from scratch. Second, context. Pikira pulls from public textbook PDFs (<span class="term">Buku Sekolah Elektronik<span class="tip">Free government-published digital textbooks</span></span>), the teacher's own <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span>, their <span class="term">Modul Ajar<span class="tip">Teaching module</span></span>, their past interactions. ChatGPT generates generic lesson plans. Pikira generates contextual ones, aligned to the specific <span class="term">kurikulum<span class="tip">Curriculum framework</span></span>, the specific school's <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span>, the specific teacher's style. That context compounds with every use, and you can't replicate it without the same integrated data layer. After one semester, Pikira knows that Kelas 10A is consistently weak on specific learning objectives, that certain classes show different patterns on the same content, and which students need attention. That's curriculum-aware data no competitor can replicate without the same integrated workflow. AI grading in Bahasa Indonesia with rubric alignment is genuinely hard - that's our biggest technical risk, and we're mitigating by grounding AI with the teacher's own materials and rubric definitions.</p>
+            <p>Two layers. First, architectural: our curriculum pipeline is structured data that AI can reason over. Competitors would need to rebuild from scratch. Second, context. Pikira pulls from public textbook PDFs (<span class="term">Buku Sekolah Elektronik<span class="tip">Free government-published digital textbooks</span></span>), the teacher's own <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span>, their <span class="term">Modul Ajar<span class="tip">Teaching module</span></span>, their past interactions. That context compounds with every use, and you can't replicate it without the same integrated data layer. After one semester, the system knows your school's specific patterns — which learning objectives are weak, which classes diverge, which students need attention. A competitor copying features tomorrow doesn't get that data. AI grading in Bahasa Indonesia with rubric alignment is genuinely hard — that's our biggest technical risk, and we're mitigating by grounding AI with the teacher's own materials and rubric definitions.</p>
         </div>
 
         <div class="faq-item">
@@ -1561,7 +1540,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 
 <div id="tip-bar"></div>
 <div class="page-indicator" id="page-indicator">
-    <span class="current-num">1</span> / <span id="pi-total">15</span><span class="section-name" id="pi-name"></span>
+    <span class="current-num">1</span> / <span id="pi-total">13</span><span class="section-name" id="pi-name"></span>
 </div>
 
 <script>
@@ -1571,7 +1550,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
     const piNum = document.querySelector('.page-indicator .current-num');
     const piName = document.getElementById('pi-name');
     const piTotal = document.getElementById('pi-total');
-    const sectionNames = ['Cover','Problem','Landscape','Insight','Pattern','Value Chain','Vision','Market','Pricing','Traction','Team','Roadmap','Ask',''];
+    const sectionNames = ['Cover','Problem','The Gap','Pattern','How It Works','Market','Pricing','Traction','Team','Roadmap','Ask',''];
     piTotal.textContent = slides.length;
 
     const obs = new IntersectionObserver(entries => {
