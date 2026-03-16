@@ -915,7 +915,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
     <div class="cover-wordmark reveal d1">PIKIRA</div>
     <div class="cover-divider reveal d2"></div>
     <p class="cover-tagline reveal d2" style="font-size:clamp(0.9rem,1.8vw,1.3rem);font-weight:600">Academic Copilot for Indonesian Schools</p>
-    <p class="reveal d2" style="font-size:var(--small);color:var(--text-dim);margin-top:-0.5em">Let teachers teach again. Give principals visibility into academic quality.</p>
+    <p class="reveal d2" style="font-size:var(--small);color:var(--text-dim);margin-top:-0.5em">The first school platform that does the work for teachers and gives leadership the data to act.</p>
     <div class="cover-meta reveal d3">
         <span style="font-weight:600;color:var(--accent)">Pitch Deck</span>
         <span>Muttaqin Muzakkir &amp; Daanish Inayat Rahman &middot; March 2026</span>
@@ -948,7 +948,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <h3 style="font-size:var(--small);color:var(--accent);margin-bottom:0.3em">The Teacher's Day</h3>
             <ul class="problem-list hot" style="font-size:var(--tiny)">
                 <li>10+ disconnected tools: Excel, Word, Google Forms, <span class="term">e-Rapor<span class="tip">Government report card system</span></span>, <span class="term">Pijar<span class="tip">Kemendikbud-backed LMS</span></span>, ChatGPT, <span class="term">Dapodik<span class="tip">Data Pokok Pendidikan (national education database system)</span></span></li>
-                <li>Grading takes the most time, but Forms only auto-grades MC - <strong>teachers avoid essay assessments entirely</strong></li>
+                <li>Grading takes the most time outside of teaching hours. Teachers grade essays, but results are flat numbers — a student gets 60, and nobody knows which specific learning objectives they're struggling with.</li>
                 <li>70% of teachers still building basic IT fluency</li>
             </ul>
             <p style="font-size:var(--tiny);color:var(--accent);font-style:italic;margin-top:0.4em">"Guru capeknya di administrasi."</p>
@@ -956,9 +956,9 @@ h3 { font-size: var(--h3); font-weight: 700; }
         <div class="card" style="border-top:3px solid var(--yellow)">
             <h3 style="font-size:var(--small);color:var(--yellow);margin-bottom:0.3em">The Principal's Blindspot</h3>
             <ul class="problem-list hot" style="font-size:var(--tiny)">
-                <li>Teaching quality across the school is <strong>invisible to leadership</strong></li>
-                <li>Monitoring via CCTV and hallway walks</li>
-                <li><span class="term">BAN-PDM<span class="tip">Badan Akreditasi Nasional Pendidikan Dasar dan Menengah</span></span> 2024 shift to performance-based <span class="term">akreditasi<span class="tip">School accreditation process by BAN-PDM, now performance-based</span></span> made evidence scrambling harder</li>
+                <li>Teaching quality across the school is <strong>invisible to leadership</strong>. Monitoring via CCTV and hallway walks.</li>
+                <li>Even where data exists — in gradebooks, in LMS dashboards — it's per-assessment averages. A bab scored low, but nobody knows which learning objectives are the problem or whether the issue is one class or all of them.</li>
+                <li>Academic performance surfaces at end-of-semester <span class="term">rapat pleno<span class="tip">End-of-semester plenary meeting for grade finalization</span></span>, when it's too late to intervene. When <span class="term">yayasan<span class="tip">School foundation (governing body)</span></span> asks why <span class="term">Rapor Pendidikan<span class="tip">School-level performance report from Kemendikbud</span></span> scores haven't moved, the principal has no structured answer — because the data to diagnose the problem doesn't exist in any system they use.</li>
             </ul>
         </div>
         <div class="card" style="border-top:3px solid var(--blue)">
@@ -989,6 +989,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 <div class="slide-content">
     <div class="section-label reveal">Competitive Landscape</div>
     <h2 class="reveal d1">The top rows are <span class="accent">empty</span> across every competitor.</h2>
+    <p class="reveal d1" style="font-size:var(--small);color:var(--text-dim)">Existing platforms digitize the documents schools produce — grades, attendance, <span class="term">rapor<span class="tip">Student report card</span></span>. The workflow that produces those documents is untouched. Teachers still do the academic work themselves, then input results. The scores that go in are per-assessment, not linked to curriculum objectives — so dashboards can't tell you where students are actually struggling.</p>
     <div class="reveal d2" style="overflow-x:auto">
     <table class="comp-table">
         <thead><tr><th>Step</th><th><span class="term">PMM<span class="tip">Platform Merdeka Mengajar: free government platform for teachers</span></span></th><th>ChatGPT</th><th><span class="term">Quintal<span class="tip">Competitor: school admin &amp; academic platform</span></span></th><th><span class="term">Sokrates<span class="tip">Competitor: school management system for private schools</span></span></th><th><span class="term">Pijar<span class="tip">Competitor: Kemendikbud-backed LMS, free for public schools</span></span></th><th>Pikira</th></tr></thead>
@@ -997,7 +998,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <tr class="hl"><td><strong>Plan (<span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span>)</strong></td><td class="x">Templates</td><td class="x">Can draft</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira">AI generates <span class="tag tag--built">Built</span></td></tr>
             <tr class="hl"><td><strong>Soal</strong></td><td class="x">&#10005;</td><td class="x">No LaTeX</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">CBT only</td><td class="pikira">AI + LaTeX <span class="tag tag--progress">In progress</span></td></tr>
             <tr class="hl"><td><strong>Grade</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">Input</td><td class="x">Input</td><td class="x">Input</td><td class="pikira">AI-assisted <span class="tag tag--progress">In progress</span></td></tr>
-            <tr class="hl"><td><strong>Analyze</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">Basic</td><td class="x">Dashboard</td><td class="x">Dashboard</td><td class="pikira">Per-<span class="term">TP<span class="tip">Tujuan Pembelajaran (learning objectives)</span></span> <span class="tag tag--planned">Planned</span></td></tr>
+            <tr class="hl"><td><strong>Analyze</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">Basic</td><td class="x">Dashboard</td><td class="x">Dashboard</td><td class="pikira">Curriculum-aware <span class="tag tag--planned">Planned</span></td></tr>
             <tr><td colspan="7" style="font-size:var(--tiny);color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;padding:0.5em 0.5em 0.3em;border:none">Operations (table stakes)</td></tr>
             <tr><td>Admin</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="chk">Strong</td><td class="chk">Strong</td><td class="chk">Some</td><td class="pikira"><span class="tag tag--planned">Planned</span></td></tr>
             <tr class="hl"><td><strong>Connected loop</strong></td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="x">&#10005;</td><td class="pikira">Connected</td></tr>
@@ -1006,13 +1007,13 @@ h3 { font-size: var(--h3); font-weight: 700; }
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-sm)" class="reveal d3">
         <div class="insight-callout"><strong>"Why not just use..."</strong><br>
-            <span style="font-size:var(--tiny)"><strong style="color:var(--accent)">PMM (free)</strong> - Templates to fill in. Doesn't generate, grade, analyze, or connect anything.<br>
-            <strong style="color:var(--accent)">ChatGPT (free)</strong> - No curriculum structure, no school context, no LaTeX, no feedback loop. A calculator vs an operating system.<br>
-            <strong style="color:var(--accent)">Quintal/Sokrates</strong> - Records what teachers produce. Pikira produces it. They'd have to rebuild from scratch.<br>
-            <strong style="color:var(--accent)">Hire another guru</strong> - One guru improves one classroom. Pikira raises the baseline across every classroom.</span>
+            <span style="font-size:var(--tiny)"><strong style="color:var(--accent)">PMM (free)</strong> - Gives teachers references and templates — but the teacher still builds the <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span>, still writes exam questions manually, still grades by hand. Nothing connects, so you have no visibility into which learning objectives are weak across classrooms.<br>
+            <strong style="color:var(--accent)">ChatGPT (free)</strong> - Teachers already use it to speed things up — that's a good sign. The problem is everything after: they reformat, manually check curriculum alignment, upload elsewhere, and results are flat scores. Every semester, adjustments are based on memory because ChatGPT doesn't remember what happened.<br>
+            <strong style="color:var(--accent)">Quintal/Sokrates</strong> - Your teachers still spend their time building <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span>, formatting exam questions, and grading — then inputting everything into the system. It stores the result, but the work that took hours is untouched. And the scores that go in are per-assessment, not linked to specific learning objectives — so dashboards show averages but can't tell you where students are struggling or why.<br>
+            <strong style="color:var(--accent)">Hire another guru</strong> - One extra hire helps one subject in one grade level and takes months to ramp up. Pikira works across every teacher, every subject from day one — and the curriculum-aware data it produces gives you visibility no individual hire ever could.</span>
         </div>
         <div class="insight-callout"><strong>Why it can't be retrofitted.</strong><br>
-            <span style="font-size:var(--tiny)">Existing tools' data models, UX, and architecture assume teachers do the work and software captures the output. Adding generation to a recording system is a rebuild, not a feature. Pikira is built AI-first from day one.</span>
+            <span style="font-size:var(--tiny)">Existing tools' data models are designed around storing what teachers produce. To generate curriculum-aligned assessments, link results to specific learning objectives, and feed insights back into planning, you'd need to redesign the data model, the generation pipeline, and the UX. That's not a feature addition — it's a different product.</span>
         </div>
     </div>
 </div>
@@ -1022,8 +1023,8 @@ h3 { font-size: var(--h3); font-weight: 700; }
 <section class="slide" id="s4">
 <div class="slide-content">
     <div class="section-label reveal">Our Insight</div>
-    <h2 class="reveal d1">Every school tool records what teachers did.<br>Pikira <span class="accent">does the work</span> so teachers can focus on teaching.</h2>
-    <p class="reveal d1" style="color:var(--text-dim);font-size:var(--small);max-width:52em">The teacher stays in charge - reviewing, adjusting, deciding. But they never start from a blank page. And every edit makes the system smarter for next time.</p>
+    <h2 class="reveal d1">Every school tool digitizes the documents.<br>Pikira <span class="accent">digitizes the workflow</span> — and every step produces curriculum-aware data that makes the next step smarter.</h2>
+    <p class="reveal d1" style="color:var(--text-dim);font-size:var(--small);max-width:52em">The teacher stays in charge — reviewing, adjusting, deciding. Their starting point is a draft informed by what actually happened last semester, not a copy of last year tweaked from memory. And every edit makes the system smarter for next time.</p>
     <!-- Loop visual: pipeline with feedback arrow -->
     <div class="reveal d2" style="position:relative">
         <div class="pipeline-visual">
@@ -1048,10 +1049,10 @@ h3 { font-size: var(--h3); font-weight: 700; }
         </div>
         <div class="moat-card">
             <h4>Context Compounds</h4>
-            <p>A school on Pikira for a year gets fundamentally better output than a school on day one. This is the moat. Competitors can copy features, but not a year of accumulated school context.</p>
+            <p>A school on Pikira for a year gets fundamentally better output than a school on day one. After a year, Pikira knows that Kelas 10A is consistently weak on specific learning objectives, that certain classes do better on the same topics than others, and which students are falling behind across multiple assessments. It flags these patterns and suggests where to dig deeper. A new school on day one doesn't get that.</p>
         </div>
     </div>
-    <div class="vs-chatgpt reveal d4">&#x1F916; Why not just ChatGPT? &rarr; <span class="better">A calculator vs an operating system.</span> No curriculum structure, no school context, no LaTeX, no feedback loop. Context is the moat.</div>
+    <div class="vs-chatgpt reveal d4">&#x1F916; Why not just ChatGPT? &rarr; <span class="better">Teachers use it, but the output has to be reformatted, manually checked against the curriculum, and uploaded separately.</span> Results are flat scores. Nothing connects, nothing compounds.</div>
 </div>
 </section>
 
@@ -1066,21 +1067,22 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <div class="analogy-logos">
                 <span class="logo-text" style="color:#8BC53F">Ramp</span>
             </div>
-            <p style="font-size:var(--tiny);color:var(--text-dim);text-align:left">Finance teams used to manually categorize, chase approvals, and close books. Ramp rebuilt it so AI handles the work and humans review. <strong style="color:var(--text)">Valued at $13B.</strong> It didn't start as an Expensify plugin.</p>
+            <p style="font-size:var(--tiny);color:var(--text-dim);text-align:left">Finance teams used to manually categorize, chase approvals, and close books. Ramp rebuilt it so AI handles the work and humans review. Now CFOs see spending patterns across the entire company in real time. <strong style="color:var(--text)">Valued at $32B.</strong></p>
         </div>
         <div class="analogy-card">
             <div class="analogy-logos">
                 <span class="logo-text" style="color:#fff">Harvey</span>
             </div>
-            <p style="font-size:var(--tiny);color:var(--text-dim);text-align:left">Lawyers used to spend hours on document review and contract drafting. Harvey built AI that drafts and researches - lawyers focus on judgment. <strong style="color:var(--text)">Valued at $3B.</strong> It didn't start as a Clio add-on.</p>
+            <p style="font-size:var(--tiny);color:var(--text-dim);text-align:left">Lawyers used to spend hours on document review and contract drafting. Harvey built AI that drafts and researches — lawyers focus on judgment. Now managing partners see firm-wide productivity patterns they never had visibility into. <strong style="color:var(--text)">Valued at $11B.</strong></p>
         </div>
         <div class="analogy-card">
             <div class="analogy-logos">
                 <span class="logo-text" style="color:#6C63FF">Numeric</span>
             </div>
-            <p style="font-size:var(--tiny);color:var(--text-dim);text-align:left">Accountants used to manually prepare reconciliations and close checklists. Numeric turned them from preparers into reviewers. <strong style="color:var(--text)">Raised $28M Series A.</strong> It didn't start as a QuickBooks dashboard.</p>
+            <p style="font-size:var(--tiny);color:var(--text-dim);text-align:left">Accountants used to manually prepare reconciliations and close checklists. Numeric turned them from preparers into reviewers — and gave controllers real-time visibility into close progress. <strong style="color:var(--text)">Raised $28M Series A.</strong></p>
         </div>
     </div>
+    <p class="reveal d2" style="font-size:var(--tiny);color:var(--text-muted);text-align:center">In each case, the winner built from scratch. The incumbents with decades of distribution and resources couldn't retrofit.</p>
     <div class="punchline-box reveal d3" style="text-align:center;font-size:var(--body);font-weight:700"><span class="accent">No one has done this for schools yet.</span></div>
 </div>
 </section>
@@ -1098,17 +1100,17 @@ h3 { font-size: var(--h3); font-weight: 700; }
         <div style="text-align:center;color:var(--navy-600);font-size:var(--tiny)">&darr;</div>
         <div style="display:flex;align-items:center;gap:0.6em;background:var(--bg-card);border-radius:8px;padding:0.4em 0.8em;border-left:3px solid var(--accent)">
             <span style="font-size:var(--h3);font-weight:800;color:var(--accent);min-width:1.5em">2</span>
-            <span style="font-size:var(--small)">Teachers start from quality drafts, have time for open-ended assessments (AI-assisted grading)</span>
+            <span style="font-size:var(--small)">Teachers do the same work faster — and every assessment they give produces curriculum-aware data showing which specific learning objectives students are strong or weak on.</span>
         </div>
         <div style="text-align:center;color:var(--navy-600);font-size:var(--tiny)">&darr;</div>
         <div style="display:flex;align-items:center;gap:0.6em;background:var(--bg-card);border-radius:8px;padding:0.4em 0.8em;border-left:3px solid var(--accent)">
             <span style="font-size:var(--h3);font-weight:800;color:var(--accent);min-width:1.5em">3</span>
-            <span style="font-size:var(--small)">Minimum baseline of academic preparation <strong>rises across classrooms</strong> (set by AI quality, not individual teacher capacity)</span>
+            <span style="font-size:var(--small)">Every teacher's starting point is informed by the curriculum structure and last semester's actual results, creating <strong>consistency across classrooms</strong> that doesn't depend on any individual's memory.</span>
         </div>
         <div style="text-align:center;color:var(--navy-600);font-size:var(--tiny)">&darr;</div>
         <div style="display:flex;align-items:center;gap:0.6em;background:var(--bg-card);border-radius:8px;padding:0.4em 0.8em;border-left:3px solid var(--yellow)">
             <span style="font-size:var(--h3);font-weight:800;color:var(--yellow);min-width:1.5em">4</span>
-            <span style="font-size:var(--small)">The principal sees what's happening across the school through connected data</span>
+            <span style="font-size:var(--small)">The principal sees which learning objectives are weak across classrooms, which classes show different patterns on the same content, and which students need attention — before <span class="term">rapat pleno<span class="tip">End-of-semester plenary meeting</span></span>, not after.</span>
         </div>
         <div style="text-align:center;color:var(--navy-600);font-size:var(--tiny)">&darr;</div>
         <div style="display:flex;align-items:center;gap:0.6em;background:var(--bg-card);border-radius:8px;padding:0.4em 0.8em;border-left:3px solid var(--blue)">
@@ -1116,7 +1118,8 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <span style="font-size:var(--small)"><span class="term">Rapor Pendidikan<span class="tip">School-level performance report from Kemendikbud</span></span> "Kualitas Pembelajaran" improves &rarr; <span class="term">akreditasi<span class="tip">School accreditation</span></span> score rises &rarr; <span class="term">PPDB<span class="tip">Penerimaan Peserta Didik Baru (new student admissions)</span></span> positioning strengthens</span>
         </div>
     </div>
-    <div class="stat-banner reveal d3" style="font-size:var(--small)"><strong style="color:var(--accent)">The system enforces quality by default</strong> - success doesn't depend on individual teacher motivation.</div>
+    <div class="stat-banner reveal d3" style="font-size:var(--small)"><strong style="color:var(--accent)">The system's default output is already aligned to the curriculum and informed by past results.</strong> Quality doesn't depend on any single teacher's effort on a given day.</div>
+    <div class="callout reveal d3" style="font-size:var(--tiny)"><strong>Without this:</strong> next semester's planning is tweaked from memory. Assessment results sit as flat scores. The principal discovers problems at <span class="term">rapat pleno<span class="tip">End-of-semester plenary meeting</span></span> when it's too late. And when <span class="term">yayasan<span class="tip">School foundation</span></span> asks why <span class="term">Rapor Pendidikan<span class="tip">School-level performance report from Kemendikbud</span></span> scores haven't moved, there's no structured answer.</div>
     <p class="reveal d3" style="font-size:var(--tiny);color:var(--text-muted);text-align:center">Steps 1-4: validated by the design partnership. Step 5: follows if the early chain holds.</p>
 </div>
 </section>
@@ -1130,7 +1133,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
     <div class="vision-split reveal d2">
         <div class="vision-panel">
             <div class="vision-col-title">Step 1: AI-Powered Academic Cycle</div>
-            <p class="vision-desc">Teacher picks a learning objective. Pikira generates the <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span> and drafts the <span class="term">Modul Ajar<span class="tip">Teaching module (lesson plans, materials, assessments)</span></span> (built). Next: create assessment <span class="term">soal<span class="tip">Exam/test questions</span></span> and grade student work (in progress). The teacher reviews, adjusts, approves. Never starts from a blank page.</p>
+            <p class="vision-desc">Teacher picks a learning objective. Pikira generates the <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span> and drafts the <span class="term">Modul Ajar<span class="tip">Teaching module (lesson plans, materials, assessments)</span></span> (built). Next: create assessment <span class="term">soal<span class="tip">Exam/test questions</span></span> and grade student work (in progress). The teacher reviews, adjusts, approves. Starts from a draft that already reflects curriculum structure and last semester's data.</p>
             <img src="modul-ajar-select.png" alt="Pikira Modul Ajar AI generation with editing controls" style="width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.1);margin-top:0.3em">
             <div style="display:flex;gap:0.3em;flex-wrap:wrap;margin-top:auto">
                 <span class="tag tag--built"><span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span> built</span>
@@ -1144,10 +1147,10 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <p class="vision-desc">AI generates. Teacher reviews, adjusts, approves. Every edit is tracked with a diff view — the teacher's judgment is always the final word.</p>
             <img src="modul-ajar-diff.png" alt="Pikira diff view showing teacher edits to AI-generated content" style="width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.1);margin-top:0.3em">
             <div class="vision-col-title" style="margin-top:0.5em">Where connected data leads <span class="tag tag--planned">Planned</span></div>
-            <div class="insight-quote">"Kelas 11B struggles with trig identities across 3 assessments. Revisit <span class="term">TP<span class="tip">Tujuan Pembelajaran (learning objective)</span></span> 4.2"</div>
+            <div class="insight-quote">"Kelas 10A scored low on GLBB overall — but curriculum-aware data shows 80% get gerak horizontal fine. The gap is specifically gerak vertikal ke atas. And Bu Rina's class did well on it while Pak Andi's didn't. Maybe it's the teaching approach, maybe something else — but now you know where to look and which conversation to have."</div>
         </div>
     </div>
-    <div class="vision-bottom reveal d3">The goal: replace the patchwork of <span class="term">Quintal<span class="tip">Competitor: school admin &amp; academic platform</span></span>, <span class="term">Pijar<span class="tip">Competitor: Kemendikbud-backed LMS</span></span>, Excel, Google Forms, Word, and ChatGPT with one platform where AI is built into every layer. Input once, flows everywhere.</div>
+    <div class="vision-bottom reveal d3">One platform where the academic workflow lives — from planning through assessment through analysis. Schools can start alongside their current tools and expand as they see results. Input once, flows everywhere.</div>
 </div>
 </section>
 
@@ -1193,7 +1196,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 <div class="slide-content">
     <div class="section-label reveal">Business Model</div>
     <h2 class="reveal d1">Cheaper than one employee. Works across <span class="accent">every classroom</span>.</h2>
-    <p class="reveal d1" style="font-size:var(--small);color:var(--text-dim);max-width:52em">Imagine you could hire one employee who drafts every <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span>, writes every <span class="term">soal<span class="tip">Exam/test questions</span></span> with perfect formatting, helps grade every essay, and builds the <span class="term">jadwal<span class="tip">School timetable/schedule</span></span> in hours instead of a week. They work across every classroom, never take <span class="term">cuti<span class="tip">Leave/time off</span></span>, and get smarter every semester because they remember every teacher's preferences and every student's weak spots. That's Pikira. And it costs less than <span class="term">UMR<span class="tip">Upah Minimum Regional (regional minimum wage)</span></span>.</p>
+    <p class="reveal d1" style="font-size:var(--small);color:var(--text-dim);max-width:52em">Imagine you could hire one employee who drafts every <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran (learning objective sequence)</span></span>, writes every <span class="term">soal<span class="tip">Exam/test questions</span></span> with perfect formatting, helps grade every essay, and builds the <span class="term">jadwal<span class="tip">School timetable/schedule</span></span> in hours instead of a week. They work across every classroom, never take <span class="term">cuti<span class="tip">Leave/time off</span></span>, and get smarter every semester because they remember every teacher's preferences and every student's weak spots. That's Pikira. And it costs less than <span class="term">UMR<span class="tip">Upah Minimum Regional (regional minimum wage)</span></span>. And unlike a new hire, every semester of data makes the system's recommendations more specific — for every teacher, every class, every subject.</p>
     <!-- UMR comparison -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)" class="reveal d2">
         <div class="card" style="text-align:center;border:1px solid var(--navy-700)">
@@ -1377,7 +1380,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 <div class="slide-content">
     <img class="cover-logo-img reveal" src="pikira-logo.png" alt="Pikira" style="height:clamp(50px,10vh,100px)">
     <div class="cover-wordmark reveal d1" style="font-size:clamp(1.8rem,5vw,3.5rem)">PIKIRA</div>
-    <p class="reveal d2" style="font-size:clamp(0.85rem,1.6vw,1.15rem);color:var(--text-dim);font-style:italic">"Let teachers teach again."</p>
+    <p class="reveal d2" style="font-size:clamp(0.85rem,1.6vw,1.15rem);color:var(--text-dim);font-style:italic">The first school platform that does the work for teachers and gives leadership the data to act.</p>
     <div class="cover-meta reveal d3">
         <span>Muttaqin Muzakkir &amp; Daanish Inayat Rahman</span>
         <a href="https://wa.me/6281218722101" target="_blank" style="color:var(--text-dim);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.15)">Muttaqin's WhatsApp: wa.me/6281218722101</a>
@@ -1404,12 +1407,12 @@ h3 { font-size: var(--h3); font-weight: 700; }
 
         <div class="faq-item">
             <h3>"The EdTech graveyard is full of LMS startups."</h3>
-            <p>Existing players (<span class="term">Sokrates<span class="tip">Competitor: school management system for private schools</span></span>, <span class="term">Quintal<span class="tip">Competitor: school admin &amp; academic platform</span></span>, <span class="term">Pijar<span class="tip">Competitor: Kemendikbud-backed LMS, free for public schools</span></span>) digitize the output: attendance, grades, <span class="term">rapor<span class="tip">Student report card</span></span>. Pikira digitizes the workflow that produces them: curriculum planning, assessment creation, grading. That's a foundation difference, not a feature gap you can close with a plugin. Their data models, UX, and architecture assume teachers do the work and software captures the output. Adding generation to a recording system is a rebuild, not a feature.</p>
+            <p>Existing players (<span class="term">Sokrates<span class="tip">Competitor: school management system for private schools</span></span>, <span class="term">Quintal<span class="tip">Competitor: school admin &amp; academic platform</span></span>, <span class="term">Pijar<span class="tip">Competitor: Kemendikbud-backed LMS, free for public schools</span></span>) digitize the documents schools produce — attendance records, grade sheets, <span class="term">rapor<span class="tip">Student report card</span></span>. Pikira digitizes the workflow that produces them: planning, assessment creation, grading, analysis. Their data models assume teachers do the work and software stores the result. To generate curriculum-aligned content and feed results back into planning, you'd need to redesign from the ground up.</p>
         </div>
 
         <div class="faq-item">
             <h3>"AI features are easy to copy. What's the moat?"</h3>
-            <p>Two layers. First, architectural: our curriculum pipeline is structured data that AI can reason over. Competitors would need to rebuild from scratch. Second, context. Pikira pulls from public textbook PDFs (<span class="term">Buku Sekolah Elektronik<span class="tip">Free government-published digital textbooks</span></span>), the teacher's own <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span>, their <span class="term">Modul Ajar<span class="tip">Teaching module</span></span>, their past interactions. ChatGPT generates generic lesson plans. Pikira generates contextual ones, aligned to the specific <span class="term">kurikulum<span class="tip">Curriculum framework</span></span>, the specific school's <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span>, the specific teacher's style. That context compounds with every use, and you can't replicate it without the same integrated data layer. AI grading in Bahasa Indonesia with rubric alignment is genuinely hard - that's our biggest technical risk, and we're mitigating by grounding AI with the teacher's own materials and rubric definitions.</p>
+            <p>Two layers. First, architectural: our curriculum pipeline is structured data that AI can reason over. Competitors would need to rebuild from scratch. Second, context. Pikira pulls from public textbook PDFs (<span class="term">Buku Sekolah Elektronik<span class="tip">Free government-published digital textbooks</span></span>), the teacher's own <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span>, their <span class="term">Modul Ajar<span class="tip">Teaching module</span></span>, their past interactions. ChatGPT generates generic lesson plans. Pikira generates contextual ones, aligned to the specific <span class="term">kurikulum<span class="tip">Curriculum framework</span></span>, the specific school's <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span>, the specific teacher's style. That context compounds with every use, and you can't replicate it without the same integrated data layer. After one semester, Pikira knows that Kelas 10A is consistently weak on specific learning objectives, that certain classes show different patterns on the same content, and which students need attention. That's curriculum-aware data no competitor can replicate without the same integrated workflow. AI grading in Bahasa Indonesia with rubric alignment is genuinely hard - that's our biggest technical risk, and we're mitigating by grounding AI with the teacher's own materials and rubric definitions.</p>
         </div>
 
         <div class="faq-item">
@@ -1419,7 +1422,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 
         <div class="faq-item">
             <h3>"What does success look like in 6 months? What kills you?"</h3>
-            <p>Success: 3-5 schools on formal pilots, teachers using it daily, 2-3 referral intros from principals. What kills us: teachers try it and churn because AI output quality isn't good enough, or onboarding friction is too high and schools stall after signing up. The honest risks: is the gap worth paying for when teachers already cope with <span class="term">PMM<span class="tip">Platform Merdeka Mengajar: free government platform for teachers</span></span> and ChatGPT? If teachers don't use it, nothing works - 70% are still building IT fluency. And incumbents: Telkom has distribution, BINUS has relationships. Speed to the feedback loop - where school data makes the copilot smarter - is the moat.</p>
+            <p>Success: 3-5 schools on formal pilots, teachers using it daily, 2-3 referral intros from principals. What kills us: teachers try it and churn because AI output quality isn't good enough, or onboarding friction is too high and schools stall after signing up. The honest risks: teachers already cope with <span class="term">PMM<span class="tip">Platform Merdeka Mengajar: free government platform for teachers</span></span>, ChatGPT, and reused files — the workflow works, it's just slow and disconnected. The value Pikira has to demonstrate in the first week isn't abstract quality improvement — it's "your <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span> draft is ready and it reflects last semester's data" and "your exam questions are formatted and linked to the curriculum." If that doesn't feel meaningfully better than copy-pasting from ChatGPT, teachers will revert. And incumbents: Telkom has distribution, BINUS has relationships. Speed to the feedback loop — where school data makes the copilot smarter — is the moat.</p>
         </div>
     </div>
 
@@ -1479,19 +1482,19 @@ h3 { font-size: var(--h3); font-weight: 700; }
             <p style="font-weight:600;color:var(--text);margin-bottom:0.4em">For Teachers <span class="tag-v">[V]</span></p>
             <ul>
                 <li>AI generates <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span>, <span class="term">Modul Ajar<span class="tip">Teaching module</span></span>, <span class="term">soal<span class="tip">Exam questions</span></span> (with LaTeX for STEM), assists grading</li>
-                <li>Review and refine, never start from zero</li>
+                <li>Review and refine — starting from a draft informed by curriculum structure and last semester's data, not a copy tweaked from memory.</li>
             </ul>
             <p style="font-weight:600;color:var(--text);margin:0.6em 0 0.4em">For Principals <span class="tag-h">[H]</span></p>
             <ul>
                 <li>Real-time visibility into academic operations</li>
-                <li>Quality floor rises - every teacher starts from AI drafts</li>
+                <li>Curriculum-aware data across every classroom — see which learning objectives are weak, which patterns persist, where to intervene.</li>
             </ul>
             <p style="font-weight:600;color:var(--text);margin:0.6em 0 0.4em">For <span class="term">Yayasan<span class="tip">School foundation (governing body)</span></span> <span class="tag-h">[H]</span></p>
             <ul>
                 <li>Documentation always ready, not scrambled before <span class="term">akreditasi<span class="tip">School accreditation</span></span></li>
-                <li>Institutional resilience, not individual heroics</li>
+                <li>Consistent academic documentation across the school. When <span class="term">akreditasi<span class="tip">School accreditation</span></span> or <span class="term">yayasan<span class="tip">School foundation</span></span> review comes, the evidence is already in the system — not scrambled the week before.</li>
             </ul>
-            <p style="color:var(--accent);font-weight:600;margin-top:0.6em;font-size:0.9em">Moat: the feedback loop. Assessment informs planning. No other tool connects this.</p>
+            <p style="color:var(--accent);font-weight:600;margin-top:0.6em;font-size:0.9em">Moat: curriculum-aware data that compounds every semester. After a year, the system knows your school's patterns — which learning objectives are consistently weak, which approaches work. No competitor can replicate that without the same integrated workflow and the same time on the platform.</p>
         </div>
 
         <!-- Customer Relationships -->
