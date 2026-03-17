@@ -987,7 +987,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
 <div class="slide-content">
     <div class="section-label reveal">The Gap</div>
     <h2 class="reveal d1">The top rows are <span class="accent">empty</span> across every competitor.</h2>
-    <p class="reveal d1" style="font-size:var(--small);color:var(--text-dim)">Existing platforms store what teachers produce - grades, attendance, <span class="term">rapor<span class="tip">Student report card</span></span>. The work that produces those documents is untouched. And the scores that go in are per-assessment, not linked to curriculum objectives - so dashboards can't tell you where students are actually struggling.</p>
+    <p class="reveal d1" style="font-size:var(--small);color:var(--text-dim)">Every competitor stores what teachers produce. The work that produces it is untouched.</p>
     <div class="reveal d2" style="overflow-x:auto">
     <table class="comp-table">
         <thead><tr><th>Step</th><th><span class="term">PMM<span class="tip">Platform Merdeka Mengajar: free government platform for teachers</span></span></th><th>ChatGPT</th><th><span class="term">Quintal<span class="tip">Competitor: school admin &amp; academic platform</span></span></th><th><span class="term">Sokrates<span class="tip">Competitor: school management system for private schools</span></span></th><th><span class="term">Pijar<span class="tip">Competitor: Kemendikbud-backed LMS, free for public schools</span></span></th><th>Pikira</th></tr></thead>
@@ -1005,12 +1005,12 @@ h3 { font-size: var(--h3); font-weight: 700; }
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-sm)" class="reveal d3">
         <div class="insight-callout"><strong>"Why not just use..."</strong><br>
-            <span style="font-size:var(--tiny)"><strong style="color:var(--accent)">Free tools (PMM, ChatGPT)</strong> - Teachers already use these, and that's a good sign. The problem: PMM gives templates but teachers still build everything. ChatGPT drafts but output has to be reformatted, checked against curriculum, uploaded elsewhere. Neither remembers what happened last semester - every term starts from scratch.<br>
-            <strong style="color:var(--accent)">Quintal/Sokrates</strong> - Teachers still build <span class="term">ATP<span class="tip">Alur Tujuan Pembelajaran</span></span>, format exams, grade - then input everything. The system stores results, but scores are per-assessment, not linked to learning objectives. Dashboards show averages but can't tell you where students are struggling.<br>
-            <strong style="color:var(--accent)">Hire another guru</strong> - One hire helps one subject, one grade level, takes months to ramp. Pikira works across every teacher, every subject from day one.</span>
+            <span style="font-size:var(--tiny)"><strong style="color:var(--accent)">PMM / ChatGPT</strong> - Teachers already use these. But output has to be reformatted, checked against curriculum, uploaded elsewhere. Neither remembers last semester.<br>
+            <strong style="color:var(--accent)">Quintal / Sokrates</strong> - Teachers still do the work, then input it. Scores are per-assessment, not linked to learning objectives.<br>
+            <strong style="color:var(--accent)">Hire another guru</strong> - One hire, one subject, months to ramp. Pikira: every teacher, every subject, day one.</span>
         </div>
         <div class="insight-callout"><strong>Why it can't be retrofitted.</strong><br>
-            <span style="font-size:var(--tiny)">Existing tools' data models are designed around storing what teachers produce. To generate curriculum-aligned assessments, link results to specific learning objectives, and feed insights back into planning, you'd need to redesign the data model, the generation pipeline, and the UX. That's not a feature addition - it's a different product.</span>
+            <span style="font-size:var(--tiny)">Their data models store results. Generating curriculum-aligned content and feeding insights back into planning requires a different architecture. That's not a feature - it's a different product.</span>
         </div>
     </div>
     <!-- Pipeline visual: from Insight slide -->
@@ -1029,7 +1029,7 @@ h3 { font-size: var(--h3); font-weight: 700; }
     <div class="moat-cards reveal d4">
         <div class="moat-card">
             <h4>Grounded in <span class="term">Kurikulum Merdeka<span class="tip">Indonesia's current national curriculum framework (2022)</span></span></h4>
-            <p>Every AI generation draws from structured <span class="term">CP<span class="tip">Capaian Pembelajaran (learning outcomes)</span></span>/<span class="term">TP<span class="tip">Tujuan Pembelajaran (learning objectives)</span></span> data and public <span class="term">BSKAP<span class="tip">Badan Standar, Kurikulum, dan Asesmen Pendidikan</span></span> PDFs, not generic knowledge.</p>
+            <p>Generates from structured <span class="term">CP<span class="tip">Capaian Pembelajaran (learning outcomes)</span></span>/<span class="term">TP<span class="tip">Tujuan Pembelajaran (learning objectives)</span></span> data, not generic knowledge.</p>
         </div>
         <div class="moat-card">
             <h4>One Store, One Context</h4>
